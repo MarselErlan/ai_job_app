@@ -1,0 +1,137 @@
+2025-06-10T12:52:20.190163-0500 | INFO | 🚀 Starting pipeline for resume: uploads/Eric_Abram_11.pdf
+2025-06-10T12:52:20.190535-0500 | INFO | ✅ Step 1: Resume parsed and embedded
+2025-06-10T12:52:20.637658-0500 | INFO | 🔍 Searching jobs with keyword 'SDET' in 'Chicago'
+2025-06-10T12:52:23.548277-0500 | INFO | 🏆 Best match: 32 Sdet jobs in Chicago, Illinois, United States (1 new) (https://www.linkedin.com/jobs/sdet-jobs-chicago-il)
+2025-06-10T12:52:23.548459-0500 | INFO | 🧐 GPT tailoring resume
+2025-06-10T12:52:37.643435-0500 | INFO | 📝 Tailored resume PDF saved: uploads/Eric_Abram_for_SDET_at_Company.pdf
+2025-06-10T12:52:37.643545-0500 | INFO | 💩 Extracting form selectors for: https://www.linkedin.com/jobs/sdet-jobs-chicago-il
+2025-06-10T12:52:56.074274-0500 | INFO | 🧰 Attempting to fill the application form
+2025-06-10T12:53:01.717532-0500 | INFO | 📸 Screenshot saved at: uploads/intelligent_apply.png
+2025-06-10T12:53:01.717847-0500 | INFO | 📂 Logging to Notion
+2025-06-10T12:53:03.345335-0500 | SUCCESS | 🌟 Pipeline completed successfully
+2025-06-10T13:06:39.770553-0500 | INFO | Logger is ready.
+2025-06-10T13:06:48.159059-0500 | INFO | Logger is ready.
+2025-06-10T13:06:50.871544-0500 | INFO | Logger is ready.
+2025-06-10T13:06:52.249926-0500 | INFO | Logger is ready.
+2025-06-10T13:08:00.022716-0500 | INFO | Logger is ready.
+2025-06-10T13:08:18.304860-0500 | INFO | Logger is ready.
+2025-06-10T13:08:20.504337-0500 | INFO | Logger is ready.
+2025-06-10T13:08:27.937225-0500 | INFO | Logger is ready.
+2025-06-10T13:08:34.043752-0500 | INFO | Logger is ready.
+2025-06-10T13:08:36.814084-0500 | INFO | Logger is ready.
+2025-06-10T13:08:37.754217-0500 | INFO | Logger is ready.
+2025-06-10T13:08:41.044500-0500 | INFO | Logger is ready.
+2025-06-10T13:09:15.657485-0500 | INFO | Logger is ready.
+2025-06-10T13:09:18.861326-0500 | INFO | Logger is ready.
+2025-06-10T13:10:46.387809-0500 | INFO | 
+
+🚀 Starting multi-apply pipeline with resume: uploads/Eric_Abram_11.pdf
+2025-06-10T13:10:47.062354-0500 | INFO | 🔍 Searching for jobs...
+2025-06-10T13:10:51.777185-0500 | INFO | 
+📌 [1] Applying to: $49-$76/hr Sdet Jobs in Chicago, IL (NOW HIRING) Jun 2025 (https://www.ziprecruiter.com/Jobs/Sdet/-in-Chicago,IL)
+2025-06-10T13:11:30.767390-0500 | SUCCESS | ✅ Applied to job: $49-$76/hr Sdet Jobs in Chicago, IL (NOW HIRING) Jun 2025
+2025-06-10T13:11:30.767915-0500 | INFO | 
+📌 [2] Applying to: 32 Sdet jobs in Chicago, Illinois, United States (1 new) (https://www.linkedin.com/jobs/sdet-jobs-chicago-il)
+2025-06-10T13:12:07.141386-0500 | SUCCESS | ✅ Applied to job: 32 Sdet jobs in Chicago, Illinois, United States (1 new)
+2025-06-10T13:12:07.141910-0500 | INFO | 
+📌 [3] Applying to: Sdet Jobs, Employment in Chicago, IL | Indeed (https://www.indeed.com/q-sdet-l-chicago,-il-jobs.html)
+2025-06-10T13:12:36.656976-0500 | ERROR | ❌ Error while applying to Sdet Jobs, Employment in Chicago, IL | Indeed: Expecting value: line 1 column 1 (char 0)
+2025-06-10T13:12:36.658017-0500 | INFO | 
+📌 [4] Applying to: Careers - Jobs at the Leader in Identity and Access Management ... (https://www.okta.com/company/careers/)
+2025-06-10T13:13:13.699663-0500 | SUCCESS | ✅ Applied to job: Careers - Jobs at the Leader in Identity and Access Management ...
+2025-06-10T13:13:13.700133-0500 | INFO | 
+📌 [5] Applying to: Atlassian Jobs: View Listings for Open Positions | Atlassian (https://www.atlassian.com/company/careers/all-jobs)
+2025-06-10T13:13:40.213074-0500 | SUCCESS | ✅ Applied to job: Atlassian Jobs: View Listings for Open Positions | Atlassian
+2025-06-10T13:38:56.732357-0500 | INFO | Logger is ready.
+2025-06-10T13:39:02.010820-0500 | INFO | Logger is ready.
+2025-06-10T13:41:32.056901-0500 | INFO | Logger is ready.
+2025-06-10T13:42:40.078212-0500 | INFO | Logger is ready.
+2025-06-10T13:42:43.679319-0500 | INFO | Logger is ready.
+2025-06-10T13:43:33.885160-0500 | INFO | Logger is ready.
+2025-06-10T13:43:38.575855-0500 | INFO | Logger is ready.
+2025-06-10T13:44:56.605661-0500 | INFO | Logger is ready.
+2025-06-10T13:45:18.153930-0500 | INFO | Logger is ready.
+2025-06-10T13:45:41.806067-0500 | INFO | Logger is ready.
+2025-06-10T13:45:45.908740-0500 | INFO | Logger is ready.
+2025-06-10T13:45:48.711409-0500 | INFO | Logger is ready.
+2025-06-10T13:45:50.594605-0500 | INFO | Logger is ready.
+2025-06-10T13:45:52.474361-0500 | INFO | Logger is ready.
+2025-06-10T13:46:19.655483-0500 | INFO | Logger is ready.
+2025-06-10T13:46:32.876267-0500 | INFO | Logger is ready.
+2025-06-10T13:47:01.653460-0500 | INFO | Logger is ready.
+2025-06-10T13:48:04.210566-0500 | INFO | Logger is ready.
+2025-06-10T13:48:43.177053-0500 | INFO | Logger is ready.
+2025-06-10T13:55:07.449460-0500 | INFO | Logger is ready.
+2025-06-10T13:55:09.643349-0500 | INFO | Logger is ready.
+2025-06-10T13:55:21.484424-0500 | INFO | Logger is ready.
+2025-06-10T13:55:55.357211-0500 | INFO | Logger is ready.
+2025-06-10T13:56:12.403455-0500 | INFO | Logger is ready.
+2025-06-10T13:57:37.668383-0500 | INFO | Logger is ready.
+2025-06-10T13:57:50.799314-0500 | INFO | Logger is ready.
+2025-06-10T13:57:57.192299-0500 | INFO | Logger is ready.
+2025-06-10T13:58:23.797177-0500 | INFO | Logger is ready.
+2025-06-10T13:58:26.919586-0500 | INFO | Logger is ready.
+2025-06-10T14:00:02.363057-0500 | INFO | Logger is ready.
+2025-06-10T14:00:09.909115-0500 | INFO | Logger is ready.
+2025-06-10T14:00:13.407893-0500 | INFO | Logger is ready.
+2025-06-10T14:07:38.094766-0500 | INFO | Logger is ready.
+2025-06-10T14:07:46.513271-0500 | INFO | Logger is ready.
+2025-06-10T14:07:58.292742-0500 | INFO | Logger is ready.
+2025-06-10T14:08:33.901749-0500 | INFO | Logger is ready.
+2025-06-10T14:08:38.372688-0500 | INFO | Logger is ready.
+2025-06-10T14:12:56.160978-0500 | INFO | Logger is ready.
+2025-06-10T14:13:13.205544-0500 | INFO | Logger is ready.
+2025-06-10T14:14:58.247585-0500 | INFO | 🚀 Starting pipeline for resume: uploads/Eric_Abram_11.pdf
+2025-06-10T14:14:58.248461-0500 | INFO | ✅ Step 1: Resume parsed and embedded
+2025-06-10T14:14:59.367121-0500 | INFO | 🔍 Searching jobs with keyword 'string' in 'string'
+2025-06-10T14:15:07.333070-0500 | INFO | 🏆 Best match: NanoString: Experience the Power of Spatial Biology (https://nanostring.com/)
+2025-06-10T14:15:07.333219-0500 | INFO | 🧐 GPT tailoring resume
+2025-06-10T14:15:21.029752-0500 | INFO | 📝 Tailored resume PDF saved: uploads/Eric_Abram_for_SDET_at_Company.pdf
+2025-06-10T14:15:21.030243-0500 | INFO | 💩 Extracting form selectors for: https://nanostring.com/
+2025-06-10T14:15:48.305469-0500 | INFO | Logger is ready.
+2025-06-10T14:15:56.504603-0500 | INFO | 🚀 Starting pipeline for resume: uploads/Eric_Abram_11.pdf
+2025-06-10T14:15:56.504794-0500 | INFO | ✅ Step 1: Resume parsed and embedded
+2025-06-10T14:15:57.183481-0500 | INFO | 🔍 Searching jobs with keyword 'SDET' in 'Chicago'
+2025-06-10T14:16:00.325327-0500 | INFO | 🏆 Best match: $49-$76/hr Sdet Jobs in Chicago, IL (NOW HIRING) Jun 2025 (https://www.ziprecruiter.com/Jobs/Sdet/-in-Chicago,IL)
+2025-06-10T14:16:00.325484-0500 | INFO | 🧐 GPT tailoring resume
+2025-06-10T14:16:13.198870-0500 | INFO | 📝 Tailored resume PDF saved: uploads/Eric_Abram_for_SDET_at_Company.pdf
+2025-06-10T14:16:13.198965-0500 | INFO | 💩 Extracting form selectors for: https://www.ziprecruiter.com/Jobs/Sdet/-in-Chicago,IL
+2025-06-10T14:16:30.543764-0500 | INFO | 🧰 Attempting to fill the application form
+2025-06-10T14:16:36.213776-0500 | INFO | 📸 Screenshot saved at: uploads/intelligent_apply.png
+2025-06-10T14:16:36.214100-0500 | INFO | 📂 Logging to Notion
+2025-06-10T14:16:36.684176-0500 | SUCCESS | 🌟 Pipeline completed successfully
+2025-06-10T14:17:19.463797-0500 | INFO | Logger is ready.
+2025-06-10T14:17:21.717682-0500 | INFO | Logger is ready.
+2025-06-10T14:17:45.977131-0500 | INFO | Logger is ready.
+2025-06-10T14:17:58.156290-0500 | INFO | Logger is ready.
+2025-06-10T14:18:15.826577-0500 | INFO | Logger is ready.
+2025-06-10T14:18:54.384584-0500 | INFO | 
+
+🚀 Starting multi-apply pipeline with resume: uploads/Eric_Abram_11.pdf
+2025-06-10T14:18:54.872907-0500 | INFO | 🔍 Searching for jobs...
+2025-06-10T14:18:57.685614-0500 | INFO | 
+📌 [1] Applying to: $49-$76/hr Sdet Jobs in Chicago, IL (NOW HIRING) Jun 2025 (https://www.ziprecruiter.com/Jobs/Sdet/-in-Chicago,IL)
+2025-06-10T14:19:29.873581-0500 | SUCCESS | ✅ Applied to job: $49-$76/hr Sdet Jobs in Chicago, IL (NOW HIRING) Jun 2025
+2025-06-10T14:19:29.874112-0500 | INFO | 
+📌 [2] Applying to: 32 Sdet jobs in Chicago, Illinois, United States (1 new) (https://www.linkedin.com/jobs/sdet-jobs-chicago-il)
+2025-06-10T14:20:09.638782-0500 | SUCCESS | ✅ Applied to job: 32 Sdet jobs in Chicago, Illinois, United States (1 new)
+2025-06-10T14:20:09.639231-0500 | INFO | 
+📌 [3] Applying to: Sdet Jobs, Employment in Chicago, IL | Indeed (https://www.indeed.com/q-sdet-l-chicago,-il-jobs.html)
+2025-06-10T14:20:48.925907-0500 | SUCCESS | ✅ Applied to job: Sdet Jobs, Employment in Chicago, IL | Indeed
+2025-06-10T14:20:48.926226-0500 | INFO | 
+📌 [4] Applying to: Careers - Jobs at the Leader in Identity and Access Management ... (https://www.okta.com/company/careers/)
+2025-06-10T14:21:21.498866-0500 | SUCCESS | ✅ Applied to job: Careers - Jobs at the Leader in Identity and Access Management ...
+2025-06-10T14:21:21.499199-0500 | INFO | 
+📌 [5] Applying to: Atlassian Jobs: View Listings for Open Positions | Atlassian (https://www.atlassian.com/company/careers/all-jobs)
+2025-06-10T14:21:45.023606-0500 | SUCCESS | ✅ Applied to job: Atlassian Jobs: View Listings for Open Positions | Atlassian
+2025-06-10T14:23:01.538856-0500 | INFO | 🚀 Starting pipeline for resume: uploads/Eric_Abram_11.pdf
+2025-06-10T14:23:01.540467-0500 | INFO | ✅ Step 1: Resume parsed and embedded
+2025-06-10T14:23:01.809293-0500 | INFO | 🔍 Searching jobs with keyword 'SDET' in 'New York'
+2025-06-10T14:23:04.195816-0500 | INFO | 🏆 Best match: 42 Sdet jobs in New York, United States (3 new) (https://www.linkedin.com/jobs/sdet-jobs-new-york)
+2025-06-10T14:23:04.195969-0500 | INFO | 🧐 GPT tailoring resume
+2025-06-10T14:23:15.626924-0500 | INFO | 📝 Tailored resume PDF saved: uploads/Eric_Abram_for_SDET_at_Company.pdf
+2025-06-10T14:23:15.627027-0500 | INFO | 💩 Extracting form selectors for: https://www.linkedin.com/jobs/sdet-jobs-new-york
+2025-06-10T14:23:38.729752-0500 | INFO | 🧰 Attempting to fill the application form
+2025-06-10T14:23:44.316083-0500 | INFO | 📸 Screenshot saved at: uploads/intelligent_apply.png
+2025-06-10T14:23:44.316419-0500 | INFO | 📂 Logging to Notion
+2025-06-10T14:23:44.824559-0500 | SUCCESS | 🌟 Pipeline completed successfully
