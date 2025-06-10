@@ -396,4 +396,8 @@ def debug_environment() -> None:
 # Initialize debugging when module is imported
 if DEBUG_ENABLED:
     logger.debug("🔧 Debug utilities initialized")
-    debug_environment() 
+    debug_environment()
+
+@debug_performance
+def your_function():
+    pass 

@@ -1,0 +1,38 @@
+{
+  "timestamp": "2025-06-10T17:18:14.943221",
+  "system_info": {
+    "python_version": "3.11.4 (v3.11.4:d2340ef257, Jun  6 2023, 19:15:51) [Clang 13.0.0 (clang-1300.0.29.30)]",
+    "platform": "posix",
+    "working_directory": "/Users/macbookpro/M4_Projects/AIEngineer/ai_job_app",
+    "debug_mode": "true",
+    "memory_logging": "true",
+    "performance_logging": "true",
+    "api_logging": "true"
+  },
+  "memory_usage": {
+    "process_memory_mb": 48.546875,
+    "process_memory_percent": 0.1975377400716146,
+    "system_memory_percent": 94.0,
+    "available_memory_mb": 1480.32421875,
+    "total_memory_mb": 24576.0
+  },
+  "test_results": {
+    "basic_debugging": "\u2705 PASSED",
+    "performance_monitoring": "\u2705 PASSED",
+    "api_debugging": "\u2705 PASSED",
+    "database_debugging": "\u2705 PASSED",
+    "error_handling": "\u2705 PASSED",
+    "memory_monitoring": "\u2705 PASSED"
+  },
+  "database_statistics": {
+    "total_queries": 0,
+    "successful_queries": 0,
+    "failed_queries": 0,
+    "total_query_time": 0.0,
+    "average_query_time": 0.0,
+    "longest_query_time": 0.0,
+    "total_records_retrieved": 0,
+    "total_records_created": 0,
+    "connection_errors": 1
+  }
+}
