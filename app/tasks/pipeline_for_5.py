@@ -3,6 +3,7 @@
 import os
 import json
 import re
+from datetime import datetime
 from loguru import logger
 from app.services.resume_parser import extract_text_from_resume, embed_resume_text
 from app.services.job_scraper import scrape_google_jobs
@@ -76,7 +77,7 @@ def run_pipeline_multi_apply(
             changed_files=["pipeline.py"],
             screenshot=screenshots[-1] if screenshots else None
         )
-        notion_log = log_to_notion("AI Job App – Multi Apply", log_body)
+        notion_log = log_to_notion(f"AI Job App – Multi Apply {datetime.now().strftime('%Y-%m-%d')}", log_body)
 
         return {
             "status": "success",

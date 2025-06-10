@@ -21,6 +21,7 @@ PDF Resume → Text → Embeddings → Job Matching → Tailored Resume → PDF 
 import os
 import json
 import re
+from datetime import datetime
 from loguru import logger
 from app.services.resume_parser import extract_text_from_resume, embed_resume_text
 from app.services.job_scraper import scrape_google_jobs
@@ -102,7 +103,7 @@ def run_pipeline(
 
         logger.info("📂 Logging to Notion")
         log_result = log_to_notion(
-            title="Pipeline: AI Job Application",
+            title=f"Pipeline: AI Job Application {datetime.now().strftime('%Y-%m-%d')}",
             content=format_daily_log(
                 highlights=[
                     "✅ Resume parsed & embedded",
