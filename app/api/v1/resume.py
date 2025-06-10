@@ -7,6 +7,8 @@ import os
 from app.services.resume_parser import extract_text_from_resume, embed_resume_text
 from app.services.resume_tailor import tailor_resume
 from app.services.pdf_generator import save_resume_as_pdf
+from app.services.form_autofiller import apply_to_ashby_job
+from app.services.field_mapper import extract_form_selectors
 
 router = APIRouter()
 
@@ -20,6 +22,16 @@ class ResumeTailorRequest(BaseModel):
     job_description: str
     job_title: str
     company_name: str
+
+class AutoApplyRequest(BaseModel):
+    job_url: str
+    name: str
+    email: str
+    phone: str
+    resume_filename: str
+
+class FormMapRequest(BaseModel):
+    job_url: str
 
 @router.post("/upload")
 async def upload_resume(file: UploadFile = File(...)):
@@ -73,3 +85,27 @@ def download_pdf(filename: str):
     if not os.path.exists(file_path):
         raise HTTPException(status_code=404, detail="PDF not found.")
     return FileResponse(path=file_path, filename=filename, media_type='application/pdf')
+
+@router.post("/apply")
+def auto_apply(payload: AutoApplyRequest):
+    resume_path = os.path.join(UPLOAD_DIR, payload.resume_filename)
+    if not os.path.exists(resume_path):
+        raise HTTPException(status_code=404, detail="Resume file not found.")
+
+    result = apply_to_ashby_job(
+        url=payload.job_url,
+        name=payload.name,
+        email=payload.email,
+        phone=payload.phone,
+        resume_path=resume_path
+    )
+
+    return result
+
+@router.post("/form/map")
+def form_map(payload: FormMapRequest):
+    try:
+        result = extract_form_selectors(payload.job_url)
+        return result
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
