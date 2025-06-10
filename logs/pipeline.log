@@ -135,3 +135,103 @@
 2025-06-10T14:23:44.316083-0500 | INFO | 📸 Screenshot saved at: uploads/intelligent_apply.png
 2025-06-10T14:23:44.316419-0500 | INFO | 📂 Logging to Notion
 2025-06-10T14:23:44.824559-0500 | SUCCESS | 🌟 Pipeline completed successfully
+2025-06-10T15:36:09.997841-0500 | INFO | Logger is ready.
+2025-06-10T15:36:19.058062-0500 | INFO | 🚀 Starting pipeline for resume: uploads/Eric_Abram_11.pdf
+2025-06-10T15:36:19.058254-0500 | INFO | ✅ Step 1: Resume parsed and embedded
+2025-06-10T15:36:20.156404-0500 | INFO | 🔍 Searching jobs with keyword 'SDET' in 'New York'
+2025-06-10T15:36:27.775940-0500 | INFO | 🏆 Best match: 42 Sdet jobs in New York, United States (3 new) (https://www.linkedin.com/jobs/sdet-jobs-new-york)
+2025-06-10T15:36:27.777498-0500 | INFO | 🧐 GPT tailoring resume
+2025-06-10T15:36:45.811949-0500 | INFO | 📝 Tailored resume PDF saved: uploads/Eric_Abram_for_SDET_at_Company.pdf
+2025-06-10T15:36:45.812065-0500 | INFO | 💻 Extracting form selectors for: https://www.linkedin.com/jobs/sdet-jobs-new-york
+2025-06-10T15:37:02.071623-0500 | INFO | 🧰 Attempting to fill the application form
+2025-06-10T15:37:07.741682-0500 | INFO | 📸 Screenshot saved at: uploads/intelligent_apply.png
+2025-06-10T15:37:07.742073-0500 | INFO | 📂 Logging to Notion
+2025-06-10T15:37:08.397604-0500 | SUCCESS | 🌟 Pipeline completed successfully
+2025-06-10T15:49:20.614196-0500 | INFO | Logger is ready.
+2025-06-10T15:49:38.634610-0500 | INFO | Logger is ready.
+2025-06-10T15:50:16.432139-0500 | INFO | Logger is ready.
+2025-06-10T15:59:21.598528-0500 | INFO | Logger is ready.
+2025-06-10T15:59:31.008288-0500 | INFO | Logger is ready.
+2025-06-10T15:59:35.987169-0500 | INFO | Logger is ready.
+2025-06-10T15:59:43.848159-0500 | INFO | 🚀 Starting pipeline for resume: uploads/Eric_Abram_11.pdf
+2025-06-10T15:59:43.848527-0500 | INFO | ✅ Step 1: Resume parsed and embedded
+2025-06-10T15:59:44.852989-0500 | INFO | 🔍 Searching jobs with keyword 'SDET' in 'New York'
+2025-06-10T15:59:46.920959-0500 | INFO | 🏆 Best match: Technology Careers at American Express | Amex Careers US (https://www.americanexpress.com/en-us/careers/career-areas/technology/)
+2025-06-10T15:59:46.921136-0500 | INFO | 🧐 GPT tailoring resume
+2025-06-10T16:00:01.588857-0500 | INFO | 📝 Tailored resume PDF saved: uploads/Eric_Abram_for_SDET_at_Company.pdf
+2025-06-10T16:00:01.588986-0500 | INFO | 💻 Extracting form selectors for: https://www.americanexpress.com/en-us/careers/career-areas/technology/
+2025-06-10T16:00:23.683880-0500 | INFO | 🧰 Attempting to fill the application form
+2025-06-10T16:00:30.204589-0500 | INFO | 📸 Screenshot saved at: uploads/intelligent_apply.png
+2025-06-10T16:00:30.204908-0500 | INFO | 📂 Logging to Notion
+2025-06-10T16:00:30.829739-0500 | SUCCESS | 🌟 Pipeline completed successfully
+2025-06-10T16:01:20.273246-0500 | INFO | 🚀 Starting pipeline for resume: uploads/Eric_Abram_11.pdf
+2025-06-10T16:01:20.273928-0500 | INFO | ✅ Step 1: Resume parsed and embedded
+2025-06-10T16:01:20.846852-0500 | INFO | 🔍 Searching jobs with keyword 'SDET' in 'New York'
+2025-06-10T16:01:33.451209-0500 | INFO | 🚀 Starting pipeline for resume: uploads/Eric_Abram_11.pdf
+2025-06-10T16:01:33.451379-0500 | INFO | ✅ Step 1: Resume parsed and embedded
+2025-06-10T16:01:34.158122-0500 | INFO | 🔍 Searching jobs with keyword 'SDET' in 'New York'
+2025-06-10T16:01:36.168468-0500 | INFO | 🚀 Starting pipeline for resume: uploads/Eric_Abram_11.pdf
+2025-06-10T16:01:36.168662-0500 | INFO | ✅ Step 1: Resume parsed and embedded
+2025-06-10T16:01:36.891813-0500 | INFO | 🔍 Searching jobs with keyword 'SDET' in 'New York'
+2025-06-10T16:07:47.954986-0500 | INFO | Logger is ready.
+2025-06-10T16:07:49.185245-0500 | INFO | Logger is ready.
+2025-06-10T16:07:55.714983-0500 | INFO | Logger is ready.
+2025-06-10T16:08:14.621951-0500 | INFO | Logger is ready.
+2025-06-10T16:14:29.375064-0500 | INFO | Logger is ready.
+2025-06-10T16:14:34.312787-0500 | INFO | Logger is ready.
+2025-06-10T16:14:47.699095-0500 | INFO | Logger is ready.
+2025-06-10T16:14:50.875674-0500 | INFO | 🚀 Starting pipeline for resume: uploads/Eric_Abram_11.pdf
+2025-06-10T16:14:50.875912-0500 | INFO | ✅ Step 1: Resume parsed and embedded
+2025-06-10T16:14:53.606044-0500 | INFO | 🔍 Searching jobs with keyword 'SDET' in 'New York'
+2025-06-10T16:14:59.873249-0500 | INFO | 🚀 Starting pipeline for resume: uploads/Eric_Abram_11.pdf
+2025-06-10T16:14:59.873417-0500 | INFO | ✅ Step 1: Resume parsed and embedded
+2025-06-10T16:15:00.657272-0500 | INFO | 🔍 Searching jobs with keyword 'SDET' in 'New York'
+2025-06-10T16:16:38.970543-0500 | INFO | Logger is ready.
+2025-06-10T16:16:40.678439-0500 | INFO | Logger is ready.
+2025-06-10T16:16:42.585393-0500 | INFO | Logger is ready.
+2025-06-10T16:16:53.097473-0500 | INFO | Logger is ready.
+2025-06-10T16:16:54.106416-0500 | INFO | Logger is ready.
+2025-06-10T16:16:55.871983-0500 | INFO | Logger is ready.
+2025-06-10T16:17:02.412444-0500 | INFO | Logger is ready.
+2025-06-10T16:23:58.255591-0500 | INFO | Logger is ready.
+2025-06-10T16:24:10.522771-0500 | INFO | Logger is ready.
+2025-06-10T16:24:14.330679-0500 | INFO | 🚀 Starting pipeline for resume: uploads/Eric_Abram_11.pdf
+2025-06-10T16:24:14.330905-0500 | INFO | ✅ Step 1: Resume parsed and embedded
+2025-06-10T16:24:14.884106-0500 | INFO | 🔍 Searching jobs with keyword 'SDET' in 'New York'
+2025-06-10T16:27:25.354431-0500 | INFO | Logger is ready.
+2025-06-10T16:27:35.261035-0500 | INFO | Logger is ready.
+2025-06-10T16:27:39.007348-0500 | INFO | 🚀 Starting pipeline for resume: uploads/Eric_Abram_11.pdf
+2025-06-10T16:27:39.007517-0500 | INFO | ✅ Step 1: Resume parsed and embedded
+2025-06-10T16:27:39.948307-0500 | INFO | 🔍 Searching jobs with keyword 'SDET' in 'New York'
+2025-06-10T16:36:03.595107-0500 | INFO | Logger is ready.
+2025-06-10T16:36:54.236221-0500 | INFO | Logger is ready.
+2025-06-10T16:37:06.236196-0500 | INFO | Logger is ready.
+2025-06-10T16:37:21.793398-0500 | INFO | Logger is ready.
+2025-06-10T16:37:26.284565-0500 | INFO | Logger is ready.
+2025-06-10T16:37:33.176746-0500 | INFO | Logger is ready.
+2025-06-10T16:38:02.440540-0500 | INFO | Logger is ready.
+2025-06-10T16:38:29.718165-0500 | INFO | Logger is ready.
+2025-06-10T16:38:46.116256-0500 | INFO | Logger is ready.
+2025-06-10T16:38:50.711130-0500 | INFO | 🚀 Starting pipeline for resume: uploads/Eric_Abram_11.pdf
+2025-06-10T16:38:50.711646-0500 | INFO | 📄 Step 1: Parsing resume and creating embeddings
+2025-06-10T16:38:51.408707-0500 | INFO | ✅ Resume parsed and embedded successfully
+2025-06-10T16:38:51.408981-0500 | INFO | 🔍 Step 2: Searching for 'SDET' jobs in 'New York'
+2025-06-10T16:38:52.810843-0500 | INFO | 🔒 Database session closed
+2025-06-10T16:39:03.222815-0500 | INFO | 🚀 Starting pipeline for resume: uploads/Eric_Abram_11.pdf
+2025-06-10T16:39:03.222972-0500 | INFO | 📄 Step 1: Parsing resume and creating embeddings
+2025-06-10T16:39:03.665915-0500 | INFO | ✅ Resume parsed and embedded successfully
+2025-06-10T16:39:03.666100-0500 | INFO | 🔍 Step 2: Searching for 'SDET' jobs in 'New York'
+2025-06-10T16:39:04.413513-0500 | INFO | 🔒 Database session closed
+2025-06-10T16:41:22.536234-0500 | INFO | Logger is ready.
+2025-06-10T16:41:37.665003-0500 | INFO | Logger is ready.
+2025-06-10T16:41:41.087592-0500 | INFO | 🚀 Starting pipeline for resume: uploads/Eric_Abram_11.pdf
+2025-06-10T16:41:41.087804-0500 | INFO | 📄 Step 1: Parsing resume and creating embeddings
+2025-06-10T16:41:42.419561-0500 | INFO | ✅ Resume parsed and embedded successfully
+2025-06-10T16:41:42.419834-0500 | INFO | 🔍 Step 2: Searching for 'SDET' jobs in 'New York'
+2025-06-10T16:41:43.965438-0500 | INFO | 🔒 Database session closed
+2025-06-10T16:41:45.745092-0500 | INFO | Logger is ready.
+2025-06-10T16:42:18.305091-0500 | INFO | Logger is ready.
+2025-06-10T16:43:21.157361-0500 | INFO | Logger is ready.
+2025-06-10T16:43:27.615885-0500 | INFO | Logger is ready.
+2025-06-10T16:49:57.081171-0500 | INFO | Logger is ready.
+2025-06-10T16:50:11.004266-0500 | INFO | Logger is ready.
