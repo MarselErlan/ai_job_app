@@ -15,7 +15,9 @@ def save_resume_as_pdf(text: str, filename: str = "tailored_resume.pdf") -> str:
             pdf.ln(5)
         else:
             for wrapped_line in textwrap.wrap(line, width=100):
+                wrapped_line = wrapped_line.encode('latin-1', 'replace').decode('latin-1')
                 pdf.cell(0, 10, wrapped_line, ln=True)
+
 
     output_path = f"uploads/{filename}"
     pdf.output(output_path)

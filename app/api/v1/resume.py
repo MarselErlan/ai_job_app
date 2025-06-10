@@ -6,6 +6,7 @@ from pydantic import BaseModel
 import os
 from app.services.resume_parser import extract_text_from_resume, embed_resume_text
 from app.services.resume_tailor import tailor_resume
+from app.services.pdf_generator import save_resume_as_pdf
 
 router = APIRouter()
 
@@ -17,6 +18,8 @@ latest_embedding = None  # Global cache for current session
 class ResumeTailorRequest(BaseModel):
     resume_text: str
     job_description: str
+    job_title: str
+    company_name: str
 
 @router.post("/upload")
 async def upload_resume(file: UploadFile = File(...)):
@@ -52,6 +55,14 @@ def get_latest_embedding():
 def tailor_resume_endpoint(payload: ResumeTailorRequest):
     try:
         tailored = tailor_resume(payload.resume_text, payload.job_description)
-        return {"tailored_resume": tailored}
+        name_part = payload.resume_text.splitlines()[0].replace(' ', '_')
+        job_part = payload.job_title.replace(' ', '_')
+        company_part = payload.company_name.replace(' ', '_')
+        filename = f"{name_part}_for_{job_part}_at_{company_part}.pdf"
+        pdf_path = save_resume_as_pdf(tailored, filename=filename)
+        return {
+            "tailored_resume": tailored,
+            "pdf_download_path": pdf_path
+        }
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
