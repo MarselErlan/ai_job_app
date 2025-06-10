@@ -9,6 +9,8 @@ from app.services.resume_tailor import tailor_resume
 from app.services.pdf_generator import save_resume_as_pdf
 from app.services.form_autofiller import apply_to_ashby_job
 from app.services.field_mapper import extract_form_selectors
+from app.services.form_executor import fill_fields
+from playwright.sync_api import sync_playwright
 
 router = APIRouter()
 
@@ -109,3 +111,54 @@ def form_map(payload: FormMapRequest):
         return result
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+
+@router.post("/apply/intelligent")
+def apply_intelligent(payload: AutoApplyRequest):
+    resume_path = os.path.join(UPLOAD_DIR, payload.resume_filename)
+    if not os.path.exists(resume_path):
+        raise HTTPException(status_code=404, detail="Resume file not found.")
+
+    # Get selector map from LLM
+    map_result = extract_form_selectors(payload.job_url)
+    if map_result["status"] != "success":
+        return map_result
+
+    import re, json
+    match = re.search(r"```json\n(.*?)```", map_result["selector_map"], re.DOTALL)
+    if match:
+        selector_map = json.loads(match.group(1))
+    else:
+        raise HTTPException(status_code=500, detail="Could not extract valid JSON selector map.")  # Convert from string JSON
+    data = {
+        key: value for key, value in {
+            "full_name": payload.name,
+            "_systemfield_name": payload.name,
+            "email": payload.email,
+            "_systemfield_email": payload.email,
+            "phone": payload.phone,
+            "_systemfield_phone": payload.phone
+        }.items() if value
+    }
+
+    screenshot_path = "uploads/intelligent_apply.png"
+
+    with sync_playwright() as p:
+        browser = p.chromium.launch(headless=False)
+        page = browser.new_page()
+        try:
+            page.goto(payload.job_url, timeout=60000)
+            page.wait_for_timeout(3000)
+
+            field_results = fill_fields(page, selector_map, data, resume_path)
+
+            page.screenshot(path=screenshot_path)
+            return {
+                "status": "success",
+                "fields": field_results,
+                "screenshot": screenshot_path
+            }
+        except Exception as e:
+            page.screenshot(path="uploads/intelligent_error.png")
+            return {"status": "error", "error": str(e)}
+        finally:
+            browser.close()
