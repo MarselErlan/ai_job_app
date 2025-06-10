@@ -1,7 +1,7 @@
 # File: app/api/v1/resume.py
 
 from fastapi import APIRouter, UploadFile, File, HTTPException
-from fastapi.responses import JSONResponse
+from fastapi.responses import JSONResponse, FileResponse
 from pydantic import BaseModel
 import os
 from app.services.resume_parser import extract_text_from_resume, embed_resume_text
@@ -66,3 +66,10 @@ def tailor_resume_endpoint(payload: ResumeTailorRequest):
         }
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+
+@router.get("/download")
+def download_pdf(filename: str):
+    file_path = os.path.join(UPLOAD_DIR, filename)
+    if not os.path.exists(file_path):
+        raise HTTPException(status_code=404, detail="PDF not found.")
+    return FileResponse(path=file_path, filename=filename, media_type='application/pdf')
