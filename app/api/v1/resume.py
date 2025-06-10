@@ -11,6 +11,8 @@ from app.services.form_autofiller import apply_to_ashby_job
 from app.services.field_mapper import extract_form_selectors
 from app.services.form_executor import fill_fields
 from playwright.sync_api import sync_playwright
+from app.services.notion_logger import log_to_notion, auto_log_project_update
+
 
 router = APIRouter()
 
@@ -162,3 +164,23 @@ def apply_intelligent(payload: AutoApplyRequest):
             return {"status": "error", "error": str(e)}
         finally:
             browser.close()
+
+
+class NotionLogRequest(BaseModel):
+    title: str
+    content: str
+
+@router.post("/log")
+def log_to_notion_route(payload: NotionLogRequest):
+    try:
+        return log_to_notion(payload.title, payload.content)
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+@router.post("/log/auto")
+def auto_log_to_notion_route():
+    try:
+        return auto_log_project_update()
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
