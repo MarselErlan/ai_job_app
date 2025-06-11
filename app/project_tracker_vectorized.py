@@ -18,6 +18,8 @@ import re
 from datetime import datetime
 from collections import defaultdict
 from pathlib import Path
+import pandas as pd
+import numpy as np
 
 # === CONFIG ===
 SOURCE_DIR = "./app"
@@ -25,7 +27,7 @@ VECTOR_DB_DIR = "./vector_db"
 OUTPUT_DIR = "./outputs"
 OUTPUT_FILE = f"{OUTPUT_DIR}/about_project_auto_{datetime.now().strftime('%Y%m%d_%H%M')}.txt"
 
-print("🚀 Starting Enhanced AI Project Tracker...")
+print("🚀 Starting Enhanced AI Project Tracker with Pandas Analytics...")
 print(f"📁 Analyzing: {SOURCE_DIR}")
 print(f"💾 Output: {OUTPUT_FILE}")
 
@@ -217,6 +219,141 @@ def advanced_completion_analysis(docs):
 
 completion_analysis = advanced_completion_analysis(documents)
 
+# === PANDAS STYLING FUNCTIONS ===
+def create_file_summary_table(breakdown, total_lines):
+    """Create a professional pandas table of file statistics"""
+    
+    data = []
+    for category, files in breakdown.items():
+        if not files:
+            continue
+            
+        category_lines = sum(f["lines"] for f in files)
+        category_functions = sum(f["functions"] for f in files)
+        category_classes = sum(f["classes"] for f in files)
+        category_size = sum(f["size_kb"] for f in files)
+        percentage = round((category_lines / total_lines) * 100, 1) if total_lines > 0 else 0
+        
+        data.append({
+            "Category": category,
+            "Files": len(files),
+            "Lines of Code": f"{category_lines:,}",
+            "Functions": category_functions,
+            "Classes": category_classes,
+            "Size (KB)": f"{category_size:.1f}",
+            "% of Codebase": f"{percentage}%"
+        })
+    
+    df = pd.DataFrame(data)
+    df = df.sort_values("% of Codebase", key=lambda x: pd.to_numeric(x.str.rstrip('%')), ascending=False)
+    return df
+
+def create_top_files_table(breakdown, top_n=15):
+    """Create a table of the most important files across all categories"""
+    
+    all_files = []
+    for category, files in breakdown.items():
+        for file_info in files:
+            file_info_copy = file_info.copy()
+            file_info_copy["category"] = category
+            all_files.append(file_info_copy)
+    
+    # Sort by importance
+    all_files.sort(key=lambda x: x["importance"], reverse=True)
+    
+    data = []
+    for file_info in all_files[:top_n]:
+        data.append({
+            "File": file_info["path"].split('/')[-1],  # Just filename
+            "Full Path": file_info["path"],
+            "Category": file_info["category"],
+            "Lines": f"{file_info['lines']:,}",
+            "Functions": file_info["functions"],
+            "Classes": file_info["classes"],
+            "Size (KB)": f"{file_info['size_kb']:.1f}",
+            "Importance": f"{file_info['importance']:.1f}%",
+            "Critical": "⭐" if file_info["importance"] > 2 else ""
+        })
+    
+    return pd.DataFrame(data)
+
+def create_quality_metrics_table(completion_analysis):
+    """Create a professional table of code quality metrics"""
+    
+    quality = completion_analysis["quality_indicators"]
+    incomplete = completion_analysis["incomplete_indicators"]
+    
+    data = [
+        ["Metric", "Value", "Status"],
+        ["Overall Completion", f"{completion_analysis['completion_percent']}%", 
+         "✅ Excellent" if completion_analysis['completion_percent'] > 90 else "🔄 Good" if completion_analysis['completion_percent'] > 70 else "⚠️ Needs Work"],
+        ["Total Lines of Code", f"{completion_analysis['total_lines']:,}", "📊 Info"],
+        ["Documentation (Docstrings)", f"{quality['docstrings']}", 
+         "✅ High" if quality['docstrings'] > 50 else "📝 Medium" if quality['docstrings'] > 20 else "⚠️ Low"],
+        ["Error Handling (Try/Except)", f"{quality['error_handling']}", 
+         "🛡️ Robust" if quality['error_handling'] > 50 else "🔧 Moderate" if quality['error_handling'] > 20 else "⚠️ Basic"],
+        ["Logging Coverage", f"{quality['logging']}", 
+         "📊 Excellent" if quality['logging'] > 100 else "📈 Good" if quality['logging'] > 50 else "📝 Basic"],
+        ["Comments", f"{quality['comments']:,}", "📝 Info"],
+        ["Type Hints", f"{quality['type_hints']}", "🔍 Info"],
+        ["TODO/FIXME Items", f"{sum(incomplete.values())}", 
+         "✅ Clean" if sum(incomplete.values()) < 10 else "🔄 Some" if sum(incomplete.values()) < 50 else "⚠️ Many"]
+    ]
+    
+    df = pd.DataFrame(data[1:], columns=data[0])  # Use first row as header
+    return df
+
+def format_pandas_table_for_text(df, title="", max_width=120):
+    """Convert pandas DataFrame to nicely formatted text table"""
+    
+    result = []
+    if title:
+        result.append(f"\n{'=' * len(title)}")
+        result.append(f"{title}")
+        result.append(f"{'=' * len(title)}")
+    
+    # Configure pandas display options for cleaner output
+    pd.set_option('display.max_columns', None)
+    pd.set_option('display.width', max_width)
+    pd.set_option('display.max_colwidth', 30)
+    
+    table_str = df.to_string(index=False, justify='left')
+    result.append(table_str)
+    result.append("")
+    
+    return "\n".join(result)
+
+def generate_file_detail_tables(breakdown):
+    """Generate detailed tables for each category"""
+    
+    tables = []
+    
+    for category, files in breakdown.items():
+        if not files or len(files) == 0:
+            continue
+            
+        # Create DataFrame for this category
+        data = []
+        for file_info in files[:10]:  # Top 10 files per category
+            data.append({
+                "File": file_info["path"].split('/')[-1],
+                "Lines": f"{file_info['lines']:,}",
+                "Functions": file_info["functions"],
+                "Classes": file_info["classes"],
+                "Size (KB)": f"{file_info['size_kb']:.1f}",
+                "Importance": f"{file_info['importance']:.1f}%"
+            })
+        
+        if data:
+            df = pd.DataFrame(data)
+            table_text = format_pandas_table_for_text(
+                df, 
+                title=f"{category} - Top Files"
+            )
+            tables.append(table_text)
+    
+    return "\n".join(tables)
+
 # === STEP 5: Enhanced Vector Embeddings ===
 print("🧠 Creating enhanced vector embeddings...")
 splitter = RecursiveCharacterTextSplitter(
@@ -294,7 +431,7 @@ enhanced_analyses = run_enhanced_analysis()
 
 # === STEP 8: Generate Comprehensive Report ===
 def generate_comprehensive_report():
-    """Generate the final comprehensive report"""
+    """Generate the final comprehensive report with pandas tables"""
     
     report = []
     
@@ -314,92 +451,87 @@ def generate_comprehensive_report():
     report.append("job application submission using AI, browser automation, and smart algorithms.")
     report.append("")
     
-    # Completion Status
-    report.append("## 📈 PROJECT STATUS")
-    report.append("")
-    report.append(f"**Overall Completion: {completion_analysis['completion_percent']}%**")
-    report.append(f"- Total Lines of Code: {completion_analysis['total_lines']:,}")
-    report.append(f"- Documentation Quality: {'High' if completion_analysis['quality_indicators']['docstrings'] > 50 else 'Medium'}")
-    report.append(f"- Error Handling: {completion_analysis['quality_indicators']['error_handling']} try/except blocks")
-    report.append(f"- Logging Coverage: {completion_analysis['quality_indicators']['logging']} log statements")
-    report.append("")
+    # === PANDAS ENHANCED SECTIONS ===
     
-    # File Breakdown by Category
-    report.append("## 📁 DETAILED FILE BREAKDOWN BY IMPORTANCE")
+    # 1. Project Status with Quality Metrics Table
+    report.append("## 📈 PROJECT STATUS & QUALITY METRICS")
     report.append("")
+    quality_table = create_quality_metrics_table(completion_analysis)
+    report.append(format_pandas_table_for_text(quality_table, "Code Quality Analysis"))
     
+    # 2. File Distribution Summary Table
     total_lines = sum(doc.metadata["line_count"] for doc in documents)
+    summary_table = create_file_summary_table(file_breakdown, total_lines)
+    report.append("## 📊 CODEBASE DISTRIBUTION SUMMARY")
+    report.append("")
+    report.append(format_pandas_table_for_text(summary_table, "File Categories Overview"))
     
-    for category, files in file_breakdown.items():
-        if not files:
-            continue
-            
-        category_lines = sum(f["lines"] for f in files)
-        percentage = round((category_lines / total_lines) * 100, 1)
-        
-        report.append(f"### {category} ({percentage}% of codebase)")
-        report.append("")
-        description = category_info.get(category, {}).get("description", "Other files and utilities")
-        report.append(description)
-        report.append("")
-        
-        for file_info in files[:5]:  # Top 5 files per category
-            importance_indicator = "⭐" if file_info["importance"] > 2 else ""
-            report.append(f"**{file_info['path']}** ({file_info['lines']} lines) {importance_indicator}")
-            report.append(f"- Functions: {file_info['functions']}, Classes: {file_info['classes']}")
-            report.append(f"- Size: {file_info['size_kb']} KB")
-            if file_info["importance"] > 2:
-                report.append(f"- **Critical Component** (Importance: {file_info['importance']}%)")
-            report.append("")
+    # 3. Top Critical Files Table
+    report.append("## ⭐ MOST CRITICAL FILES (Top 15)")
+    report.append("")
+    top_files_table = create_top_files_table(file_breakdown, top_n=15)
+    report.append(format_pandas_table_for_text(top_files_table, "Critical Components Ranked by Importance"))
     
-    # Technical Analysis Sections
+    # 4. Detailed Category Breakdown
+    report.append("## 📁 DETAILED FILE BREAKDOWN BY CATEGORY")
+    report.append("")
+    report.append(generate_file_detail_tables(file_breakdown))
+    
+    # Technical Analysis Sections (Enhanced with better formatting)
+    report.append("## 🔧 AI-POWERED TECHNICAL ANALYSIS")
+    report.append("")
+    report.append("The following sections were generated using AI analysis of the codebase:")
+    report.append("")
+    
     for focus, analysis in enhanced_analyses.items():
         section_title = focus.replace("and", "&").title()
-        report.append(f"## 🔧 {section_title}")
+        report.append(f"### 🔍 {section_title}")
         report.append("")
-        report.append(analysis.strip())
-        report.append("")
+        
+        # Clean up the analysis text
+        clean_analysis = analysis.strip()
+        if len(clean_analysis) > 50:  # Only include substantial analysis
+            # Add some formatting to make it more readable
+            paragraphs = clean_analysis.split('\n\n')
+            for paragraph in paragraphs:
+                if paragraph.strip():
+                    report.append(paragraph.strip())
+                    report.append("")
+        else:
+            report.append("Analysis is being processed or unavailable.")
+            report.append("")
     
-    # Functionality Breakdown
-    report.append("## 🎯 FUNCTIONALITY DISTRIBUTION")
-    report.append("")
-    
-    category_totals = {}
-    for category, files in file_breakdown.items():
-        if files:
-            total = sum(f["lines"] for f in files)
-            percentage = round((total / total_lines) * 100, 1)
-            category_totals[category] = percentage
-    
-    # Sort by percentage
-    sorted_categories = sorted(category_totals.items(), key=lambda x: x[1], reverse=True)
-    
-    for category, percentage in sorted_categories:
-        report.append(f"**{category}: {percentage}%**")
-        description = category_info.get(category, {}).get("description", "")
-        if description:
-            report.append(f"- {description}")
-        report.append("")
-    
-    # Key Insights and Recommendations
+    # Key Insights with enhanced formatting
     report.append("## 💡 KEY INSIGHTS & RECOMMENDATIONS")
     report.append("")
     
     # Auto-generate insights based on analysis
     insights = []
     
-    if completion_analysis['completion_percent'] > 90:
-        insights.append("✅ **High Completion Rate** - System is production-ready")
-    elif completion_analysis['completion_percent'] > 70:
+    completion_pct = completion_analysis['completion_percent']
+    error_handling = completion_analysis['quality_indicators']['error_handling']
+    logging_count = completion_analysis['quality_indicators']['logging']
+    
+    if completion_pct > 90:
+        insights.append("✅ **High Completion Rate** - System is production-ready with excellent code coverage")
+    elif completion_pct > 70:
         insights.append("🔄 **Good Progress** - System is largely functional with room for enhancement")
     else:
         insights.append("⚠️ **Development Stage** - Core functionality present but needs completion")
     
-    if completion_analysis['quality_indicators']['error_handling'] > 50:
-        insights.append("🛡️ **Robust Error Handling** - System has comprehensive error recovery")
+    if error_handling > 50:
+        insights.append("🛡️ **Robust Error Handling** - System has comprehensive error recovery mechanisms")
+    elif error_handling > 20:
+        insights.append("🔧 **Moderate Error Handling** - Basic error recovery in place, could be enhanced")
+    else:
+        insights.append("⚠️ **Limited Error Handling** - Consider adding more try/except blocks")
     
-    if completion_analysis['quality_indicators']['logging'] > 100:
-        insights.append("📊 **Excellent Observability** - Comprehensive logging for debugging")
+    if logging_count > 100:
+        insights.append("📊 **Excellent Observability** - Comprehensive logging for debugging and monitoring")
+    elif logging_count > 50:
+        insights.append("📈 **Good Logging Coverage** - Adequate logging for most operations")
+    else:
+        insights.append("📝 **Basic Logging** - Consider adding more logging for better observability")
     
     # Find most important files
     all_files = []
@@ -409,18 +541,31 @@ def generate_comprehensive_report():
     top_files = sorted(all_files, key=lambda x: x["importance"], reverse=True)[:5]
     insights.append(f"🎯 **Core Components**: {', '.join([f['path'].split('/')[-1] for f in top_files])}")
     
+    # Add architecture insights
+    core_pipeline_files = len([f for f in all_files if "pipeline" in f["path"].lower()])
+    service_files = len([f for f in all_files if "services" in f["path"].lower()])
+    
+    if core_pipeline_files > 1:
+        insights.append("🏗️ **Modular Architecture** - Well-structured pipeline design with clear separation")
+    
+    if service_files > 5:
+        insights.append("🔧 **Service-Oriented Design** - Good separation of concerns with dedicated service modules")
+    
     for insight in insights:
         report.append(insight)
         report.append("")
     
-    # Usage Instructions
+    # Usage Instructions with better formatting
     report.append("## 🚀 SYSTEM USAGE")
     report.append("")
     report.append("```bash")
     report.append("# Start the system")
     report.append("uvicorn app.main:app --reload")
     report.append("")
-    report.append("# Run complete pipeline")
+    report.append("# Access interactive API documentation")
+    report.append("open http://localhost:8000/docs")
+    report.append("")
+    report.append("# Run complete pipeline via API")
     report.append("curl -X POST 'http://localhost:8000/api/v1/pipeline/apply-multi' \\")
     report.append("  -H 'Content-Type: application/json' \\")
     report.append("  -d '{")
@@ -431,14 +576,39 @@ def generate_comprehensive_report():
     report.append('    "role": "SDET",')
     report.append('    "location": "Chicago"')
     report.append("  }'")
+    report.append("")
+    report.append("# Generate updated project analysis")
+    report.append("python app/project_tracker_vectorized.py")
     report.append("```")
     report.append("")
     
+    # Statistics Summary
+    report.append("## 📊 PROJECT STATISTICS SUMMARY")
+    report.append("")
+    critical_files = len([f for f in all_files if f["importance"] > 2])
+    total_functions = sum(f["functions"] for f in all_files)
+    total_classes = sum(f["classes"] for f in all_files)
+    
+    stats_data = [
+        ["Statistic", "Value"],
+        ["Total Files Analyzed", f"{len(documents)}"],
+        ["Total Lines of Code", f"{completion_analysis['total_lines']:,}"],
+        ["Critical Components", f"{critical_files}"],
+        ["Total Functions", f"{total_functions:,}"],
+        ["Total Classes", f"{total_classes}"],
+        ["Documentation Quality", f"{'High' if completion_analysis['quality_indicators']['docstrings'] > 50 else 'Medium'}"],
+        ["Project Completion", f"{completion_analysis['completion_percent']}%"]
+    ]
+    
+    stats_df = pd.DataFrame(stats_data[1:], columns=stats_data[0])
+    report.append(format_pandas_table_for_text(stats_df, "Key Project Metrics"))
+    
     # Footer
     report.append("---")
-    report.append(f"📋 Report generated automatically by Enhanced AI Project Tracker")
+    report.append(f"📋 Report generated automatically by Enhanced AI Project Tracker with Pandas Analytics")
     report.append(f"🕒 Analysis completed in vectorized processing mode for optimal speed")
-    report.append(f"🔄 Re-run this script anytime to get updated project analysis")
+    report.append(f"📊 Professional data formatting powered by pandas and numpy")
+    report.append(f"🔄 Re-run this script anytime to get updated project analysis with clean tables")
     
     return "\n".join(report)
 
@@ -456,23 +626,34 @@ print(f"📊 Analyzed {len(documents)} files with {completion_analysis['total_li
 print(f"🎯 Project completion: {completion_analysis['completion_percent']}%")
 print(f"⭐ Found {len([f for files in file_breakdown.values() for f in files if f['importance'] > 2])} critical components")
 
-# === STEP 10: Quick Summary to Console ===
-print("\n" + "="*60)
-print("🔍 QUICK ANALYSIS SUMMARY")
-print("="*60)
+# === STEP 10: Enhanced Console Summary with Pandas ===
+print("\n" + "="*80)
+print("🔍 ENHANCED ANALYSIS SUMMARY WITH PANDAS TABLES")
+print("="*80)
 
-for category, files in file_breakdown.items():
-    if files:
-        total_lines = sum(f["lines"] for f in files)
-        print(f"{category}: {len(files)} files, {total_lines} lines")
+# Show quality metrics table in console
+print("\n📊 CODE QUALITY METRICS:")
+quality_console_table = create_quality_metrics_table(completion_analysis)
+print(quality_console_table.to_string(index=False))
 
-print(f"\nMost Important Files:")
-all_files = []
-for files in file_breakdown.values():
-    all_files.extend(files)
+# Show file distribution summary
+print("\n📁 CODEBASE DISTRIBUTION:")
+total_lines_console = sum(doc.metadata["line_count"] for doc in documents)
+summary_console_table = create_file_summary_table(file_breakdown, total_lines_console)
+print(summary_console_table.to_string(index=False))
 
-top_files = sorted(all_files, key=lambda x: x["importance"], reverse=True)[:5]
-for i, file_info in enumerate(top_files, 1):
-    print(f"{i}. {file_info['path']} ({file_info['lines']} lines)")
+# Show top critical files
+print("\n⭐ TOP 10 CRITICAL FILES:")
+top_console_table = create_top_files_table(file_breakdown, top_n=10)
+# Select key columns for console display
+console_display = top_console_table[['File', 'Category', 'Lines', 'Functions', 'Importance', 'Critical']]
+print(console_display.to_string(index=False))
 
-print(f"\n🎉 Enhanced analysis complete! Check {OUTPUT_FILE} for full details.")
+print(f"\n📈 PROJECT COMPLETION: {completion_analysis['completion_percent']}%")
+print(f"📊 TOTAL FILES: {len(documents)}")
+print(f"📝 TOTAL LINES: {completion_analysis['total_lines']:,}")
+
+critical_count = len([f for files in file_breakdown.values() for f in files if f['importance'] > 2])
+print(f"⭐ CRITICAL COMPONENTS: {critical_count}")
+
+print(f"\n🎉 Enhanced analysis complete! Check {OUTPUT_FILE} for full detailed report with all tables.")
