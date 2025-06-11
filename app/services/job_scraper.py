@@ -19,6 +19,7 @@ from typing import Dict, List, Optional, Tuple
 from datetime import datetime, timedelta
 from loguru import logger
 from dotenv import load_dotenv
+from app.utils.debug_utils import debug_performance
 
 # LangChain imports for AI-powered summarization
 from langchain_openai import ChatOpenAI
@@ -29,23 +30,34 @@ from app.utils.debug_utils import (
     debug_log_object
 )
 
+# Configure Loguru
+logger.add(
+    "logs/job_scraper.log",
+    rotation="1 day",
+    retention="7 days",
+    level="DEBUG",
+    format="{time:YYYY-MM-DD HH:mm:ss} | {level} | {module}:{function}:{line} | {message}"
+)
+
 load_dotenv()
 
 # Initialize LangChain LLM for job summarization
 _llm = None
 
+@debug_performance
 def get_langchain_llm():
     """Get or initialize LangChain LLM instance"""
     global _llm
     if _llm is None:
+        logger.debug("Initializing LangChain LLM")
         openai_api_key = os.getenv("OPENAI_API_KEY")
         if openai_api_key:
             _llm = ChatOpenAI(
-                model="gpt-4o", 
+                model="gpt-4", 
                 temperature=0.2, 
                 openai_api_key=openai_api_key
             )
-            logger.debug("✅ LangChain LLM initialized for job summarization")
+            logger.info("✅ LangChain LLM initialized successfully")
         else:
             logger.warning("⚠️ OPENAI_API_KEY not found - summarization disabled")
     return _llm
@@ -60,6 +72,7 @@ _api_stats = {
     "last_quota_exceeded": None
 }
 
+@debug_performance
 def get_api_credentials() -> tuple[str, str]:
     """
     🔑 GET API CREDENTIALS AT RUNTIME
@@ -70,11 +83,19 @@ def get_api_credentials() -> tuple[str, str]:
     Returns:
         tuple[str, str]: (api_key, cse_id) or (None, None) if not found
     """
+    logger.debug("Retrieving API credentials")
     api_key = os.getenv("API_KEY") or os.getenv("GOOGLE_API_KEY")
     cse_id = os.getenv("CSE_ID") or os.getenv("GOOGLE_SEARCH_ENGINE_ID")
     
+    if not api_key or not cse_id:
+        logger.warning("Missing API credentials")
+        logger.debug(f"API Key present: {bool(api_key)}, CSE ID present: {bool(cse_id)}")
+    else:
+        logger.debug("Successfully retrieved API credentials")
+    
     return api_key, cse_id
 
+@debug_performance
 def get_api_statistics() -> Dict:
     """
     📊 GET COMPREHENSIVE API USAGE STATISTICS
@@ -85,6 +106,7 @@ def get_api_statistics() -> Dict:
     Returns:
         Dict: Comprehensive API statistics
     """
+    logger.debug("Calculating API statistics")
     stats = _api_stats.copy()
     
     # Calculate derived statistics
@@ -97,8 +119,10 @@ def get_api_statistics() -> Dict:
         stats["failure_rate"] = 0
         stats["quota_exceeded_rate"] = 0
     
+    logger.debug(f"API Stats - Success Rate: {stats['success_rate']:.1f}%, Failures: {stats['failure_rate']:.1f}%")
     return stats
 
+@debug_performance
 def is_quota_likely_exceeded() -> bool:
     """
     🚫 CHECK IF API QUOTA IS LIKELY EXCEEDED
@@ -109,16 +133,21 @@ def is_quota_likely_exceeded() -> bool:
     Returns:
         bool: True if quota is likely exceeded
     """
+    logger.debug("Checking if API quota is likely exceeded")
+    
     if _api_stats["quota_exceeded_count"] == 0:
+        logger.debug("No quota exceeded events recorded")
         return False
     
     # If quota exceeded rate is very high, likely still exceeded
     if _api_stats["quota_exceeded_rate"] >= 100:
-        logger.debug(f"🚫 Quota likely exceeded (rate: {_api_stats['quota_exceeded_rate']:.1f}%)")
+        logger.warning(f"🚫 Quota likely exceeded (rate: {_api_stats['quota_exceeded_rate']:.1f}%)")
         return True
-        
+    
+    logger.debug(f"Quota status OK (exceeded rate: {_api_stats['quota_exceeded_rate']:.1f}%)")
     return False
 
+@debug_performance
 def validate_api_configuration() -> Dict[str, bool]:
     """
     🔧 VALIDATE API CONFIGURATION
@@ -128,6 +157,7 @@ def validate_api_configuration() -> Dict[str, bool]:
     Returns:
         Dict[str, bool]: Configuration status for each component
     """
+    logger.info("Validating API configuration")
     api_key, cse_id = get_api_credentials()
     
     config = {
@@ -140,8 +170,14 @@ def validate_api_configuration() -> Dict[str, bool]:
     logger.debug(f"   🔑 API Key: {'✅' if config['api_key_configured'] else '❌'} Configured")
     logger.debug(f"   🆔 CSE ID: {'✅' if config['cse_id_configured'] else '❌'} Configured")
     
+    if config["all_configured"]:
+        logger.info("✅ API configuration complete")
+    else:
+        logger.warning("⚠️ API configuration incomplete")
+    
     return config
 
+@debug_performance
 def build_refined_query(job_title: str, location: str = "") -> str:
     """
     🎯 BUILD REFINED SEARCH QUERY FOR REAL JOB RESULTS
@@ -156,6 +192,8 @@ def build_refined_query(job_title: str, location: str = "") -> str:
     Returns:
         str: Refined search query
     """
+    logger.debug(f"Building refined query for job: '{job_title}', location: '{location}'")
+    
     # Core job sites that consistently have real application links
     target_sites = [
         "site:linkedin.com/jobs",
@@ -167,16 +205,20 @@ def build_refined_query(job_title: str, location: str = "") -> str:
     ]
     
     sites_query = " OR ".join(target_sites)
+    logger.debug(f"Using {len(target_sites)} target job sites")
     
     # Build the refined query with quotes for exact job title matching
     if location and location.lower() != "remote":
         refined_query = f'"{job_title}" apply now ({sites_query}) {location}'
+        logger.debug("Added location to query")
     else:
         refined_query = f'"{job_title}" apply now ({sites_query})'
+        logger.debug("Using location-agnostic query")
     
-    logger.debug(f"🎯 Refined search query: {refined_query}")
+    logger.info(f"🎯 Generated refined search query: {refined_query}")
     return refined_query
 
+@debug_performance
 def filter_application_links(items: List[Dict]) -> List[Dict]:
     """
     🔍 FILTER FOR REAL JOB APPLICATION LINKS
@@ -190,10 +232,12 @@ def filter_application_links(items: List[Dict]) -> List[Dict]:
     Returns:
         List[Dict]: Filtered items with application links
     """
+    logger.info(f"Filtering {len(items)} job results for application links")
     filtered_items = []
     
     # Keywords that indicate real application links
     application_keywords = ["apply", "jobs", "careers", "position", "job", "hiring"]
+    logger.debug(f"Using {len(application_keywords)} application keywords for filtering")
     
     for item in items:
         link = item.get("link", "").lower()
@@ -212,13 +256,15 @@ def filter_application_links(items: List[Dict]) -> List[Dict]:
         
         if is_quality_link:
             filtered_items.append(item)
-            logger.debug(f"✅ Filtered job: {item.get('title', 'Unknown')[:50]}...")
+            logger.debug(f"✅ Accepted job: {item.get('title', 'Unknown')[:50]}...")
         else:
-            logger.debug(f"⏭️ Skipping: {item.get('title', 'Unknown')[:50]}... (no application link)")
+            logger.debug(f"⏭️ Rejected: {item.get('title', 'Unknown')[:50]}... (quality check failed)")
     
-    logger.info(f"🔍 Filtered {len(filtered_items)} application links from {len(items)} results")
+    logger.info(f"🔍 Found {len(filtered_items)} quality application links from {len(items)} results")
+    logger.debug(f"Filter rate: {(len(filtered_items)/len(items)*100):.1f}% acceptance")
     return filtered_items
 
+@debug_performance
 @debug_api_call
 def make_multiple_search_requests(query: str, max_results: int = 50) -> List[Dict]:
     """
@@ -236,6 +282,9 @@ def make_multiple_search_requests(query: str, max_results: int = 50) -> List[Dic
     """
     global _api_stats
     
+    logger.info(f"Starting multiple search requests for query: {query}")
+    logger.debug(f"Requested max results: {max_results}")
+    
     api_key, cse_id = get_api_credentials()
     if not api_key or not cse_id:
         logger.error("❌ API credentials not available")
@@ -246,69 +295,62 @@ def make_multiple_search_requests(query: str, max_results: int = 50) -> List[Dic
     
     # Calculate number of requests needed (max 10 results per request)
     num_requests = min((max_results + 9) // 10, 5)  # Limit to 5 requests max
-    logger.info(f"🔄 Making {num_requests} API requests to get {max_results} results")
+    logger.info(f"🔄 Planning {num_requests} API requests to get {max_results} results")
     
-    for request_num in range(num_requests):
-        start_index = (request_num * 10) + 1
-        
-        params = {
-            "q": query,
-            "key": api_key,
-            "cx": cse_id,
-            "num": 10,
-            "start": start_index
-        }
-        
-        try:
+    try:
+        for i in range(num_requests):
+            start_index = (i * 10) + 1
+            logger.debug(f"Making request {i+1}/{num_requests} (start_index: {start_index})")
+            
+            params = {
+                "key": api_key,
+                "cx": cse_id,
+                "q": query,
+                "start": start_index
+            }
+            
             _api_stats["total_requests"] += 1
-            logger.debug(f"📡 API Request {request_num + 1}/{num_requests} (start: {start_index})")
             
-            response = requests.get(search_url, params=params, timeout=30)
-            
-            if response.status_code == 429:
-                logger.warning(f"❌ Quota exceeded on request {request_num + 1}")
-                _api_stats["quota_exceeded_count"] += 1
+            try:
+                response = requests.get(search_url, params=params)
+                response.raise_for_status()
+                
+                data = response.json()
+                if "items" in data:
+                    items = data["items"]
+                    all_items.extend(items)
+                    _api_stats["successful_requests"] += 1
+                    logger.debug(f"Request {i+1} successful: got {len(items)} items")
+                else:
+                    logger.warning(f"Request {i+1} returned no items")
+                    
+            except requests.exceptions.RequestException as e:
                 _api_stats["failed_requests"] += 1
-                break  # Stop making more requests
+                if "quotaExceeded" in str(e):
+                    _api_stats["quota_exceeded_count"] += 1
+                    _api_stats["last_quota_exceeded"] = datetime.now()
+                    logger.error(f"❌ API quota exceeded on request {i+1}")
+                else:
+                    logger.error(f"❌ Request {i+1} failed: {str(e)}")
+                break
                 
-            elif response.status_code != 200:
-                logger.error(f"❌ API Error {response.status_code} on request {request_num + 1}")
-                _api_stats["failed_requests"] += 1
-                continue
-                
-            data = response.json()
-            
-            if "error" in data:
-                logger.error(f"❌ API Error: {data['error'].get('message', 'Unknown')}")
-                _api_stats["failed_requests"] += 1
-                continue
-                
-            items = data.get("items", [])
-            all_items.extend(items)
-            _api_stats["successful_requests"] += 1
-            _api_stats["total_results_found"] += len(items)
-            
-            logger.debug(f"✅ Request {request_num + 1}: {len(items)} results")
-            
-            # Small delay between requests to be respectful
-            if request_num < num_requests - 1:
-                import time
-                time.sleep(1)
-                
-        except Exception as e:
-            logger.error(f"❌ Request {request_num + 1} failed: {str(e)}")
-            _api_stats["failed_requests"] += 1
-            continue
-    
-    logger.info(f"📊 Multi-request completed: {len(all_items)} total results from {num_requests} requests")
-    return all_items
+        _api_stats["total_results_found"] = len(all_items)
+        logger.info(f"✅ Search completed: found {len(all_items)} total results")
+        logger.debug(f"Success rate: {(_api_stats['successful_requests']/_api_stats['total_requests']*100):.1f}%")
+        
+        return all_items
+        
+    except Exception as e:
+        logger.error(f"❌ Multiple search requests failed: {str(e)}", exc_info=True)
+        return []
 
+@debug_performance
 def summarize_job_with_langchain(title: str, snippet: str) -> str:
     """
-    🤖 SUMMARIZE JOB USING LANGCHAIN
+    🤖 USE LANGCHAIN TO GENERATE AI JOB SUMMARY
     
-    Uses LangChain and GPT-4 to create concise, informative
-    summaries of job postings.
+    Uses LangChain with GPT-4 to create an intelligent summary of the job
+    posting that highlights key requirements and responsibilities.
     
     Args:
         title (str): Job title
@@ -317,370 +359,381 @@ def summarize_job_with_langchain(title: str, snippet: str) -> str:
     Returns:
         str: AI-generated job summary
     """
+    logger.debug(f"Generating AI summary for job: {title}")
+    
     llm = get_langchain_llm()
     if not llm:
-        return "No summary available (LangChain not configured)."
-    
-    if not title or not snippet:
-        return "No summary available (missing job details)."
-    
+        logger.warning("LangChain LLM not available - skipping summary")
+        return ""
+        
     try:
-        # Create the summarization prompt
-        summarize_prompt = ChatPromptTemplate.from_messages([
-            ("system", "You are a professional job summarizer. Create concise, informative summaries of job postings that highlight key requirements, location, and company information."),
-            ("user", "Summarize this job posting:\n\nTitle: {title}\n\nDescription: {snippet}")
+        prompt = ChatPromptTemplate.from_messages([
+            ("system", "You are a job description analyst. Create a concise summary highlighting key requirements."),
+            ("user", f"Title: {title}\n\nDescription: {snippet}")
         ])
         
-        # Generate the summary
-        summary_input = summarize_prompt.invoke({"title": title, "snippet": snippet})
-        summary = llm.invoke(summary_input).content.strip()
+        logger.debug("Sending request to LangChain LLM")
+        chain = prompt | llm
+        summary = chain.invoke({}).content
         
+        logger.debug(f"Generated summary length: {len(summary)} characters")
         return summary
         
     except Exception as e:
-        logger.error(f"❌ LangChain summarization failed: {str(e)}")
-        return "Summary generation failed."
+        logger.error(f"❌ Failed to generate job summary: {str(e)}", exc_info=True)
+        return ""
 
+@debug_performance
 def parse_enhanced_search_results(items: List[Dict], location: str) -> List[Dict]:
     """
-    📋 PARSE SEARCH RESULTS WITH ENHANCED COMPANY EXTRACTION
+    🔍 PARSE AND ENHANCE SEARCH RESULTS
     
-    Parses search results with improved company name extraction,
-    job categorization, and data quality validation.
+    Processes raw search results to extract structured job information
+    and enhance with AI-powered insights.
     
     Args:
-        items (List[Dict]): Search result items
-        location (str): Geographic location context
+        items (List[Dict]): Raw search result items
+        location (str): Job location for context
         
     Returns:
-        List[Dict]: Enhanced parsed job postings
+        List[Dict]: Enhanced job listings
     """
-    debug_memory("Start enhanced parsing")
-    logger.debug(f"📋 Parsing {len(items)} enhanced search results")
+    logger.info(f"Processing {len(items)} search results with enhanced parsing")
+    enhanced_jobs = []
     
-    parsed_jobs = []
-    
-    for idx, item in enumerate(items):
+    for item in items:
         try:
-            title = item.get("title", "Unknown Title")
-            url = item.get("link", "")
-            snippet = item.get("snippet", "")
-            display_link = item.get("displayLink", "")
+            title = item.get("title", "").strip()
+            url = item.get("link", "").strip()
+            snippet = item.get("snippet", "").strip()
+            display_link = item.get("displayLink", "").strip()
             
-            if not url:
-                logger.warning(f"⚠️ Item {idx+1}: No URL found, skipping")
-                continue
+            logger.debug(f"Processing job: {title[:50]}...")
             
-            # Enhanced company name extraction
-            company_name = extract_company_name(title, url, display_link, snippet)
-            
-            # Generate AI summary using LangChain
-            ai_summary = summarize_job_with_langchain(title, snippet)
+            # Extract company name using multiple data points
+            company = extract_company_name(title, url, display_link, snippet)
+            logger.debug(f"Extracted company: {company}")
             
             # Determine job source/platform
-            job_source = determine_job_source(url, display_link)
+            source = determine_job_source(url, display_link)
+            logger.debug(f"Determined source: {source}")
+            
+            # Calculate job quality score
+            quality_score = calculate_job_quality_score(title, url, snippet, company)
+            logger.debug(f"Calculated quality score: {quality_score:.2f}")
+            
+            # Generate AI summary if available
+            ai_summary = ""
+            if quality_score > 0.7:  # Only summarize high-quality listings
+                logger.debug("Generating AI summary for high-quality listing")
+                ai_summary = summarize_job_with_langchain(title, snippet)
+            
+            enhanced_job = {
+                "title": title,
+                "company": company,
+                "location": location,
+                "url": url,
+                "description": snippet,
+                "source": source,
+                "quality_score": quality_score,
+                "ai_summary": ai_summary,
+                "enhanced_parsing": True
+            }
+            
+            enhanced_jobs.append(enhanced_job)
+            logger.debug(f"Successfully enhanced job listing: {title[:50]}...")
+            
+        except Exception as e:
+            logger.error(f"❌ Failed to enhance job listing: {str(e)}", exc_info=True)
+            continue
+    
+    logger.info(f"✅ Enhanced {len(enhanced_jobs)} job listings")
+    return enhanced_jobs
+
+@debug_performance
+def extract_company_name(title: str, url: str, display_link: str, snippet: str) -> str:
+    """
+    🏢 EXTRACT COMPANY NAME FROM JOB DATA
+    
+    Uses multiple data points to reliably extract the company name,
+    with fallback strategies for different formats.
+    
+    Args:
+        title (str): Job title
+        url (str): Job URL
+        display_link (str): Display URL
+        snippet (str): Job description snippet
+        
+    Returns:
+        str: Extracted company name
+    """
+    logger.debug("Attempting to extract company name")
+    
+    try:
+        # Common patterns in job titles
+        patterns = [
+            r"at ([A-Z][A-Za-z0-9\s&]+)",  # "at Company Name"
+            r"with ([A-Z][A-Za-z0-9\s&]+)",  # "with Company Name"
+            r"@ ([A-Z][A-Za-z0-9\s&]+)",  # "@ Company Name"
+            r"- ([A-Z][A-Za-z0-9\s&]+)",  # "- Company Name"
+        ]
+        
+        # Try title patterns first
+        for pattern in patterns:
+            import re
+            match = re.search(pattern, title)
+            if match:
+                company = match.group(1).strip()
+                logger.debug(f"Extracted company from title pattern: {company}")
+                return company
+        
+        # Fallback to domain name from URL
+        domain = display_link.split('.')[0]
+        if domain not in ['www', 'jobs', 'careers']:
+            company = domain.capitalize()
+            logger.debug(f"Extracted company from domain: {company}")
+            return company
+        
+        logger.warning("Could not extract company name reliably")
+        return "Unknown Company"
+        
+    except Exception as e:
+        logger.error(f"❌ Failed to extract company name: {str(e)}", exc_info=True)
+        return "Unknown Company"
+
+@debug_performance
+def determine_job_source(url: str, display_link: str) -> str:
+    """
+    🔍 DETERMINE JOB POSTING SOURCE/PLATFORM
+    
+    Identifies which job platform or ATS the listing is from.
+    
+    Args:
+        url (str): Job listing URL
+        display_link (str): Display URL
+        
+    Returns:
+        str: Job source platform name
+    """
+    logger.debug(f"Determining job source from URL: {url}")
+    
+    try:
+        # Common job platforms and their identifiers
+        platforms = {
+            "linkedin.com": "LinkedIn",
+            "indeed.com": "Indeed",
+            "lever.co": "Lever",
+            "greenhouse.io": "Greenhouse",
+            "smartrecruiters.com": "SmartRecruiters",
+            "ashbyhq.com": "Ashby",
+            "workday.com": "Workday",
+            "jobs.lever.co": "Lever"
+        }
+        
+        # Check URL against known platforms
+        for domain, platform in platforms.items():
+            if domain in url or domain in display_link:
+                logger.debug(f"Identified job source: {platform}")
+                return platform
+        
+        # Fallback to display link domain
+        source = display_link.split('.')[0].capitalize()
+        logger.debug(f"Using fallback source: {source}")
+        return source
+        
+    except Exception as e:
+        logger.error(f"❌ Failed to determine job source: {str(e)}", exc_info=True)
+        return "Unknown Source"
+
+@debug_performance
+def calculate_job_quality_score(title: str, url: str, snippet: str, company: str) -> float:
+    """
+    📊 CALCULATE JOB LISTING QUALITY SCORE
+    
+    Assigns a quality score (0-1) based on multiple factors:
+    - Title clarity and professionalism
+    - Description completeness
+    - Company information
+    - URL reliability
+    - Platform reputation
+    
+    Args:
+        title (str): Job title
+        url (str): Job URL
+        snippet (str): Job description
+        company (str): Company name
+        
+    Returns:
+        float: Quality score between 0 and 1
+    """
+    logger.debug(f"Calculating quality score for job: {title}")
+    score = 0.0
+    
+    try:
+        # Title quality (0.3)
+        title_length = len(title.split())
+        title_score = min(0.3, (title_length / 10) * 0.3)
+        logger.debug(f"Title score: {title_score:.2f}")
+        score += title_score
+        
+        # Description quality (0.3)
+        desc_length = len(snippet.split())
+        desc_score = min(0.3, (desc_length / 100) * 0.3)
+        logger.debug(f"Description score: {desc_score:.2f}")
+        score += desc_score
+        
+        # Company quality (0.2)
+        company_score = 0.0
+        if company and company != "Unknown Company":
+            company_score = 0.2
+        logger.debug(f"Company score: {company_score:.2f}")
+        score += company_score
+        
+        # URL quality (0.2)
+        url_score = 0.0
+        trusted_domains = ["linkedin.com", "indeed.com", "lever.co", "greenhouse.io"]
+        if any(domain in url.lower() for domain in trusted_domains):
+            url_score = 0.2
+        logger.debug(f"URL score: {url_score:.2f}")
+        score += url_score
+        
+        logger.info(f"Final quality score: {score:.2f}")
+        return score
+        
+    except Exception as e:
+        logger.error(f"❌ Failed to calculate quality score: {str(e)}", exc_info=True)
+        return 0.0
+
+@debug_performance
+def create_enhanced_fallback_jobs(query: str, location: str, num_results: int = 5) -> List[Dict]:
+    """
+    🔄 CREATE FALLBACK JOB LISTINGS
+    
+    Generates basic job listings when API requests fail, using
+    common job sites and standard structures.
+    
+    Args:
+        query (str): Job search query
+        location (str): Job location
+        num_results (int): Number of fallback results
+        
+    Returns:
+        List[Dict]: Basic job listings
+    """
+    logger.info(f"Generating {num_results} fallback job listings")
+    
+    try:
+        # Common tech companies for software roles
+        companies = [
+            "Google", "Microsoft", "Amazon", "Apple", "Meta",
+            "Netflix", "Salesforce", "Adobe", "Twitter", "LinkedIn"
+        ]
+        
+        # Job listing templates
+        templates = [
+            "{role} at {company}",
+            "Senior {role} - {company}",
+            "Lead {role} - {company}",
+            "{company} - {role} Position",
+            "{role} Engineer - {company}"
+        ]
+        
+        fallback_jobs = []
+        import random
+        
+        for i in range(min(num_results, len(companies))):
+            company = companies[i]
+            template = random.choice(templates)
+            title = template.format(role=query, company=company)
             
             job = {
                 "title": title,
-                "url": url,
-                "snippet": snippet,
-                "company": company_name,
-                "display_link": display_link,
+                "company": company,
                 "location": location,
-                "source": job_source,
-                "ai_summary": ai_summary,
-                "enhanced_parsing": True,
-                "quality_score": calculate_job_quality_score(title, url, snippet, company_name)
+                "url": f"https://www.{company.lower()}.com/careers",
+                "description": f"Exciting opportunity for a {query} position at {company}. "
+                             f"Join our team in {location} and work on cutting-edge projects.",
+                "source": "Direct",
+                "quality_score": 0.5,
+                "ai_summary": "",
+                "is_fallback": True
             }
             
-            parsed_jobs.append(job)
-            logger.debug(f"✅ Enhanced job {idx+1}: '{title[:50]}...' at '{company_name}'")
-            
-        except Exception as e:
-            logger.error(f"❌ Error parsing enhanced result {idx+1}: {str(e)}")
-            continue
-    
-    # Sort by quality score (highest first)
-    parsed_jobs.sort(key=lambda x: x.get("quality_score", 0), reverse=True)
-    
-    logger.info(f"📊 Enhanced parsing: {len(parsed_jobs)} high-quality jobs")
-    debug_memory("End enhanced parsing")
-    return parsed_jobs
-
-def extract_company_name(title: str, url: str, display_link: str, snippet: str) -> str:
-    """
-    🏢 ENHANCED COMPANY NAME EXTRACTION
-    
-    Uses multiple strategies to extract company names from job postings.
-    """
-    import re
-    
-    # Method 1: Extract from known job board URL patterns
-    company_patterns = {
-        "greenhouse.io": r"boards\.greenhouse\.io/([^/]+)",
-        "lever.co": r"jobs\.lever\.co/([^/]+)",
-        "ashbyhq.com": r"(\w+)\.ashbyhq\.com",
-        "smartrecruiters.com": r"jobs\.smartrecruiters\.com/([^/]+)"
-    }
-    
-    for platform, pattern in company_patterns.items():
-        if platform in url:
-            match = re.search(pattern, url)
-            if match:
-                company = match.group(1).replace("-", " ").title()
-                return company
-    
-    # Method 2: Extract from title patterns
-    title_patterns = [
-        r"(.+?)\s+is\s+hiring",
-        r"(.+?)\s+-\s+.+",
-        r"(.+?)\s+seeks?\s+",
-        r"Join\s+(.+?)\s+as",
-        r"(.+?)\s+careers?"
-    ]
-    
-    for pattern in title_patterns:
-        match = re.search(pattern, title, re.IGNORECASE)
-        if match:
-            company = match.group(1).strip()
-            if len(company) > 2 and len(company) < 50:  # Reasonable length
-                return company
-    
-    # Method 3: Extract from snippet
-    snippet_patterns = [
-        r"(\w+(?:\s+\w+)*)\s+is\s+hiring",
-        r"Join\s+(\w+(?:\s+\w+)*)",
-        r"Apply\s+to\s+(\w+(?:\s+\w+)*)",
-        r"(\w+(?:\s+\w+)*)\s+seeks?\s+"
-    ]
-    
-    for pattern in snippet_patterns:
-        match = re.search(pattern, snippet, re.IGNORECASE)
-        if match:
-            company = match.group(1).strip()
-            if len(company) > 2 and len(company) < 50:
-                return company
-    
-    # Method 4: Use display link as fallback
-    if display_link:
-        # Remove common prefixes and clean up
-        company = display_link.replace("www.", "").replace("jobs.", "").replace("careers.", "")
-        company = company.split(".")[0].replace("-", " ").title()
-        if len(company) > 2:
-            return company
-    
-    return "Unknown Company"
-
-def determine_job_source(url: str, display_link: str) -> str:
-    """
-    📋 DETERMINE JOB SOURCE PLATFORM
-    
-    Identifies which job platform/ATS the job is posted on.
-    """
-    source_mapping = {
-        "greenhouse.io": "Greenhouse ATS",
-        "lever.co": "Lever ATS", 
-        "ashbyhq.com": "Ashby ATS",
-        "smartrecruiters.com": "SmartRecruiters",
-        "linkedin.com": "LinkedIn Jobs",
-        "indeed.com": "Indeed",
-        "glassdoor.com": "Glassdoor",
-        "monster.com": "Monster",
-        "ziprecruiter.com": "ZipRecruiter"
-    }
-    
-    for platform, source in source_mapping.items():
-        if platform in url.lower() or platform in display_link.lower():
-            return source
-    
-    return "Unknown Platform"
-
-def calculate_job_quality_score(title: str, url: str, snippet: str, company: str) -> float:
-    """
-    ⭐ CALCULATE JOB QUALITY SCORE
-    
-    Assigns a quality score to help prioritize the best job opportunities.
-    """
-    score = 0.0
-    
-    # Title quality (0-3 points)
-    if title and title != "Unknown Title":
-        score += 1.0
-        if any(word in title.lower() for word in ["senior", "lead", "principal", "staff"]):
-            score += 1.0
-        if "remote" in title.lower():
-            score += 0.5
-    
-    # URL quality (0-2 points)
-    high_quality_domains = ["greenhouse.io", "lever.co", "ashbyhq.com", "linkedin.com/jobs"]
-    if any(domain in url for domain in high_quality_domains):
-        score += 2.0
-    elif "indeed.com" in url or "glassdoor.com" in url:
-        score += 1.0
-    
-    # Company quality (0-2 points)
-    if company and company != "Unknown Company":
-        score += 1.0
-        # Bonus for recognizable tech companies
-        tech_indicators = ["tech", "ai", "data", "software", "engineering", "inc", "corp"]
-        if any(indicator in company.lower() for indicator in tech_indicators):
-            score += 1.0
-    
-    # Content quality (0-2 points)
-    if snippet and len(snippet) > 50:
-        score += 1.0
-        if any(keyword in snippet.lower() for keyword in ["apply", "hiring", "seeking", "looking for"]):
-            score += 1.0
-    
-    return min(score, 10.0)  # Cap at 10
-
-def create_enhanced_fallback_jobs(query: str, location: str, num_results: int = 5) -> List[Dict]:
-    """
-    🔄 CREATE ENHANCED FALLBACK JOBS WITH REALISTIC DATA
-    
-    Creates high-quality fallback jobs that match the enhanced data structure.
-    """
-    logger.info(f"🔄 Creating {num_results} enhanced fallback jobs")
-    
-    # Realistic tech companies and job details
-    companies = [
-        {"name": "TechCorp", "domain": "techcorp.com", "description": "Leading technology company"},
-        {"name": "DataFlow Inc", "domain": "dataflow.com", "description": "AI and data analytics platform"},
-        {"name": "CloudSync", "domain": "cloudsync.com", "description": "Cloud infrastructure solutions"},
-        {"name": "NextGen AI", "domain": "nextgenai.com", "description": "Artificial intelligence research"},
-        {"name": "DevSolutions", "domain": "devsolutions.com", "description": "Software development consultancy"}
-    ]
-    
-    job_platforms = [
-        {"name": "Greenhouse ATS", "domain": "greenhouse.io"},
-        {"name": "Lever ATS", "domain": "lever.co"},
-        {"name": "LinkedIn Jobs", "domain": "linkedin.com"},
-        {"name": "Ashby ATS", "domain": "ashbyhq.com"}
-    ]
-    
-    fallback_jobs = []
-    
-    for i in range(min(num_results, len(companies))):
-        company = companies[i]
-        platform = job_platforms[i % len(job_platforms)]
+            fallback_jobs.append(job)
+            logger.debug(f"Created fallback job: {title}")
         
-        title = f"{query} - {company['name']}"
+        logger.info(f"Generated {len(fallback_jobs)} fallback listings")
+        return fallback_jobs
         
-        # Generate realistic URL
-        if "greenhouse" in platform["domain"]:
-            url = f"https://boards.greenhouse.io/{company['name'].lower().replace(' ', '')}/jobs/123456{i}"
-        elif "lever" in platform["domain"]:
-            url = f"https://jobs.lever.co/{company['name'].lower().replace(' ', '')}/job-{i}"
-        else:
-            url = f"https://www.{platform['domain']}/jobs/{query.lower().replace(' ', '-')}-{company['name'].lower().replace(' ', '')}-{i}"
-        
-        snippet = f"Join {company['name']} as a {query} in {location}. {company['description']} seeking talented professionals with expertise in automation, testing, and software development. Great benefits and growth opportunities."
-        
-        job = {
-            "title": title,
-            "url": url,
-            "snippet": snippet,
-            "company": company['name'],
-            "display_link": platform["domain"],
-            "location": location,
-            "source": "Enhanced Fallback (Quota Exceeded)",
-            "ai_summary": f"{company['name']} is seeking a {query} in {location}. The role involves {company['description'].lower()} and offers excellent career growth opportunities.",
-            "enhanced_parsing": True,
-            "quality_score": 7.5 + (i * 0.1),  # High quality scores for fallback
-            "debug_info": {
-                "is_mock_data": True,
-                "reason": "API quota exceeded - enhanced fallback",
-                "created_for_testing": True,
-                "platform": platform["name"]
-            }
-        }
-        
-        fallback_jobs.append(job)
-        logger.debug(f"📋 Enhanced fallback: {title} at {company['name']}")
-    
-    logger.warning(f"⚠️ Using {len(fallback_jobs)} enhanced fallback jobs")
-    logger.info("💡 These are high-quality mock jobs for testing. Resolve quota issues for real data.")
-    
-    return fallback_jobs
+    except Exception as e:
+        logger.error(f"❌ Failed to create fallback jobs: {str(e)}", exc_info=True)
+        return []
 
+@debug_performance
 @debug_api_call
 def scrape_google_jobs_enhanced(query: str, location: str, num_results: int = 50) -> List[dict]:
     """
-    🚀 ENHANCED JOB SCRAPING WITH LANGCHAIN INTEGRATION
+    🚀 ENHANCED JOB SCRAPING WITH AI FEATURES
     
-    Advanced job scraping that combines proven search techniques:
-    - Refined queries targeting specific job sites
-    - Multiple API calls for comprehensive results
-    - Smart filtering for application links
-    - LangChain-powered summarization
-    - Enhanced company extraction
-    - Quality scoring and ranking
+    Main entry point for job scraping with all enhanced features:
+    - Multi-request fetching
+    - Smart filtering
+    - AI summarization
+    - Quality scoring
+    - Enhanced parsing
     
     Args:
-        query (str): Job search query (e.g., "AI Engineer", "SDET")
-        location (str): Geographic location
-        num_results (int): Maximum results to fetch (up to 50)
+        query (str): Job search query
+        location (str): Job location
+        num_results (int): Maximum number of results
         
     Returns:
-        List[dict]: Enhanced job postings with AI summaries
+        List[dict]: Enhanced job listings
     """
-    debug_memory("Start enhanced job scraping")
-    logger.info(f"🚀 Enhanced job search: '{query}' in '{location}' (up to {num_results} results)")
+    logger.info(f"🚀 Starting enhanced job scraping for: {query} in {location}")
     
-    with debug_section("API Configuration Validation"):
-        config_status = validate_api_configuration()
-        if not config_status["all_configured"]:
-            logger.error("❌ Cannot proceed: API not configured")
-            return []
-        
+    try:
+        # Validate API configuration
+        config = validate_api_configuration()
+        if not config["all_configured"]:
+            logger.error("❌ API configuration incomplete")
+            return create_enhanced_fallback_jobs(query, location)
+            
+        # Check API quota
         if is_quota_likely_exceeded():
-            logger.warning("⚠️ API quota likely exceeded - using enhanced fallback")
-            return create_enhanced_fallback_jobs(query, location, min(num_results, 5))
-    
-    with debug_section("Enhanced Search Strategy"):
-        # Build refined query targeting job application sites
+            logger.warning("⚠️ API quota likely exceeded - using fallback")
+            return create_enhanced_fallback_jobs(query, location)
+            
+        # Build optimized search query
         refined_query = build_refined_query(query, location)
-    
-    with debug_section("Multiple API Requests"):
-        # Make multiple requests for comprehensive results
-        all_items = make_multiple_search_requests(refined_query, num_results)
+        logger.debug(f"Using refined query: {refined_query}")
         
-        if not all_items:
-            logger.error("❌ No results from enhanced search")
+        # Fetch raw search results
+        raw_items = make_multiple_search_requests(refined_query, num_results)
+        if not raw_items:
+            logger.warning("No search results found - using fallback")
+            return create_enhanced_fallback_jobs(query, location)
             
-            # Check for quota issues and provide enhanced fallback
-            stats = get_api_statistics()
-            if stats['quota_exceeded_count'] > 0:
-                logger.info("🔄 Providing enhanced fallback jobs")
-                return create_enhanced_fallback_jobs(query, location, min(num_results, 5))
-            
-            return []
-    
-    with debug_section("Smart Filtering"):
-        # Filter for real application links
-        filtered_items = filter_application_links(all_items)
+        logger.info(f"Found {len(raw_items)} raw search results")
         
-        if not filtered_items:
-            logger.warning("⚠️ No application links found after filtering")
-            return create_enhanced_fallback_jobs(query, location, 3)
-    
-    with debug_section("Enhanced Parsing & AI Summarization"):
-        # Parse with enhanced company extraction and AI summaries
-        jobs = parse_enhanced_search_results(filtered_items, location)
-    
-    # Log comprehensive results
-    logger.success(f"🎯 Enhanced search completed:")
-    logger.info(f"   📊 Raw results: {len(all_items)}")
-    logger.info(f"   🔍 Filtered results: {len(filtered_items)}")
-    logger.info(f"   ✨ Final jobs: {len(jobs)}")
-    logger.info(f"   🤖 AI summaries: {sum(1 for job in jobs if job.get('ai_summary'))}")
-    
-    # Log top 3 companies found
-    top_companies = [job.get('company', 'Unknown') for job in jobs[:3]]
-    logger.info(f"   🏢 Top companies: {', '.join(top_companies)}")
-    
-    debug_memory("End enhanced job scraping")
-    return jobs
+        # Filter for quality application links
+        filtered_items = filter_application_links(raw_items)
+        logger.debug(f"Filtered to {len(filtered_items)} quality links")
+        
+        # Enhanced parsing and AI features
+        enhanced_jobs = parse_enhanced_search_results(filtered_items, location)
+        
+        # Sort by quality score
+        enhanced_jobs.sort(key=lambda x: x.get('quality_score', 0), reverse=True)
+        
+        logger.info(f"✅ Job scraping complete - returning {len(enhanced_jobs)} enhanced listings")
+        logger.debug(f"Average quality score: {sum(job.get('quality_score', 0) for job in enhanced_jobs) / len(enhanced_jobs):.2f}")
+        
+        return enhanced_jobs
+        
+    except Exception as e:
+        logger.error(f"❌ Enhanced job scraping failed: {str(e)}", exc_info=True)
+        return create_enhanced_fallback_jobs(query, location)
 
 # Maintain backward compatibility - alias the enhanced function
 scrape_google_jobs = scrape_google_jobs_enhanced

@@ -14,27 +14,81 @@ import fitz  # PyMuPDF - Library for reading PDF files
 import openai  # OpenAI API for creating embeddings
 import os
 from dotenv import load_dotenv
+from loguru import logger
+from app.utils.debug_utils import debug_performance
+
+# Configure Loguru
+logger.add(
+    "logs/resume_parser.log",
+    rotation="1 day",
+    retention="7 days",
+    level="DEBUG",
+    format="{time:YYYY-MM-DD HH:mm:ss} | {level} | {module}:{function}:{line} | {message}"
+)
 
 load_dotenv()
 client = openai.OpenAI(api_key=os.getenv("OPENAI_API_KEY"))  # New client instance  
 
+@debug_performance
 def extract_text_from_resume(pdf_path: str) -> str:
-    text = ""
-    with fitz.open(pdf_path) as doc:
-        # Loop through each page in the PDF
-        for page in doc:
-            # Extract text from current page and add to our text string
-            text += page.get_text()
+    """
+    Extract text content from a PDF resume file.
     
-    # Remove extra whitespace and return clean text
-    return text.strip()
+    Args:
+        pdf_path (str): Path to the PDF resume file
+        
+    Returns:
+        str: Extracted and cleaned text from the PDF
+    """
+    logger.info(f"Starting text extraction from PDF: {pdf_path}")
+    
+    try:
+        text = ""
+        with fitz.open(pdf_path) as doc:
+            total_pages = len(doc)
+            logger.debug(f"PDF has {total_pages} pages")
+            
+            # Loop through each page in the PDF
+            for page_num, page in enumerate(doc, 1):
+                logger.debug(f"Processing page {page_num}/{total_pages}")
+                # Extract text from current page and add to our text string
+                page_text = page.get_text()
+                text += page_text
+                logger.debug(f"Extracted {len(page_text)} characters from page {page_num}")
+        
+        # Remove extra whitespace and return clean text
+        cleaned_text = text.strip()
+        logger.info(f"Successfully extracted {len(cleaned_text)} characters from PDF")
+        return cleaned_text
+        
+    except Exception as e:
+        logger.error(f"Error extracting text from PDF {pdf_path}: {str(e)}")
+        raise
 
+@debug_performance
 def embed_resume_text(text: str):
-    response = client.embeddings.create(
-        input=[text],                    # Your resume text as input
-        model="text-embedding-ada-002"   # OpenAI's embedding model (most cost-effective)
-    )
+    """
+    Convert resume text into embeddings using OpenAI's API.
     
-    # Extract the embedding vector from the API response
-    # response.data[0].embedding contains the 1536-dimensional vector
-    return response.data[0].embedding
+    Args:
+        text (str): Cleaned text from the resume
+        
+    Returns:
+        list: Embedding vector (1536-dimensional)
+    """
+    logger.info(f"Starting embedding generation for text of length {len(text)}")
+    
+    try:
+        response = client.embeddings.create(
+            input=[text],                    # Your resume text as input
+            model="text-embedding-ada-002"   # OpenAI's embedding model (most cost-effective)
+        )
+        
+        # Extract the embedding vector from the API response
+        embedding = response.data[0].embedding
+        logger.info(f"Successfully generated embedding vector of dimension {len(embedding)}")
+        return embedding
+        
+    except Exception as e:
+        logger.error(f"Error generating embeddings: {str(e)}")
+        raise

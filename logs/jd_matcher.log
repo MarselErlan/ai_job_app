@@ -1,0 +1,36 @@
+2025-06-11 14:24:35 | DEBUG    | app.db.crud:<module>:674 - 🔧 CRUD operations debug module initialized
+2025-06-11 14:24:35 | INFO     | app.tasks.pipeline_for_5:<module>:82 - 🧠 LangChain modules imported successfully
+2025-06-11 14:24:35 | INFO     | app.main:<module>:61 - 🚀 Initializing application in DEBUG mode
+2025-06-11 14:24:39 | DEBUG    | app.db.crud:<module>:674 - 🔧 CRUD operations debug module initialized
+2025-06-11 14:24:39 | INFO     | app.tasks.pipeline_for_5:<module>:82 - 🧠 LangChain modules imported successfully
+2025-06-11 14:24:39 | INFO     | app.main:<module>:61 - 🚀 Initializing application in DEBUG mode
+2025-06-11 14:25:30 | DEBUG    | app.db.crud:<module>:674 - 🔧 CRUD operations debug module initialized
+2025-06-11 14:25:30 | INFO     | app.tasks.pipeline_for_5:<module>:82 - 🧠 LangChain modules imported successfully
+2025-06-11 14:25:30 | INFO     | app.main:<module>:61 - 🚀 Initializing application in DEBUG mode
+2025-06-11 14:28:44 | DEBUG    | app.db.crud:<module>:674 - 🔧 CRUD operations debug module initialized
+2025-06-11 14:28:44 | INFO     | app.tasks.pipeline_for_5:<module>:82 - 🧠 LangChain modules imported successfully
+2025-06-11 14:28:44 | INFO     | app.main:<module>:61 - 🚀 Initializing application in DEBUG mode
+2025-06-11 14:28:59 | DEBUG    | app.db.crud:<module>:674 - 🔧 CRUD operations debug module initialized
+2025-06-11 14:28:59 | INFO     | app.tasks.pipeline_for_5:<module>:82 - 🧠 LangChain modules imported successfully
+2025-06-11 14:28:59 | INFO     | app.main:<module>:61 - 🚀 Initializing application in DEBUG mode
+2025-06-11 14:29:01 | DEBUG    | app.db.crud:<module>:674 - 🔧 CRUD operations debug module initialized
+2025-06-11 14:29:01 | INFO     | app.tasks.pipeline_for_5:<module>:82 - 🧠 LangChain modules imported successfully
+2025-06-11 14:29:01 | INFO     | app.main:<module>:61 - 🚀 Initializing application in DEBUG mode
+2025-06-11 14:29:11 | DEBUG    | app.db.crud:<module>:674 - 🔧 CRUD operations debug module initialized
+2025-06-11 14:29:11 | INFO     | app.tasks.pipeline_for_5:<module>:82 - 🧠 LangChain modules imported successfully
+2025-06-11 14:29:11 | INFO     | app.main:<module>:61 - 🚀 Initializing application in DEBUG mode
+2025-06-11 14:29:47 | DEBUG    | app.db.crud:<module>:674 - 🔧 CRUD operations debug module initialized
+2025-06-11 14:29:47 | INFO     | app.tasks.pipeline_for_5:<module>:82 - 🧠 LangChain modules imported successfully
+2025-06-11 14:29:47 | INFO     | app.main:<module>:61 - 🚀 Initializing application in DEBUG mode
+2025-06-11 14:30:25 | DEBUG    | app.db.crud:<module>:674 - 🔧 CRUD operations debug module initialized
+2025-06-11 14:30:25 | INFO     | app.tasks.pipeline_for_5:<module>:82 - 🧠 LangChain modules imported successfully
+2025-06-11 14:30:25 | INFO     | app.main:<module>:61 - 🚀 Initializing application in DEBUG mode
+2025-06-11 14:31:01 | DEBUG    | app.db.crud:<module>:674 - 🔧 CRUD operations debug module initialized
+2025-06-11 14:31:01 | INFO     | app.tasks.pipeline_for_5:<module>:82 - 🧠 LangChain modules imported successfully
+2025-06-11 14:31:01 | INFO     | app.main:<module>:61 - 🚀 Initializing application in DEBUG mode
+2025-06-11 14:31:22 | DEBUG    | app.db.crud:<module>:674 - 🔧 CRUD operations debug module initialized
+2025-06-11 14:31:22 | INFO     | app.tasks.pipeline_for_5:<module>:82 - 🧠 LangChain modules imported successfully
+2025-06-11 14:31:22 | INFO     | app.main:<module>:61 - 🚀 Initializing application in DEBUG mode
+2025-06-11 14:36:29 | DEBUG    | app.db.crud:<module>:674 - 🔧 CRUD operations debug module initialized
+2025-06-11 14:36:29 | INFO     | app.tasks.pipeline_for_5:<module>:82 - 🧠 LangChain modules imported successfully
+2025-06-11 14:36:29 | INFO     | app.main:<module>:61 - 🚀 Initializing application in DEBUG mode

@@ -1372,3 +1372,29 @@ Please use the Async API instead.
 Please use the Async API instead.
 2025-06-10T23:52:13.968884-0500 | ERROR | ❌ Job analysis failed: asyncio.run() cannot be called from a running event loop
 2025-06-10T23:55:51.892267-0500 | ERROR | ❌ Job analysis failed: asyncio.run() cannot be called from a running event loop
+2025-06-11T14:24:36.101626-0500 | CRITICAL | ❌ Application startup failed: 'NoneType' object has no attribute 'items'
+2025-06-11T14:24:39.956400-0500 | CRITICAL | ❌ Application startup failed: 'NoneType' object has no attribute 'items'
+2025-06-11T14:25:31.349631-0500 | CRITICAL | ❌ Application startup failed: 'NoneType' object has no attribute 'items'
+2025-06-11T14:28:45.355428-0500 | CRITICAL | ❌ Application startup failed: 'used_mb'
+2025-06-11T14:29:00.030710-0500 | CRITICAL | ❌ Application startup failed: 'used_mb'
+2025-06-11T14:29:01.811076-0500 | CRITICAL | ❌ Application startup failed: 'used_mb'
+2025-06-11T14:29:12.023641-0500 | CRITICAL | ❌ Application startup failed: 'used_mb'
+2025-06-11T14:29:48.356233-0500 | CRITICAL | ❌ Application startup failed: 'used_mb'
+2025-06-11T14:38:08.639252-0500 | ERROR | ❌ Failed to parse selector map: Expecting value: line 1 column 1 (char 0)
+2025-06-11T14:38:08.639751-0500 | ERROR | 🔍 Problematic selector_map content: The provided HTML does not contain any input fields. Therefore, the JSON mapping for all input fields is an empty object: `{}`.
+2025-06-11T14:38:44.196038-0500 | ERROR | Failed to fill full_name: fill error: Page.fill: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("input[name='name']")
+
+2025-06-11T14:39:14.204216-0500 | ERROR | Failed to fill email: fill error: Page.fill: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("input[name='email']")
+
+2025-06-11T14:39:44.223759-0500 | ERROR | Failed to fill phone: fill error: Page.fill: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("input[name='phone']")
+
+2025-06-11T14:40:14.245307-0500 | ERROR | Failed to upload resume for resume_upload: upload error: Page.set_input_files: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("input[type='file']")
+

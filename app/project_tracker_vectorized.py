@@ -20,16 +20,23 @@ from collections import defaultdict
 from pathlib import Path
 import pandas as pd
 import numpy as np
+import matplotlib.pyplot as plt
+from visualization import create_codebase_distribution_chart
 
 # === CONFIG ===
 SOURCE_DIR = "./app"
 VECTOR_DB_DIR = "./vector_db"
 OUTPUT_DIR = "./outputs"
+CHARTS_DIR = "./outputs/charts"
 OUTPUT_FILE = f"{OUTPUT_DIR}/about_project_auto_{datetime.now().strftime('%Y%m%d_%H%M')}.txt"
 
 print("🚀 Starting Enhanced AI Project Tracker with Pandas Analytics...")
 print(f"📁 Analyzing: {SOURCE_DIR}")
 print(f"💾 Output: {OUTPUT_FILE}")
+
+# Create output directories
+os.makedirs(OUTPUT_DIR, exist_ok=True)
+os.makedirs(CHARTS_DIR, exist_ok=True)
 
 # === STEP 1: Advanced File Loading with Metadata ===
 def load_project_files():
@@ -441,6 +448,18 @@ def generate_comprehensive_report():
     report.append(f"📅 Generated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
     report.append(f"📁 Source: {SOURCE_DIR}")
     report.append(f"📊 Files Analyzed: {len(documents)}")
+    report.append("")
+    
+    # Generate and save visualization
+    print("📊 Generating codebase distribution chart...")
+    fig = create_codebase_distribution_chart()
+    chart_path = os.path.join(CHARTS_DIR, f"codebase_distribution_{datetime.now().strftime('%Y%m%d_%H%M')}.png")
+    fig.savefig(chart_path, bbox_inches='tight', dpi=300)
+    plt.close(fig)
+    
+    report.append("## 📈 CODEBASE VISUALIZATION")
+    report.append("")
+    report.append(f"A detailed visualization of the codebase distribution has been saved to: {chart_path}")
     report.append("")
     
     # Executive Summary

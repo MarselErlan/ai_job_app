@@ -368,21 +368,31 @@ def create_debug_checkpoint() -> str:
     logger.debug(f"🏁 CHECKPOINT CREATED: {checkpoint_id}")
     return checkpoint_id
 
-def debug_environment() -> None:
+def debug_environment() -> Dict[str, str]:
     """
-    🌍 LOG CURRENT ENVIRONMENT INFORMATION
+    🌍 LOG AND RETURN CURRENT ENVIRONMENT INFORMATION
     
     Logs system information, environment variables,
     and application configuration for debugging.
+    
+    Returns:
+        Dict[str, str]: Dictionary containing environment information
     """
     if not DEBUG_ENABLED:
-        return
+        return {}
         
+    env_info = {
+        "Python": os.sys.version,
+        "OS": os.name,
+        "CWD": os.getcwd(),
+        "Memory": f"{get_memory_usage()['process_memory_mb']:.1f}MB"
+    }
+    
     logger.debug("🌍 ENVIRONMENT DEBUG INFO:")
-    logger.debug(f"   🐍 Python: {os.sys.version}")
-    logger.debug(f"   💻 OS: {os.name}")
-    logger.debug(f"   📁 CWD: {os.getcwd()}")
-    logger.debug(f"   🧠 Memory: {get_memory_usage()['process_memory_mb']:.1f}MB")
+    logger.debug(f"   🐍 Python: {env_info['Python']}")
+    logger.debug(f"   💻 OS: {env_info['OS']}")
+    logger.debug(f"   📁 CWD: {env_info['CWD']}")
+    logger.debug(f"   🧠 Memory: {env_info['Memory']}")
     
     # Log relevant environment variables
     env_vars = ['DEBUG_MODE', 'PERF_LOGGING', 'MEMORY_LOGGING', 'API_LOGGING', 
@@ -394,7 +404,10 @@ def debug_environment() -> None:
             display_value = value[:8] + '...' if value != 'NOT_SET' else 'NOT_SET'
         else:
             display_value = value
+        env_info[var] = display_value
         logger.debug(f"   🔧 {var}: {display_value}")
+    
+    return env_info
 
 # Initialize debugging when module is imported
 if DEBUG_ENABLED:

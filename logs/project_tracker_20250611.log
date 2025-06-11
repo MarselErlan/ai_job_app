@@ -1,0 +1,247 @@
+2025-06-11 03:48:16 | INFO     | utils.logger | 🚀 Starting Enhanced AI Project Tracker with Pandas Analytics...
+2025-06-11 03:48:16 | INFO     | utils.logger | 📁 Analyzing: ./app
+2025-06-11 03:48:16 | INFO     | utils.logger | 💾 Output: ./outputs/about_project_auto_20250611_0348.txt
+2025-06-11 03:48:16 | INFO     | utils.logger | Starting file loading process...
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Successfully loaded 41 documents
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Processed app/__init__.py: 1 lines, 0 functions, 0 classes
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Processed app/project_tracker_vectorized.py: 277 lines, 5 functions, 0 classes
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Processed app/main.py: 219 lines, 1 functions, 0 classes
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Processed app/tasks/queue.py: 0 lines, 0 functions, 0 classes
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Processed app/tasks/pipeline_for_5.py: 513 lines, 5 functions, 1 classes
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Processed app/tasks/__init__.py: 1 lines, 0 functions, 0 classes
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Processed app/tasks/pipeline.py: 249 lines, 0 functions, 0 classes
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Processed app/core/config.py: 0 lines, 0 functions, 0 classes
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Processed app/core/logger.py: 23 lines, 1 functions, 0 classes
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Processed app/utils/__init__.py: 45 lines, 0 functions, 0 classes
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Processed app/utils/logger.py: 39 lines, 0 functions, 0 classes
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Processed app/utils/file.py: 0 lines, 0 functions, 0 classes
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Processed app/utils/embeddings.py: 0 lines, 0 functions, 0 classes
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Processed app/utils/debug_utils.py: 283 lines, 18 functions, 0 classes
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Processed app/schemas/resume.py: 0 lines, 0 functions, 0 classes
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Processed app/schemas/jobs.py: 33 lines, 0 functions, 3 classes
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Processed app/schemas/apply.py: 0 lines, 0 functions, 0 classes
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Processed app/db/models.py: 17 lines, 0 functions, 1 classes
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Processed app/db/session.py: 29 lines, 1 functions, 0 classes
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Processed app/db/crud.py: 385 lines, 4 functions, 0 classes
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Processed app/api/__init__.py: 1 lines, 0 functions, 0 classes
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Processed app/api/v1/resume.py: 159 lines, 3 functions, 4 classes
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Processed app/api/v1/__init__.py: 1 lines, 0 functions, 0 classes
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Processed app/api/v1/notify.py: 0 lines, 0 functions, 0 classes
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Processed app/api/v1/jobs.py: 143 lines, 2 functions, 3 classes
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Processed app/api/v1/pipeline.py: 167 lines, 3 functions, 1 classes
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Processed app/api/v1/apply.py: 0 lines, 0 functions, 0 classes
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Processed app/services/resume_parser.py: 17 lines, 2 functions, 0 classes
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Processed app/services/enhanced_job_scraper.py: 85 lines, 4 functions, 0 classes
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Processed app/services/field_mapper.py: 53 lines, 1 functions, 0 classes
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Processed app/services/pdf_generator.py: 29 lines, 1 functions, 0 classes
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Processed app/services/resume_tailor.py: 41 lines, 1 functions, 0 classes
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Processed app/services/notifier.py: 0 lines, 0 functions, 0 classes
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Processed app/services/__init__.py: 1 lines, 0 functions, 0 classes
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Processed app/services/notion_logger.py: 39 lines, 2 functions, 0 classes
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Processed app/services/form_autofiller.py: 103 lines, 2 functions, 0 classes
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Processed app/services/form_executor.py: 13 lines, 1 functions, 0 classes
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Processed app/services/log_formatter.py: 17 lines, 1 functions, 0 classes
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Processed app/services/job_scraper.py: 351 lines, 13 functions, 0 classes
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Processed app/services/file_diff.py: 27 lines, 2 functions, 0 classes
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Processed app/services/jd_matcher.py: 39 lines, 3 functions, 0 classes
+2025-06-11 03:48:20 | INFO     | utils.logger | 📊 Loaded 41 Python files
+2025-06-11 03:48:20 | INFO     | utils.logger | Starting file importance analysis...
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Total lines in project: 3400
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Analyzed app/__init__.py: Category=Configuration, Importance=0.1
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Analyzed app/project_tracker_vectorized.py: Category=Other, Importance=16.3
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Analyzed app/main.py: Category=API & Web Layer, Importance=96.6
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Analyzed app/tasks/queue.py: Category=Core Pipeline, Importance=0.0
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Analyzed app/tasks/pipeline_for_5.py: Category=Core Pipeline, Importance=528.1
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Analyzed app/tasks/__init__.py: Category=Core Pipeline, Importance=1.0
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Analyzed app/tasks/pipeline.py: Category=Core Pipeline, Importance=256.3
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Analyzed app/core/config.py: Category=Infrastructure, Importance=0.0
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Analyzed app/core/logger.py: Category=Infrastructure, Importance=5.4
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Analyzed app/utils/__init__.py: Category=Infrastructure, Importance=10.6
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Analyzed app/utils/logger.py: Category=Infrastructure, Importance=9.2
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Analyzed app/utils/file.py: Category=Infrastructure, Importance=0.0
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Analyzed app/utils/embeddings.py: Category=Infrastructure, Importance=0.0
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Analyzed app/utils/debug_utils.py: Category=Infrastructure, Importance=66.6
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Analyzed app/schemas/resume.py: Category=Configuration, Importance=0.0
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Analyzed app/schemas/jobs.py: Category=Configuration, Importance=4.9
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Analyzed app/schemas/apply.py: Category=Configuration, Importance=0.0
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Analyzed app/db/models.py: Category=Database Layer, Importance=6.0
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Analyzed app/db/session.py: Category=Database Layer, Importance=10.2
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Analyzed app/db/crud.py: Category=Database Layer, Importance=135.9
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Analyzed app/api/__init__.py: Category=API & Web Layer, Importance=0.4
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Analyzed app/api/v1/resume.py: Category=API & Web Layer, Importance=70.1
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Analyzed app/api/v1/__init__.py: Category=API & Web Layer, Importance=0.4
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Analyzed app/api/v1/notify.py: Category=API & Web Layer, Importance=0.0
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Analyzed app/api/v1/jobs.py: Category=API & Web Layer, Importance=63.1
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Analyzed app/api/v1/pipeline.py: Category=Core Pipeline, Importance=171.9
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Analyzed app/api/v1/apply.py: Category=API & Web Layer, Importance=0.0
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Analyzed app/services/resume_parser.py: Category=Service Layer, Importance=12.5
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Analyzed app/services/enhanced_job_scraper.py: Category=Service Layer, Importance=62.5
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Analyzed app/services/field_mapper.py: Category=Service Layer, Importance=39.0
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Analyzed app/services/pdf_generator.py: Category=Service Layer, Importance=21.3
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Analyzed app/services/resume_tailor.py: Category=Service Layer, Importance=30.1
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Analyzed app/services/notifier.py: Category=Service Layer, Importance=0.0
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Analyzed app/services/__init__.py: Category=Service Layer, Importance=0.7
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Analyzed app/services/notion_logger.py: Category=Service Layer, Importance=28.7
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Analyzed app/services/form_autofiller.py: Category=Service Layer, Importance=75.7
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Analyzed app/services/form_executor.py: Category=Service Layer, Importance=9.6
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Analyzed app/services/log_formatter.py: Category=Service Layer, Importance=12.5
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Analyzed app/services/job_scraper.py: Category=Service Layer, Importance=258.1
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Analyzed app/services/file_diff.py: Category=Service Layer, Importance=19.9
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Analyzed app/services/jd_matcher.py: Category=Service Layer, Importance=28.7
+2025-06-11 03:48:20 | INFO     | utils.logger | Generating detailed file breakdown...
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Added app/__init__.py to Configuration category
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Added app/project_tracker_vectorized.py to Other category
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Added app/main.py to API & Web Layer category
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Added app/tasks/queue.py to Core Pipeline category
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Added app/tasks/pipeline_for_5.py to Core Pipeline category
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Added app/tasks/__init__.py to Core Pipeline category
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Added app/tasks/pipeline.py to Core Pipeline category
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Added app/core/config.py to Infrastructure category
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Added app/core/logger.py to Infrastructure category
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Added app/utils/__init__.py to Infrastructure category
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Added app/utils/logger.py to Infrastructure category
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Added app/utils/file.py to Infrastructure category
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Added app/utils/embeddings.py to Infrastructure category
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Added app/utils/debug_utils.py to Infrastructure category
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Added app/schemas/resume.py to Configuration category
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Added app/schemas/jobs.py to Configuration category
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Added app/schemas/apply.py to Configuration category
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Added app/db/models.py to Database Layer category
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Added app/db/session.py to Database Layer category
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Added app/db/crud.py to Database Layer category
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Added app/api/__init__.py to API & Web Layer category
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Added app/api/v1/resume.py to API & Web Layer category
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Added app/api/v1/__init__.py to API & Web Layer category
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Added app/api/v1/notify.py to API & Web Layer category
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Added app/api/v1/jobs.py to API & Web Layer category
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Added app/api/v1/pipeline.py to Core Pipeline category
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Added app/api/v1/apply.py to API & Web Layer category
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Added app/services/resume_parser.py to Service Layer category
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Added app/services/enhanced_job_scraper.py to Service Layer category
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Added app/services/field_mapper.py to Service Layer category
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Added app/services/pdf_generator.py to Service Layer category
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Added app/services/resume_tailor.py to Service Layer category
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Added app/services/notifier.py to Service Layer category
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Added app/services/__init__.py to Service Layer category
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Added app/services/notion_logger.py to Service Layer category
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Added app/services/form_autofiller.py to Service Layer category
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Added app/services/form_executor.py to Service Layer category
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Added app/services/log_formatter.py to Service Layer category
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Added app/services/job_scraper.py to Service Layer category
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Added app/services/file_diff.py to Service Layer category
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Added app/services/jd_matcher.py to Service Layer category
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Sorted 5 files in Core Pipeline category
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Sorted 14 files in Service Layer category
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Sorted 7 files in API & Web Layer category
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Sorted 3 files in Database Layer category
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Sorted 7 files in Infrastructure category
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Sorted 4 files in Configuration category
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Sorted 1 files in Other category
+2025-06-11 03:48:20 | INFO     | utils.logger | Starting completion and quality analysis...
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Analyzed quality metrics for app/__init__.py
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Found 2 TODO in app/project_tracker_vectorized.py
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Found 2 FIXME in app/project_tracker_vectorized.py
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Found 1 pass in app/project_tracker_vectorized.py
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Found 1 raise NotImplementedError in app/project_tracker_vectorized.py
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Found 1 # TODO in app/project_tracker_vectorized.py
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Found 1 # FIXME in app/project_tracker_vectorized.py
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Found 16 ... in app/project_tracker_vectorized.py
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Analyzed quality metrics for app/project_tracker_vectorized.py
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Analyzed quality metrics for app/main.py
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Analyzed quality metrics for app/tasks/queue.py
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Analyzed quality metrics for app/tasks/pipeline_for_5.py
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Analyzed quality metrics for app/tasks/__init__.py
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Found 1 ... in app/tasks/pipeline.py
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Analyzed quality metrics for app/tasks/pipeline.py
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Analyzed quality metrics for app/core/config.py
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Analyzed quality metrics for app/core/logger.py
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Analyzed quality metrics for app/utils/__init__.py
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Analyzed quality metrics for app/utils/logger.py
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Analyzed quality metrics for app/utils/file.py
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Analyzed quality metrics for app/utils/embeddings.py
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Found 2 pass in app/utils/debug_utils.py
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Found 14 ... in app/utils/debug_utils.py
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Analyzed quality metrics for app/utils/debug_utils.py
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Analyzed quality metrics for app/schemas/resume.py
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Analyzed quality metrics for app/schemas/jobs.py
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Analyzed quality metrics for app/schemas/apply.py
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Analyzed quality metrics for app/db/models.py
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Analyzed quality metrics for app/db/session.py
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Found 11 ... in app/db/crud.py
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Analyzed quality metrics for app/db/crud.py
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Analyzed quality metrics for app/api/__init__.py
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Found 1 ... in app/api/v1/resume.py
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Analyzed quality metrics for app/api/v1/resume.py
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Analyzed quality metrics for app/api/v1/__init__.py
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Analyzed quality metrics for app/api/v1/notify.py
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Analyzed quality metrics for app/api/v1/jobs.py
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Analyzed quality metrics for app/api/v1/pipeline.py
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Analyzed quality metrics for app/api/v1/apply.py
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Analyzed quality metrics for app/services/resume_parser.py
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Analyzed quality metrics for app/services/enhanced_job_scraper.py
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Analyzed quality metrics for app/services/field_mapper.py
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Analyzed quality metrics for app/services/pdf_generator.py
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Analyzed quality metrics for app/services/resume_tailor.py
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Analyzed quality metrics for app/services/notifier.py
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Analyzed quality metrics for app/services/__init__.py
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Analyzed quality metrics for app/services/notion_logger.py
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Analyzed quality metrics for app/services/form_autofiller.py
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Analyzed quality metrics for app/services/form_executor.py
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Analyzed quality metrics for app/services/log_formatter.py
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Found 3 ... in app/services/job_scraper.py
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Analyzed quality metrics for app/services/job_scraper.py
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Analyzed quality metrics for app/services/file_diff.py
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Analyzed quality metrics for app/services/jd_matcher.py
+2025-06-11 03:48:20 | INFO     | utils.logger | Project completion analysis: 98.4% complete
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Quality indicators: {'docstrings': 255, 'comments': 307, 'type_hints': 53, 'error_handling': 195, 'logging': 415}
+2025-06-11 03:48:20 | DEBUG    | utils.logger | Incomplete indicators: {'TODO': 2, 'FIXME': 2, 'pass': 3, 'raise NotImplementedError': 1, '# TODO': 1, '# FIXME': 1, '...': 46}
+2025-06-11 03:48:22 | INFO     | utils.logger | Starting project analysis...
+2025-06-11 03:48:22 | INFO     | utils.logger | Generating comprehensive project report...
+2025-06-11 03:48:22 | INFO     | utils.logger | Starting enhanced project analysis...
+2025-06-11 03:48:22 | INFO     | utils.logger | Generating analysis components...
+2025-06-11 03:48:22 | DEBUG    | utils.logger | Creating file summary table...
+2025-06-11 03:48:22 | DEBUG    | utils.logger | Added summary for Core Pipeline: 5 files, 930 lines
+2025-06-11 03:48:22 | DEBUG    | utils.logger | Added summary for Service Layer: 14 files, 815 lines
+2025-06-11 03:48:22 | DEBUG    | utils.logger | Added summary for API & Web Layer: 7 files, 523 lines
+2025-06-11 03:48:22 | DEBUG    | utils.logger | Added summary for Database Layer: 3 files, 431 lines
+2025-06-11 03:48:22 | DEBUG    | utils.logger | Added summary for Infrastructure: 7 files, 390 lines
+2025-06-11 03:48:22 | DEBUG    | utils.logger | Added summary for Configuration: 4 files, 34 lines
+2025-06-11 03:48:22 | DEBUG    | utils.logger | Added summary for Other: 1 files, 277 lines
+2025-06-11 03:48:22 | DEBUG    | utils.logger | File summary table created
+2025-06-11 03:48:22 | DEBUG    | utils.logger | Creating quality metrics table...
+2025-06-11 03:48:22 | DEBUG    | utils.logger | Quality metrics table created successfully
+2025-06-11 03:48:22 | DEBUG    | utils.logger | Quality metrics table created
+2025-06-11 03:48:22 | INFO     | utils.logger | Generating detailed file tables for each category...
+2025-06-11 03:48:22 | DEBUG    | utils.logger | Created detailed table for Core Pipeline with 5 files
+2025-06-11 03:48:22 | DEBUG    | utils.logger | Created detailed table for Service Layer with 14 files
+2025-06-11 03:48:22 | DEBUG    | utils.logger | Created detailed table for API & Web Layer with 7 files
+2025-06-11 03:48:22 | DEBUG    | utils.logger | Created detailed table for Database Layer with 3 files
+2025-06-11 03:48:22 | DEBUG    | utils.logger | Created detailed table for Infrastructure with 7 files
+2025-06-11 03:48:22 | DEBUG    | utils.logger | Created detailed table for Configuration with 4 files
+2025-06-11 03:48:22 | DEBUG    | utils.logger | Created detailed table for Other with 1 files
+2025-06-11 03:48:22 | DEBUG    | utils.logger | Generated 7 category-specific tables
+2025-06-11 03:48:22 | INFO     | utils.logger | Formatting analysis results...
+2025-06-11 03:48:22 | DEBUG    | utils.logger | Formatting table: FILE CATEGORY SUMMARY
+2025-06-11 03:48:22 | DEBUG    | utils.logger | Table formatted successfully
+2025-06-11 03:48:22 | DEBUG    | utils.logger | Formatting table: CODE QUALITY METRICS
+2025-06-11 03:48:22 | DEBUG    | utils.logger | Table formatted successfully
+2025-06-11 03:48:22 | DEBUG    | utils.logger | Formatting table: DETAILED CORE PIPELINE FILES
+2025-06-11 03:48:22 | DEBUG    | utils.logger | Table formatted successfully
+2025-06-11 03:48:22 | DEBUG    | utils.logger | Formatting table: DETAILED SERVICE LAYER FILES
+2025-06-11 03:48:22 | DEBUG    | utils.logger | Table formatted successfully
+2025-06-11 03:48:22 | DEBUG    | utils.logger | Formatting table: DETAILED API & WEB LAYER FILES
+2025-06-11 03:48:22 | DEBUG    | utils.logger | Table formatted successfully
+2025-06-11 03:48:22 | DEBUG    | utils.logger | Formatting table: DETAILED DATABASE LAYER FILES
+2025-06-11 03:48:22 | DEBUG    | utils.logger | Table formatted successfully
+2025-06-11 03:48:22 | DEBUG    | utils.logger | Formatting table: DETAILED INFRASTRUCTURE FILES
+2025-06-11 03:48:22 | DEBUG    | utils.logger | Table formatted successfully
+2025-06-11 03:48:22 | DEBUG    | utils.logger | Formatting table: DETAILED CONFIGURATION FILES
+2025-06-11 03:48:22 | DEBUG    | utils.logger | Table formatted successfully
+2025-06-11 03:48:22 | DEBUG    | utils.logger | Formatting table: DETAILED OTHER FILES
+2025-06-11 03:48:22 | DEBUG    | utils.logger | Table formatted successfully
+2025-06-11 03:48:22 | INFO     | utils.logger | Analysis complete! Results written to ./outputs/about_project_auto_20250611_0348.txt
+2025-06-11 03:48:22 | INFO     | utils.logger | Comprehensive report generated successfully: ./outputs/project_report_20250611_0348.txt
+2025-06-11 03:48:22 | INFO     | utils.logger | Analysis completed successfully!
+2025-06-11 03:56:43 | INFO     | utils.logger | 🚀 Starting Enhanced AI Project Tracker with Pandas Analytics...
+2025-06-11 03:56:43 | INFO     | utils.logger | 📁 Analyzing: ./app
+2025-06-11 03:56:43 | INFO     | utils.logger | 💾 Output: ./outputs/about_project_auto_20250611_0356.txt
