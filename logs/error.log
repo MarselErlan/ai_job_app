@@ -1353,3 +1353,22 @@ If there were input fields, the process would involve:
 3. Constructing a CSS selector for each input element, which could be based on attributes like `id`, `class`, or `name`.
 
 Since the HTML provided does not include any input fields, I cannot generate the JSON mapping as requested. If you have a complete HTML document or specific sections with input fields, please provide them, and I can help extract the necessary information.
+2025-06-10T23:16:16.621308-0500 | ERROR | ❌ Error while applying to Sr. Software Development Engineer in Test (SDET) - Chicago, IL ...: Selector map parse error: Expecting value: line 1 column 1 (char 0)
+2025-06-10T23:16:45.879719-0500 | ERROR | ❌ Error while applying to Arrow International, Inc. hiring Software Development Engineer in ...: Selector map parse error: Expecting value: line 1 column 1 (char 0)
+2025-06-10T23:17:16.428039-0500 | ERROR | ❌ Error while applying to Global Business Ser. 4u hiring SDET Automation tester in Chicago ...: Selector map parse error: Expecting value: line 1 column 1 (char 0)
+2025-06-10T23:34:20.128475-0500 | ERROR | ❌ Job analysis failed: asyncio.run() cannot be called from a running event loop
+2025-06-10T23:34:42.072692-0500 | ERROR | ❌ FAILED: Enhanced resume tailoring (14.858s)
+2025-06-10T23:34:42.072927-0500 | ERROR |    💥 Error: cannot access local variable 'tailored_resume' where it is not associated with a value
+2025-06-10T23:34:42.073045-0500 | ERROR | ❌ Enhanced Pipeline V5 failed: cannot access local variable 'tailored_resume' where it is not associated with a value
+2025-06-10T23:40:56.442699-0500 | ERROR | ❌ Job analysis failed: asyncio.run() cannot be called from a running event loop
+2025-06-10T23:41:16.012220-0500 | ERROR | ❌ FAILED: Enhanced resume tailoring (15.360s)
+2025-06-10T23:41:16.012339-0500 | ERROR |    💥 Error: cannot access local variable 'tailored_resume' where it is not associated with a value
+2025-06-10T23:41:16.012602-0500 | ERROR | ❌ Enhanced Pipeline V5 failed: cannot access local variable 'tailored_resume' where it is not associated with a value
+2025-06-10T23:49:54.855609-0500 | ERROR | ❌ Job analysis failed: asyncio.run() cannot be called from a running event loop
+2025-06-10T23:50:14.156875-0500 | ERROR | ❌ FAILED: Enhanced form field mapping (0.000s)
+2025-06-10T23:50:14.157129-0500 | ERROR |    💥 Error: It looks like you are using Playwright Sync API inside the asyncio loop.
+Please use the Async API instead.
+2025-06-10T23:50:14.157323-0500 | ERROR | ❌ Enhanced Pipeline V5 failed: It looks like you are using Playwright Sync API inside the asyncio loop.
+Please use the Async API instead.
+2025-06-10T23:52:13.968884-0500 | ERROR | ❌ Job analysis failed: asyncio.run() cannot be called from a running event loop
+2025-06-10T23:55:51.892267-0500 | ERROR | ❌ Job analysis failed: asyncio.run() cannot be called from a running event loop
