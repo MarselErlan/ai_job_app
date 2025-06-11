@@ -1398,3 +1398,21 @@ Call log:
 Call log:
   - waiting for locator("input[type='file']")
 
+2025-06-11T17:10:02.618143-0500 | ERROR | ❌ Failed to parse selector map: Expecting value: line 1 column 1 (char 0)
+2025-06-11T17:10:02.618436-0500 | ERROR | 🔍 Problematic selector_map content: The provided HTML does not contain any input fields. Therefore, the JSON mapping for input fields cannot be generated. Please provide HTML with input fields to generate the JSON mapping.
+2025-06-11T17:10:45.716071-0500 | ERROR | Failed to fill full_name: fill error: Page.fill: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("input[name='name']")
+
+2025-06-11T17:11:15.729562-0500 | ERROR | Failed to fill email: fill error: Page.fill: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("input[name='email']")
+
+2025-06-11T17:11:45.737665-0500 | ERROR | Failed to fill phone: fill error: Page.fill: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("input[name='phone']")
+
+2025-06-11T17:12:15.753088-0500 | ERROR | Failed to upload resume for resume_upload: upload error: Page.set_input_files: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("input[type='file']")
+
