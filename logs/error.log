@@ -628,3 +628,728 @@ KeyError: "'error'"
 2025-06-10T20:38:50.660533-0500 | ERROR | ❌ Database connection failed on startup: Textual SQL expression 'SELECT 1' should be explicitly declared as text('SELECT 1')
 2025-06-10T20:38:57.641079-0500 | ERROR | ❌ Database connection failed on startup: Textual SQL expression 'SELECT 1' should be explicitly declared as text('SELECT 1')
 2025-06-10T20:47:36.306857-0500 | ERROR | ❌ Database connection failed on startup: Textual SQL expression 'SELECT 1' should be explicitly declared as text('SELECT 1')
+2025-06-10T20:55:06.669618-0500 | ERROR | ❌ Google API Error: Status 400
+2025-06-10T20:55:06.669690-0500 | ERROR |    📄 Response: {
+  "error": {
+    "code": 400,
+    "message": "Request contains an invalid argument.",
+    "errors": [
+      {
+        "message": "Request contains an invalid argument.",
+        "domain": "global",
+        "reason": "badRequest"
+      }
+    ],
+    "status": "INVALID_ARGUMENT"
+  }
+}
+...
+2025-06-10T20:55:06.670021-0500 | ERROR | ❌ Failed to get search results from Google API
+2025-06-10T20:55:08.848152-0500 | ERROR | ❌ Google API Error: Status 400
+2025-06-10T20:55:08.848279-0500 | ERROR |    📄 Response: {
+  "error": {
+    "code": 400,
+    "message": "Request contains an invalid argument.",
+    "errors": [
+      {
+        "message": "Request contains an invalid argument.",
+        "domain": "global",
+        "reason": "badRequest"
+      }
+    ],
+    "status": "INVALID_ARGUMENT"
+  }
+}
+...
+2025-06-10T20:55:08.849122-0500 | ERROR | ❌ Failed to get search results from Google API
+2025-06-10T20:55:11.049994-0500 | ERROR | ❌ Google API Error: Status 400
+2025-06-10T20:55:11.050044-0500 | ERROR |    📄 Response: {
+  "error": {
+    "code": 400,
+    "message": "Request contains an invalid argument.",
+    "errors": [
+      {
+        "message": "Request contains an invalid argument.",
+        "domain": "global",
+        "reason": "badRequest"
+      }
+    ],
+    "status": "INVALID_ARGUMENT"
+  }
+}
+...
+2025-06-10T20:55:11.050338-0500 | ERROR | ❌ Failed to get search results from Google API
+2025-06-10T20:55:13.245949-0500 | ERROR | ❌ Google API Error: Status 400
+2025-06-10T20:55:13.246006-0500 | ERROR |    📄 Response: {
+  "error": {
+    "code": 400,
+    "message": "Request contains an invalid argument.",
+    "errors": [
+      {
+        "message": "Request contains an invalid argument.",
+        "domain": "global",
+        "reason": "badRequest"
+      }
+    ],
+    "status": "INVALID_ARGUMENT"
+  }
+}
+...
+2025-06-10T20:55:13.246310-0500 | ERROR | ❌ Failed to get search results from Google API
+2025-06-10T20:55:15.357633-0500 | ERROR | ❌ Google API Error: Status 400
+2025-06-10T20:55:15.357702-0500 | ERROR |    📄 Response: {
+  "error": {
+    "code": 400,
+    "message": "Request contains an invalid argument.",
+    "errors": [
+      {
+        "message": "Request contains an invalid argument.",
+        "domain": "global",
+        "reason": "badRequest"
+      }
+    ],
+    "status": "INVALID_ARGUMENT"
+  }
+}
+...
+2025-06-10T20:55:15.358083-0500 | ERROR | ❌ Failed to get search results from Google API
+2025-06-10T20:55:17.492375-0500 | ERROR | ❌ Google API Error: Status 400
+2025-06-10T20:55:17.492423-0500 | ERROR |    📄 Response: {
+  "error": {
+    "code": 400,
+    "message": "Request contains an invalid argument.",
+    "errors": [
+      {
+        "message": "Request contains an invalid argument.",
+        "domain": "global",
+        "reason": "badRequest"
+      }
+    ],
+    "status": "INVALID_ARGUMENT"
+  }
+}
+...
+2025-06-10T20:55:17.492713-0500 | ERROR | ❌ Failed to get search results from Google API
+2025-06-10T20:55:19.627317-0500 | ERROR | ❌ Google API Error: Status 400
+2025-06-10T20:55:19.627400-0500 | ERROR |    📄 Response: {
+  "error": {
+    "code": 400,
+    "message": "Request contains an invalid argument.",
+    "errors": [
+      {
+        "message": "Request contains an invalid argument.",
+        "domain": "global",
+        "reason": "badRequest"
+      }
+    ],
+    "status": "INVALID_ARGUMENT"
+  }
+}
+...
+2025-06-10T20:55:19.627832-0500 | ERROR | ❌ Failed to get search results from Google API
+2025-06-10T20:55:21.755110-0500 | ERROR | ❌ Google API Error: Status 400
+2025-06-10T20:55:21.755163-0500 | ERROR |    📄 Response: {
+  "error": {
+    "code": 400,
+    "message": "Request contains an invalid argument.",
+    "errors": [
+      {
+        "message": "Request contains an invalid argument.",
+        "domain": "global",
+        "reason": "badRequest"
+      }
+    ],
+    "status": "INVALID_ARGUMENT"
+  }
+}
+...
+2025-06-10T20:55:21.755440-0500 | ERROR | ❌ Failed to get search results from Google API
+2025-06-10T20:55:23.957974-0500 | ERROR | ❌ Google API Error: Status 400
+2025-06-10T20:55:23.958104-0500 | ERROR |    📄 Response: {
+  "error": {
+    "code": 400,
+    "message": "Request contains an invalid argument.",
+    "errors": [
+      {
+        "message": "Request contains an invalid argument.",
+        "domain": "global",
+        "reason": "badRequest"
+      }
+    ],
+    "status": "INVALID_ARGUMENT"
+  }
+}
+...
+2025-06-10T20:55:23.959108-0500 | ERROR | ❌ Failed to get search results from Google API
+2025-06-10T20:55:26.086306-0500 | ERROR | ❌ Google API Error: Status 400
+2025-06-10T20:55:26.086358-0500 | ERROR |    📄 Response: {
+  "error": {
+    "code": 400,
+    "message": "Request contains an invalid argument.",
+    "errors": [
+      {
+        "message": "Request contains an invalid argument.",
+        "domain": "global",
+        "reason": "badRequest"
+      }
+    ],
+    "status": "INVALID_ARGUMENT"
+  }
+}
+...
+2025-06-10T20:55:26.086737-0500 | ERROR | ❌ Failed to get search results from Google API
+2025-06-10T21:24:35.832288-0500 | ERROR | ❌ Google API Error: Status 400
+2025-06-10T21:24:35.832397-0500 | ERROR |    📄 Response: {
+  "error": {
+    "code": 400,
+    "message": "Request contains an invalid argument.",
+    "errors": [
+      {
+        "message": "Request contains an invalid argument.",
+        "domain": "global",
+        "reason": "badRequest"
+      }
+    ],
+    "status": "INVALID_ARGUMENT"
+  }
+}
+...
+2025-06-10T21:24:35.832858-0500 | ERROR | ❌ Failed to get search results from Google API
+2025-06-10T21:24:38.045886-0500 | ERROR | ❌ Google API Error: Status 400
+2025-06-10T21:24:38.045945-0500 | ERROR |    📄 Response: {
+  "error": {
+    "code": 400,
+    "message": "Request contains an invalid argument.",
+    "errors": [
+      {
+        "message": "Request contains an invalid argument.",
+        "domain": "global",
+        "reason": "badRequest"
+      }
+    ],
+    "status": "INVALID_ARGUMENT"
+  }
+}
+...
+2025-06-10T21:24:38.046232-0500 | ERROR | ❌ Failed to get search results from Google API
+2025-06-10T21:24:40.210803-0500 | ERROR | ❌ Google API Error: Status 400
+2025-06-10T21:24:40.210863-0500 | ERROR |    📄 Response: {
+  "error": {
+    "code": 400,
+    "message": "Request contains an invalid argument.",
+    "errors": [
+      {
+        "message": "Request contains an invalid argument.",
+        "domain": "global",
+        "reason": "badRequest"
+      }
+    ],
+    "status": "INVALID_ARGUMENT"
+  }
+}
+...
+2025-06-10T21:24:40.211143-0500 | ERROR | ❌ Failed to get search results from Google API
+2025-06-10T21:24:42.334442-0500 | ERROR | ❌ Google API Error: Status 400
+2025-06-10T21:24:42.334501-0500 | ERROR |    📄 Response: {
+  "error": {
+    "code": 400,
+    "message": "Request contains an invalid argument.",
+    "errors": [
+      {
+        "message": "Request contains an invalid argument.",
+        "domain": "global",
+        "reason": "badRequest"
+      }
+    ],
+    "status": "INVALID_ARGUMENT"
+  }
+}
+...
+2025-06-10T21:24:42.334771-0500 | ERROR | ❌ Failed to get search results from Google API
+2025-06-10T21:24:44.467797-0500 | ERROR | ❌ Google API Error: Status 400
+2025-06-10T21:24:44.467923-0500 | ERROR |    📄 Response: {
+  "error": {
+    "code": 400,
+    "message": "Request contains an invalid argument.",
+    "errors": [
+      {
+        "message": "Request contains an invalid argument.",
+        "domain": "global",
+        "reason": "badRequest"
+      }
+    ],
+    "status": "INVALID_ARGUMENT"
+  }
+}
+...
+2025-06-10T21:24:44.468482-0500 | ERROR | ❌ Failed to get search results from Google API
+2025-06-10T21:24:46.652327-0500 | ERROR | ❌ Google API Error: Status 400
+2025-06-10T21:24:46.652386-0500 | ERROR |    📄 Response: {
+  "error": {
+    "code": 400,
+    "message": "Request contains an invalid argument.",
+    "errors": [
+      {
+        "message": "Request contains an invalid argument.",
+        "domain": "global",
+        "reason": "badRequest"
+      }
+    ],
+    "status": "INVALID_ARGUMENT"
+  }
+}
+...
+2025-06-10T21:24:46.652657-0500 | ERROR | ❌ Failed to get search results from Google API
+2025-06-10T21:24:48.774735-0500 | ERROR | ❌ Google API Error: Status 400
+2025-06-10T21:24:48.774856-0500 | ERROR |    📄 Response: {
+  "error": {
+    "code": 400,
+    "message": "Request contains an invalid argument.",
+    "errors": [
+      {
+        "message": "Request contains an invalid argument.",
+        "domain": "global",
+        "reason": "badRequest"
+      }
+    ],
+    "status": "INVALID_ARGUMENT"
+  }
+}
+...
+2025-06-10T21:24:48.775381-0500 | ERROR | ❌ Failed to get search results from Google API
+2025-06-10T21:24:50.898021-0500 | ERROR | ❌ Google API Error: Status 400
+2025-06-10T21:24:50.898087-0500 | ERROR |    📄 Response: {
+  "error": {
+    "code": 400,
+    "message": "Request contains an invalid argument.",
+    "errors": [
+      {
+        "message": "Request contains an invalid argument.",
+        "domain": "global",
+        "reason": "badRequest"
+      }
+    ],
+    "status": "INVALID_ARGUMENT"
+  }
+}
+...
+2025-06-10T21:24:50.898359-0500 | ERROR | ❌ Failed to get search results from Google API
+2025-06-10T21:24:53.016048-0500 | ERROR | ❌ Google API Error: Status 400
+2025-06-10T21:24:53.016139-0500 | ERROR |    📄 Response: {
+  "error": {
+    "code": 400,
+    "message": "Request contains an invalid argument.",
+    "errors": [
+      {
+        "message": "Request contains an invalid argument.",
+        "domain": "global",
+        "reason": "badRequest"
+      }
+    ],
+    "status": "INVALID_ARGUMENT"
+  }
+}
+...
+2025-06-10T21:24:53.016622-0500 | ERROR | ❌ Failed to get search results from Google API
+2025-06-10T21:24:55.231067-0500 | ERROR | ❌ Google API Error: Status 400
+2025-06-10T21:24:55.231122-0500 | ERROR |    📄 Response: {
+  "error": {
+    "code": 400,
+    "message": "Request contains an invalid argument.",
+    "errors": [
+      {
+        "message": "Request contains an invalid argument.",
+        "domain": "global",
+        "reason": "badRequest"
+      }
+    ],
+    "status": "INVALID_ARGUMENT"
+  }
+}
+...
+2025-06-10T21:24:55.231411-0500 | ERROR | ❌ Failed to get search results from Google API
+2025-06-10T21:29:28.398230-0500 | ERROR | ❌ API FAILED: app.services.job_scraper.scrape_google_jobs
+2025-06-10T21:29:28.398758-0500 | ERROR |    ⏱️ Time: 0.479s
+2025-06-10T21:29:28.398811-0500 | ERROR |    💥 Error: 'Core' object has no attribute '_min_level'
+2025-06-10T21:29:28.400436-0500 | ERROR |    📚 Full traceback:
+Traceback (most recent call last):
+  File "/Users/macbookpro/M4_Projects/AIEngineer/ai_job_app/app/utils/debug_utils.py", line 182, in wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbookpro/M4_Projects/AIEngineer/ai_job_app/app/services/job_scraper.py", line 373, in scrape_google_jobs
+    "scraped_at": logger._core.levels[logger._core._min_level].name,
+                                      ^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Core' object has no attribute '_min_level'
+
+2025-06-10T21:29:28.400630-0500 | ERROR | ❌ Search attempt 1 failed: 'Core' object has no attribute '_min_level'
+2025-06-10T21:29:28.587938-0500 | ERROR | ❌ Google API Error: Status 429
+2025-06-10T21:29:28.588016-0500 | ERROR |    📄 Response: {
+  "error": {
+    "code": 429,
+    "message": "Quota exceeded for quota metric 'Queries' and limit 'Queries per day' of service 'customsearch.googleapis.com' for consumer 'project_number:877036365087'.",
+    "errors": [
+      {
+        "message": "Quota exceeded for quota metric 'Queries' and limit 'Queries per day' of service 'customsearch.googleapis.com' for consumer 'project_number:877036365087'.",
+        "domain": "global",
+        "reason": "rateLimitExceeded"
+      }
+    ],
+    "status":...
+2025-06-10T21:29:28.588330-0500 | ERROR | ❌ Failed to get search results from Google API
+2025-06-10T21:29:30.709074-0500 | ERROR | ❌ Google API Error: Status 429
+2025-06-10T21:29:30.709137-0500 | ERROR |    📄 Response: {
+  "error": {
+    "code": 429,
+    "message": "Quota exceeded for quota metric 'Queries' and limit 'Queries per day' of service 'customsearch.googleapis.com' for consumer 'project_number:877036365087'.",
+    "errors": [
+      {
+        "message": "Quota exceeded for quota metric 'Queries' and limit 'Queries per day' of service 'customsearch.googleapis.com' for consumer 'project_number:877036365087'.",
+        "domain": "global",
+        "reason": "rateLimitExceeded"
+      }
+    ],
+    "status":...
+2025-06-10T21:29:30.709441-0500 | ERROR | ❌ Failed to get search results from Google API
+2025-06-10T21:29:33.230217-0500 | ERROR | ❌ API FAILED: app.services.job_scraper.scrape_google_jobs
+2025-06-10T21:29:33.230260-0500 | ERROR |    ⏱️ Time: 0.515s
+2025-06-10T21:29:33.230300-0500 | ERROR |    💥 Error: 'Core' object has no attribute '_min_level'
+2025-06-10T21:29:33.230555-0500 | ERROR |    📚 Full traceback:
+Traceback (most recent call last):
+  File "/Users/macbookpro/M4_Projects/AIEngineer/ai_job_app/app/utils/debug_utils.py", line 182, in wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbookpro/M4_Projects/AIEngineer/ai_job_app/app/services/job_scraper.py", line 373, in scrape_google_jobs
+    "scraped_at": logger._core.levels[logger._core._min_level].name,
+                                      ^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Core' object has no attribute '_min_level'
+
+2025-06-10T21:29:33.230614-0500 | ERROR | ❌ Search attempt 4 failed: 'Core' object has no attribute '_min_level'
+2025-06-10T21:29:33.947169-0500 | ERROR | ❌ API FAILED: app.services.job_scraper.scrape_google_jobs
+2025-06-10T21:29:33.947231-0500 | ERROR |    ⏱️ Time: 0.716s
+2025-06-10T21:29:33.947285-0500 | ERROR |    💥 Error: 'Core' object has no attribute '_min_level'
+2025-06-10T21:29:33.947695-0500 | ERROR |    📚 Full traceback:
+Traceback (most recent call last):
+  File "/Users/macbookpro/M4_Projects/AIEngineer/ai_job_app/app/utils/debug_utils.py", line 182, in wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbookpro/M4_Projects/AIEngineer/ai_job_app/app/services/job_scraper.py", line 373, in scrape_google_jobs
+    "scraped_at": logger._core.levels[logger._core._min_level].name,
+                                      ^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Core' object has no attribute '_min_level'
+
+2025-06-10T21:29:33.947782-0500 | ERROR | ❌ Search attempt 5 failed: 'Core' object has no attribute '_min_level'
+2025-06-10T21:29:34.154749-0500 | ERROR | ❌ Google API Error: Status 429
+2025-06-10T21:29:34.154795-0500 | ERROR |    📄 Response: {
+  "error": {
+    "code": 429,
+    "message": "Quota exceeded for quota metric 'Queries' and limit 'Queries per day' of service 'customsearch.googleapis.com' for consumer 'project_number:877036365087'.",
+    "errors": [
+      {
+        "message": "Quota exceeded for quota metric 'Queries' and limit 'Queries per day' of service 'customsearch.googleapis.com' for consumer 'project_number:877036365087'.",
+        "domain": "global",
+        "reason": "rateLimitExceeded"
+      }
+    ],
+    "status":...
+2025-06-10T21:29:34.155072-0500 | ERROR | ❌ Failed to get search results from Google API
+2025-06-10T21:29:36.410783-0500 | ERROR | ❌ Google API Error: Status 429
+2025-06-10T21:29:36.410836-0500 | ERROR |    📄 Response: {
+  "error": {
+    "code": 429,
+    "message": "Quota exceeded for quota metric 'Queries' and limit 'Queries per day' of service 'customsearch.googleapis.com' for consumer 'project_number:877036365087'.",
+    "errors": [
+      {
+        "message": "Quota exceeded for quota metric 'Queries' and limit 'Queries per day' of service 'customsearch.googleapis.com' for consumer 'project_number:877036365087'.",
+        "domain": "global",
+        "reason": "rateLimitExceeded"
+      }
+    ],
+    "status":...
+2025-06-10T21:29:36.411134-0500 | ERROR | ❌ Failed to get search results from Google API
+2025-06-10T21:29:39.066090-0500 | ERROR | ❌ API FAILED: app.services.job_scraper.scrape_google_jobs
+2025-06-10T21:29:39.066159-0500 | ERROR |    ⏱️ Time: 0.649s
+2025-06-10T21:29:39.066219-0500 | ERROR |    💥 Error: 'Core' object has no attribute '_min_level'
+2025-06-10T21:29:39.066647-0500 | ERROR |    📚 Full traceback:
+Traceback (most recent call last):
+  File "/Users/macbookpro/M4_Projects/AIEngineer/ai_job_app/app/utils/debug_utils.py", line 182, in wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbookpro/M4_Projects/AIEngineer/ai_job_app/app/services/job_scraper.py", line 373, in scrape_google_jobs
+    "scraped_at": logger._core.levels[logger._core._min_level].name,
+                                      ^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Core' object has no attribute '_min_level'
+
+2025-06-10T21:29:39.066761-0500 | ERROR | ❌ Search attempt 8 failed: 'Core' object has no attribute '_min_level'
+2025-06-10T21:29:39.179569-0500 | ERROR | ❌ Google API Error: Status 429
+2025-06-10T21:29:39.179620-0500 | ERROR |    📄 Response: {
+  "error": {
+    "code": 429,
+    "message": "Quota exceeded for quota metric 'Queries' and limit 'Queries per day' of service 'customsearch.googleapis.com' for consumer 'project_number:877036365087'.",
+    "errors": [
+      {
+        "message": "Quota exceeded for quota metric 'Queries' and limit 'Queries per day' of service 'customsearch.googleapis.com' for consumer 'project_number:877036365087'.",
+        "domain": "global",
+        "reason": "rateLimitExceeded"
+      }
+    ],
+    "status":...
+2025-06-10T21:29:39.179909-0500 | ERROR | ❌ Failed to get search results from Google API
+2025-06-10T21:29:41.301558-0500 | ERROR | ❌ Google API Error: Status 429
+2025-06-10T21:29:41.301628-0500 | ERROR |    📄 Response: {
+  "error": {
+    "code": 429,
+    "message": "Quota exceeded for quota metric 'Queries' and limit 'Queries per day' of service 'customsearch.googleapis.com' for consumer 'project_number:877036365087'.",
+    "errors": [
+      {
+        "message": "Quota exceeded for quota metric 'Queries' and limit 'Queries per day' of service 'customsearch.googleapis.com' for consumer 'project_number:877036365087'.",
+        "domain": "global",
+        "reason": "rateLimitExceeded"
+      }
+    ],
+    "status":...
+2025-06-10T21:29:41.301992-0500 | ERROR | ❌ Failed to get search results from Google API
+2025-06-10T21:30:34.087191-0500 | ERROR | ❌ Google API Error: Status 429
+2025-06-10T21:30:34.087377-0500 | ERROR |    📄 Response: {
+  "error": {
+    "code": 429,
+    "message": "Quota exceeded for quota metric 'Queries' and limit 'Queries per day' of service 'customsearch.googleapis.com' for consumer 'project_number:877036365087'.",
+    "errors": [
+      {
+        "message": "Quota exceeded for quota metric 'Queries' and limit 'Queries per day' of service 'customsearch.googleapis.com' for consumer 'project_number:877036365087'.",
+        "domain": "global",
+        "reason": "rateLimitExceeded"
+      }
+    ],
+    "status":...
+2025-06-10T21:30:34.088187-0500 | ERROR | ❌ Failed to get search results from Google API
+2025-06-10T21:30:36.259744-0500 | ERROR | ❌ Google API Error: Status 429
+2025-06-10T21:30:36.259800-0500 | ERROR |    📄 Response: {
+  "error": {
+    "code": 429,
+    "message": "Quota exceeded for quota metric 'Queries' and limit 'Queries per day' of service 'customsearch.googleapis.com' for consumer 'project_number:877036365087'.",
+    "errors": [
+      {
+        "message": "Quota exceeded for quota metric 'Queries' and limit 'Queries per day' of service 'customsearch.googleapis.com' for consumer 'project_number:877036365087'.",
+        "domain": "global",
+        "reason": "rateLimitExceeded"
+      }
+    ],
+    "status":...
+2025-06-10T21:30:36.260111-0500 | ERROR | ❌ Failed to get search results from Google API
+2025-06-10T21:30:38.826630-0500 | ERROR | ❌ API FAILED: app.services.job_scraper.scrape_google_jobs
+2025-06-10T21:30:38.826699-0500 | ERROR |    ⏱️ Time: 0.560s
+2025-06-10T21:30:38.826756-0500 | ERROR |    💥 Error: 'Core' object has no attribute '_min_level'
+2025-06-10T21:30:38.828360-0500 | ERROR |    📚 Full traceback:
+Traceback (most recent call last):
+  File "/Users/macbookpro/M4_Projects/AIEngineer/ai_job_app/app/utils/debug_utils.py", line 182, in wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbookpro/M4_Projects/AIEngineer/ai_job_app/app/services/job_scraper.py", line 373, in scrape_google_jobs
+    "scraped_at": logger._core.levels[logger._core._min_level].name,
+                                      ^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Core' object has no attribute '_min_level'
+
+2025-06-10T21:30:38.828481-0500 | ERROR | ❌ Search attempt 3 failed: 'Core' object has no attribute '_min_level'
+2025-06-10T21:30:38.943499-0500 | ERROR | ❌ Google API Error: Status 429
+2025-06-10T21:30:38.943800-0500 | ERROR |    📄 Response: {
+  "error": {
+    "code": 429,
+    "message": "Quota exceeded for quota metric 'Queries' and limit 'Queries per day' of service 'customsearch.googleapis.com' for consumer 'project_number:877036365087'.",
+    "errors": [
+      {
+        "message": "Quota exceeded for quota metric 'Queries' and limit 'Queries per day' of service 'customsearch.googleapis.com' for consumer 'project_number:877036365087'.",
+        "domain": "global",
+        "reason": "rateLimitExceeded"
+      }
+    ],
+    "status":...
+2025-06-10T21:30:38.946022-0500 | ERROR | ❌ Failed to get search results from Google API
+2025-06-10T21:30:41.063815-0500 | ERROR | ❌ Google API Error: Status 429
+2025-06-10T21:30:41.063869-0500 | ERROR |    📄 Response: {
+  "error": {
+    "code": 429,
+    "message": "Quota exceeded for quota metric 'Queries' and limit 'Queries per day' of service 'customsearch.googleapis.com' for consumer 'project_number:877036365087'.",
+    "errors": [
+      {
+        "message": "Quota exceeded for quota metric 'Queries' and limit 'Queries per day' of service 'customsearch.googleapis.com' for consumer 'project_number:877036365087'.",
+        "domain": "global",
+        "reason": "rateLimitExceeded"
+      }
+    ],
+    "status":...
+2025-06-10T21:30:41.064151-0500 | ERROR | ❌ Failed to get search results from Google API
+2025-06-10T21:30:43.240984-0500 | ERROR | ❌ Google API Error: Status 429
+2025-06-10T21:30:43.241773-0500 | ERROR |    📄 Response: {
+  "error": {
+    "code": 429,
+    "message": "Quota exceeded for quota metric 'Queries' and limit 'Queries per day' of service 'customsearch.googleapis.com' for consumer 'project_number:877036365087'.",
+    "errors": [
+      {
+        "message": "Quota exceeded for quota metric 'Queries' and limit 'Queries per day' of service 'customsearch.googleapis.com' for consumer 'project_number:877036365087'.",
+        "domain": "global",
+        "reason": "rateLimitExceeded"
+      }
+    ],
+    "status":...
+2025-06-10T21:30:43.244157-0500 | ERROR | ❌ Failed to get search results from Google API
+2025-06-10T21:30:45.459280-0500 | ERROR | ❌ Google API Error: Status 429
+2025-06-10T21:30:45.459351-0500 | ERROR |    📄 Response: {
+  "error": {
+    "code": 429,
+    "message": "Quota exceeded for quota metric 'Queries' and limit 'Queries per day' of service 'customsearch.googleapis.com' for consumer 'project_number:877036365087'.",
+    "errors": [
+      {
+        "message": "Quota exceeded for quota metric 'Queries' and limit 'Queries per day' of service 'customsearch.googleapis.com' for consumer 'project_number:877036365087'.",
+        "domain": "global",
+        "reason": "rateLimitExceeded"
+      }
+    ],
+    "status":...
+2025-06-10T21:30:45.459752-0500 | ERROR | ❌ Failed to get search results from Google API
+2025-06-10T21:30:47.707803-0500 | ERROR | ❌ Google API Error: Status 429
+2025-06-10T21:30:47.707856-0500 | ERROR |    📄 Response: {
+  "error": {
+    "code": 429,
+    "message": "Quota exceeded for quota metric 'Queries' and limit 'Queries per day' of service 'customsearch.googleapis.com' for consumer 'project_number:877036365087'.",
+    "errors": [
+      {
+        "message": "Quota exceeded for quota metric 'Queries' and limit 'Queries per day' of service 'customsearch.googleapis.com' for consumer 'project_number:877036365087'.",
+        "domain": "global",
+        "reason": "rateLimitExceeded"
+      }
+    ],
+    "status":...
+2025-06-10T21:30:47.708134-0500 | ERROR | ❌ Failed to get search results from Google API
+2025-06-10T21:30:49.835144-0500 | ERROR | ❌ Google API Error: Status 429
+2025-06-10T21:30:49.835965-0500 | ERROR |    📄 Response: {
+  "error": {
+    "code": 429,
+    "message": "Quota exceeded for quota metric 'Queries' and limit 'Queries per day' of service 'customsearch.googleapis.com' for consumer 'project_number:877036365087'.",
+    "errors": [
+      {
+        "message": "Quota exceeded for quota metric 'Queries' and limit 'Queries per day' of service 'customsearch.googleapis.com' for consumer 'project_number:877036365087'.",
+        "domain": "global",
+        "reason": "rateLimitExceeded"
+      }
+    ],
+    "status":...
+2025-06-10T21:30:49.837540-0500 | ERROR | ❌ Failed to get search results from Google API
+2025-06-10T21:30:52.009278-0500 | ERROR | ❌ Google API Error: Status 429
+2025-06-10T21:30:52.009339-0500 | ERROR |    📄 Response: {
+  "error": {
+    "code": 429,
+    "message": "Quota exceeded for quota metric 'Queries' and limit 'Queries per day' of service 'customsearch.googleapis.com' for consumer 'project_number:877036365087'.",
+    "errors": [
+      {
+        "message": "Quota exceeded for quota metric 'Queries' and limit 'Queries per day' of service 'customsearch.googleapis.com' for consumer 'project_number:877036365087'.",
+        "domain": "global",
+        "reason": "rateLimitExceeded"
+      }
+    ],
+    "status":...
+2025-06-10T21:30:52.009654-0500 | ERROR | ❌ Failed to get search results from Google API
+2025-06-10T21:33:56.867078-0500 | ERROR | ❌ Google API Error: Status 429
+2025-06-10T21:33:56.867161-0500 | ERROR |    📄 Response: {
+  "error": {
+    "code": 429,
+    "message": "Quota exceeded for quota metric 'Queries' and limit 'Queries per day' of service 'customsearch.googleapis.com' for consumer 'project_number:877036365087'.",
+    "errors": [
+      {
+        "message": "Quota exceeded for quota metric 'Queries' and limit 'Queries per day' of service 'customsearch.googleapis.com' for consumer 'project_number:877036365087'.",
+        "domain": "global",
+        "reason": "rateLimitExceeded"
+      }
+    ],
+    "status":...
+2025-06-10T21:33:56.867764-0500 | ERROR | ❌ Failed to get search results from Google API
+2025-06-10T21:35:17.443170-0500 | ERROR | ❌ HTTP ERROR: GET /debug/test-job-search
+2025-06-10T21:35:17.443521-0500 | ERROR |    ⏱️ Time: 0.001s
+2025-06-10T21:35:17.443648-0500 | ERROR |    💥 Error: name 'is_debug_mode' is not defined
+2025-06-10T21:35:17.443708-0500 | ERROR |    🆔 Checkpoint: checkpoint_213517442
+2025-06-10T21:36:51.416837-0500 | ERROR | ❌ Google API Error: Status 429
+2025-06-10T21:36:51.417148-0500 | ERROR |    📄 Response: {
+  "error": {
+    "code": 429,
+    "message": "Quota exceeded for quota metric 'Queries' and limit 'Queries per day' of service 'customsearch.googleapis.com' for consumer 'project_number:877036365087'.",
+    "errors": [
+      {
+        "message": "Quota exceeded for quota metric 'Queries' and limit 'Queries per day' of service 'customsearch.googleapis.com' for consumer 'project_number:877036365087'.",
+        "domain": "global",
+        "reason": "rateLimitExceeded"
+      }
+    ],
+    "status":...
+2025-06-10T21:36:51.417833-0500 | ERROR | ❌ Failed to get search results from Google API
+2025-06-10T21:37:41.344108-0500 | ERROR | ❌ Failed to parse selector map: Expecting value: line 1 column 1 (char 0)
+2025-06-10T21:38:38.154180-0500 | ERROR | ❌ Google API Error: Status 429
+2025-06-10T21:38:38.154329-0500 | ERROR |    📄 Response: {
+  "error": {
+    "code": 429,
+    "message": "Quota exceeded for quota metric 'Queries' and limit 'Queries per day' of service 'customsearch.googleapis.com' for consumer 'project_number:877036365087'.",
+    "errors": [
+      {
+        "message": "Quota exceeded for quota metric 'Queries' and limit 'Queries per day' of service 'customsearch.googleapis.com' for consumer 'project_number:877036365087'.",
+        "domain": "global",
+        "reason": "rateLimitExceeded"
+      }
+    ],
+    "status":...
+2025-06-10T21:38:38.155462-0500 | ERROR | ❌ Failed to get search results from Google API
+2025-06-10T21:39:25.843974-0500 | ERROR | ❌ Failed to parse selector map: Expecting value: line 1 column 1 (char 0)
+2025-06-10T21:44:19.284623-0500 | ERROR | ❌ Google API Error: Status 429
+2025-06-10T21:44:19.285570-0500 | ERROR |    📄 Response: {
+  "error": {
+    "code": 429,
+    "message": "Quota exceeded for quota metric 'Queries' and limit 'Queries per day' of service 'customsearch.googleapis.com' for consumer 'project_number:877036365087'.",
+    "errors": [
+      {
+        "message": "Quota exceeded for quota metric 'Queries' and limit 'Queries per day' of service 'customsearch.googleapis.com' for consumer 'project_number:877036365087'.",
+        "domain": "global",
+        "reason": "rateLimitExceeded"
+      }
+    ],
+    "status":...
+2025-06-10T21:44:19.286078-0500 | ERROR | ❌ Failed to get search results from Google API
+2025-06-10T21:48:34.236217-0500 | ERROR | ❌ Google API Error: Status 429
+2025-06-10T21:48:34.236297-0500 | ERROR |    📄 Response: {
+  "error": {
+    "code": 429,
+    "message": "Quota exceeded for quota metric 'Queries' and limit 'Queries per day' of service 'customsearch.googleapis.com' for consumer 'project_number:877036365087'.",
+    "errors": [
+      {
+        "message": "Quota exceeded for quota metric 'Queries' and limit 'Queries per day' of service 'customsearch.googleapis.com' for consumer 'project_number:877036365087'.",
+        "domain": "global",
+        "reason": "rateLimitExceeded"
+      }
+    ],
+    "status":...
+2025-06-10T21:48:34.236747-0500 | ERROR | ❌ Failed to get search results from Google API
+2025-06-10T21:55:24.744326-0500 | ERROR | ❌ FAILED: Form filling (124.673s)
+2025-06-10T21:55:24.745260-0500 | ERROR |    💥 Error: Page.screenshot: Target page, context or browser has been closed
+2025-06-10T21:55:24.745787-0500 | ERROR | ❌ Pipeline failed: Page.screenshot: Target page, context or browser has been closed
+2025-06-10T22:19:53.710572-0500 | ERROR | ❌ Google API Error: Status 429
+2025-06-10T22:19:53.711720-0500 | ERROR |    📄 Response: {
+  "error": {
+    "code": 429,
+    "message": "Quota exceeded for quota metric 'Queries' and limit 'Queries per day' of service 'customsearch.googleapis.com' for consumer 'project_number:877036365087'.",
+    "errors": [
+      {
+        "message": "Quota exceeded for quota metric 'Queries' and limit 'Queries per day' of service 'customsearch.googleapis.com' for consumer 'project_number:877036365087'.",
+        "domain": "global",
+        "reason": "rateLimitExceeded"
+      }
+    ],
+    "status":...
+2025-06-10T22:19:53.712808-0500 | ERROR | ❌ Failed to get search results from Google API
+2025-06-10T22:47:21.306823-0500 | ERROR | ❌ No results from enhanced search
+2025-06-10T22:50:07.337651-0500 | ERROR | ❌ No results from enhanced search
+2025-06-10T22:53:50.987363-0500 | ERROR | ❌ Failed to parse selector map: Expecting value: line 1 column 1 (char 0)
+2025-06-10T22:53:50.987814-0500 | ERROR | 🔍 Problematic selector_map content: To extract the input fields and their corresponding CSS selectors from the given HTML, we need to parse the HTML content and identify the input elements. However, the provided HTML snippet seems to be incomplete and does not contain any input fields. 
+
+If there were input fields, the process would involve:
+
+1. Parsing the HTML to locate all `<input>` elements.
+2. Extracting the `name` attribute from each input element to use as the key in the JSON object.
+3. Constructing a CSS selector for each input element, which could be based on attributes like `id`, `class`, or `name`.
+
+Since the HTML provided does not include any input fields, I cannot generate the JSON mapping as requested. If you have a complete HTML document or specific sections with input fields, please provide them, and I can help extract the necessary information.

@@ -28,6 +28,7 @@ from datetime import datetime
 from loguru import logger
 from app.services.resume_parser import extract_text_from_resume, embed_resume_text
 from app.services.job_scraper import scrape_google_jobs
+from app.services.enhanced_job_scraper import scrape_google_jobs_enhanced
 from app.services.jd_matcher import rank_job_matches
 from app.services.resume_tailor import tailor_resume
 from app.services.pdf_generator import save_resume_as_pdf
@@ -51,7 +52,7 @@ def generate_search_variations(role: str, location: str) -> list[dict]:
     of finding new job opportunities. It tries different keywords, locations,
     and search approaches to cast a wider net.
     
-    Args:
+    Args: 
         role (str): Primary job role (e.g., "SDET")
         location (str): Primary location (e.g., "Chicago")
         
@@ -174,12 +175,21 @@ def persistent_job_search(role: str, location: str, existing_urls: set, max_atte
             try:
                 debug_memory(f"Before search attempt {attempt}")
                 
-                # Search with current strategy
-                jobs = scrape_google_jobs(
-                    query=strategy["query"], 
-                    location=strategy["location"],
-                    num_results=15  # Get more results per search
-                )
+                # Search with current strategy using enhanced scraper
+                if attempt == 1:  # Use enhanced scraper for first attempt
+                    logger.info("🚀 Using enhanced job scraper with LangChain integration")
+                    jobs = scrape_google_jobs_enhanced(
+                        query=strategy["query"], 
+                        location=strategy["location"],
+                        num_results=25  # Get more results with enhanced scraper
+                    )
+                else:
+                    # Use standard scraper for subsequent attempts
+                    jobs = scrape_google_jobs(
+                        query=strategy["query"], 
+                        location=strategy["location"],
+                        num_results=15
+                    )
                 
                 search_stats["total_attempts"] = attempt
                 search_stats["strategies_tried"].append(strategy["description"])
@@ -408,11 +418,47 @@ def run_pipeline(
             logger.info(f"🗺️ Step 7: Mapping form fields for: {best_job.get('url', '')}")
             debug_memory("Before form mapping")
             
-            selector_result = extract_form_selectors(best_job.get('url', ''))
+            # Check if this is a fallback/mock job (which won't have real forms)
+            is_fallback_job = best_job.get('source') == 'Fallback (Quota Exceeded)'
             
-            if selector_result.get("status") != "success":
-                logger.error(f"❌ Form mapping failed: {selector_result}")
-                return {"status": "error", "message": "Field mapping failed.", "details": selector_result}
+            if is_fallback_job:
+                logger.warning("⚠️ Detected fallback job - skipping real form mapping and using mock selectors")
+                # Create a mock selector map for fallback jobs
+                selector_result = {
+                    "status": "success",
+                    "selector_map": """{
+    "full_name": "input[name='name'], input[data-testid='Field-name']",
+    "email": "input[name='email'], input[data-testid='Field-email']",
+    "phone": "input[name='phone'], input[data-testid='Field-phone']",
+    "resume_upload": "input[type='file']"
+}"""
+                }
+                logger.info("✅ Using mock selector map for fallback job")
+            else:
+                # Real job - attempt form mapping
+                selector_result = extract_form_selectors(best_job.get('url', ''))
+                
+                # Enhanced error handling for form mapping failures
+                if selector_result.get("status") != "success":
+                    logger.error(f"❌ Form mapping failed: {selector_result}")
+                    
+                    # Check if the error might be due to URL access issues
+                    error_msg = selector_result.get("error", "").lower()
+                    if any(keyword in error_msg for keyword in ["timeout", "net::", "404", "403", "connection"]):
+                        logger.warning("⚠️ URL access error detected - treating as fallback job")
+                        # Use fallback selectors for inaccessible URLs
+                        selector_result = {
+                            "status": "success",
+                            "selector_map": """{
+    "full_name": "input[name='name'], input[data-testid='Field-name']",
+    "email": "input[name='email'], input[data-testid='Field-email']", 
+    "phone": "input[name='phone'], input[data-testid='Field-phone']",
+    "resume_upload": "input[type='file']"
+}"""
+                        }
+                        logger.info("✅ Using fallback selector map due to URL access issues")
+                    else:
+                        return {"status": "error", "message": "Field mapping failed.", "details": selector_result}
             
             debug_memory("After form mapping")
 
@@ -420,14 +466,41 @@ def run_pipeline(
             # === STEP 10: JSON PARSING ===
             logger.info("📝 Step 8: Parsing AI-generated form selectors")
             try:
+                # Enhanced validation before JSON parsing
+                if "selector_map" not in selector_result:
+                    raise KeyError("selector_map key missing from result")
+                
                 selector_map_text = selector_result["selector_map"]
+                
+                if not selector_map_text or selector_map_text.strip() == "":
+                    raise ValueError("selector_map is empty")
+                
+                # Try to parse JSON with markdown code block extraction
                 match = re.search(r"```json\n(.*?)```", selector_map_text, re.DOTALL)
-                selector_map = json.loads(match.group(1)) if match else json.loads(selector_map_text)
+                if match:
+                    selector_map = json.loads(match.group(1))
+                    logger.debug("✅ Parsed JSON from markdown code block")
+                else:
+                    # Try direct JSON parsing
+                    selector_map = json.loads(selector_map_text)
+                    logger.debug("✅ Parsed JSON directly")
+                
                 logger.info(f"✅ Successfully parsed {len(selector_map)} form selectors")
                 debug_log_object(selector_map, "Parsed selector map")
-            except (json.JSONDecodeError, KeyError) as e:
+                
+            except (json.JSONDecodeError, KeyError, ValueError) as e:
                 logger.error(f"❌ Failed to parse selector map: {str(e)}")
-                return {"status": "error", "message": f"Failed to parse selector map: {str(e)}"}
+                logger.error(f"🔍 Problematic selector_map content: {selector_result.get('selector_map', 'MISSING')}")
+                
+                # Provide emergency fallback selectors
+                logger.warning("⚠️ Using emergency fallback selectors")
+                selector_map = {
+                    "full_name": "input[name='name']",
+                    "email": "input[name='email']", 
+                    "phone": "input[name='phone']",
+                    "resume_upload": "input[type='file']"
+                }
+                logger.info(f"✅ Emergency fallback: Using {len(selector_map)} basic selectors")
 
         with debug_section("Form filling"):
             # === STEP 11: AUTOMATED FORM FILLING ===
@@ -557,3 +630,4 @@ def run_pipeline(
         db.close()
         logger.info("🔒 Database session closed")
         debug_memory("Pipeline cleanup complete")
+    

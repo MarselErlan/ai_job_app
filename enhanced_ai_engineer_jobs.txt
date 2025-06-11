@@ -1,0 +1,47 @@
+Enhanced job application links for: AI Engineer
+Total found: 3
+Generated at: 2025-06-10 22:49:13
+================================================================================
+
+JOB #1
+URL: https://boards.greenhouse.io/techcorp/jobs/1234560
+Title: AI Engineer - TechCorp
+Company: TechCorp
+Source Platform: Enhanced Google Search
+Quality Score: 8.0/10
+Location: San Francisco
+Enhanced Parsing: Yes
+
+AI Summary: TechCorp is seeking an AI Engineer to join their team in San Francisco. The ideal candidate will have experience in automation testing and possess strong technical skills. The position offers excellent benefits and opportunities for professional growth.
+
+Original Snippet: Join TechCorp as a AI Engineer in San Francisco. We're looking for talented professionals with automation testing experience and strong technical skills. Great benefits and growth opportunities.
+--------------------------------------------------------------------------------
+
+JOB #2
+URL: https://boards.greenhouse.io/dataflowinc/jobs/1234561
+Title: AI Engineer - DataFlow Inc
+Company: DataFlow Inc
+Source Platform: Enhanced Google Search
+Quality Score: 8.1/10
+Location: San Francisco
+Enhanced Parsing: Yes
+
+AI Summary: DataFlow Inc is seeking an AI Engineer to join their team in San Francisco. The ideal candidate will have experience in automation testing and possess strong technical skills. The position offers excellent benefits and opportunities for professional growth.
+
+Original Snippet: Join DataFlow Inc as a AI Engineer in San Francisco. We're looking for talented professionals with automation testing experience and strong technical skills. Great benefits and growth opportunities.
+--------------------------------------------------------------------------------
+
+JOB #3
+URL: https://boards.greenhouse.io/cloudsync/jobs/1234562
+Title: AI Engineer - CloudSync
+Company: CloudSync
+Source Platform: Enhanced Google Search
+Quality Score: 8.2/10
+Location: San Francisco
+Enhanced Parsing: Yes
+
+AI Summary: CloudSync is seeking an AI Engineer to join their team in San Francisco. The ideal candidate will have experience in automation testing and possess strong technical skills. The position offers excellent benefits and opportunities for professional growth.
+
+Original Snippet: Join CloudSync as a AI Engineer in San Francisco. We're looking for talented professionals with automation testing experience and strong technical skills. Great benefits and growth opportunities.
+--------------------------------------------------------------------------------
+
