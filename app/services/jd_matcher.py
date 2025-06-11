@@ -23,9 +23,13 @@ import openai
 import numpy as np  # For mathematical calculations
 from typing import List, Dict
 from dotenv import load_dotenv
+from loguru import logger
 
 load_dotenv()
+
 client = openai.OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+
+
 
 def embed_text(text: str) -> List[float]:
     response = client.embeddings.create(

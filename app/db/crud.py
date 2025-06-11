@@ -31,6 +31,7 @@ The JobApplication table stores:
 
 from sqlalchemy.orm import Session
 from sqlalchemy.exc import IntegrityError, SQLAlchemyError
+from sqlalchemy import text
 from app.db.models import JobApplication
 from loguru import logger
 from app.utils.debug_utils import debug_database, debug_memory, debug_section, debug_log_object
@@ -80,7 +81,7 @@ def validate_database_connection(db: Session) -> bool:
     """
     try:
         # Simple query to test connection
-        db.execute("SELECT 1")
+        db.execute(text("SELECT 1"))
         logger.debug("✅ Database connection healthy")
         return True
     except Exception as e:

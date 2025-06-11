@@ -29,6 +29,7 @@ load_dotenv()
 API_KEY = os.getenv("API_KEY")
 CSE_ID = os.getenv("CSE_ID")
 
+
 # API usage statistics for debugging
 _api_stats = {
     "total_requests": 0,

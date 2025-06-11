@@ -38,6 +38,9 @@ from typing import Any, Callable, Dict, List, Optional
 from loguru import logger
 import threading
 from contextlib import contextmanager
+from dotenv import load_dotenv
+
+load_dotenv()   
 
 # Debug configuration
 DEBUG_ENABLED = os.getenv("DEBUG_MODE", "true").lower() == "true"
@@ -383,7 +386,7 @@ def debug_environment() -> None:
     
     # Log relevant environment variables
     env_vars = ['DEBUG_MODE', 'PERF_LOGGING', 'MEMORY_LOGGING', 'API_LOGGING', 
-                'OPENAI_API_KEY', 'GOOGLE_API_KEY', 'NOTION_TOKEN']
+                'OPENAI_API_KEY', 'API_KEY', 'NOTION_API_KEY', 'CSE_ID', 'NOTION_DB_ID']
     for var in env_vars:
         value = os.getenv(var, 'NOT_SET')
         # Mask sensitive values

@@ -1,1 +1,630 @@
 2025-06-10T13:12:36.656976-0500 | ERROR | ❌ Error while applying to Sdet Jobs, Employment in Chicago, IL | Indeed: Expecting value: line 1 column 1 (char 0)
+2025-06-10T17:20:28.103679-0500 | ERROR | ❌ Database connection failed on startup: Textual SQL expression 'SELECT 1' should be explicitly declared as text('SELECT 1')
+2025-06-10T17:20:46.641345-0500 | ERROR | ❌ Health check database error: Textual SQL expression 'SELECT 1' should be explicitly declared as text('SELECT 1')
+2025-06-10T17:51:43.648613-0500 | ERROR | ❌ Database connection failed on startup: Textual SQL expression 'SELECT 1' should be explicitly declared as text('SELECT 1')
+2025-06-10T17:52:03.988613-0500 | ERROR | ❌ FAILED: Resume processing (0.551s)
+2025-06-10T17:52:03.989616-0500 | ERROR |    💥 Error: Error code: 401 - {'error': {'message': 'Incorrect API key provided: your_ope********here. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+2025-06-10T17:52:03.990471-0500 | ERROR | ❌ FAILED app.tasks.pipeline.run_pipeline
+2025-06-10T17:52:03.990528-0500 | ERROR |    ⏱️ Time: 0.554s
+2025-06-10T17:52:03.990576-0500 | ERROR |    💥 Error: "'error'"
+2025-06-10T17:52:03.996136-0500 | ERROR |    📚 Stack trace:
+Traceback (most recent call last):
+  File "/Users/macbookpro/M4_Projects/AIEngineer/ai_job_app/app/tasks/pipeline.py", line 312, in run_pipeline
+    embedding = embed_resume_text(raw_text)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbookpro/M4_Projects/AIEngineer/ai_job_app/app/services/resume_parser.py", line 33, in embed_resume_text
+    response = client.embeddings.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbookpro/M4_Projects/AIEngineer/ai_job_app/venv/lib/python3.11/site-packages/openai/resources/embeddings.py", line 129, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "/Users/macbookpro/M4_Projects/AIEngineer/ai_job_app/venv/lib/python3.11/site-packages/openai/_base_client.py", line 1242, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbookpro/M4_Projects/AIEngineer/ai_job_app/venv/lib/python3.11/site-packages/openai/_base_client.py", line 1037, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: your_ope********here. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/macbookpro/M4_Projects/AIEngineer/ai_job_app/app/utils/debug_utils.py", line 129, in wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbookpro/M4_Projects/AIEngineer/ai_job_app/app/tasks/pipeline.py", line 547, in run_pipeline
+    logger.error(f"❌ Pipeline failed: {str(e)}", exc_info=True)
+  File "/Users/macbookpro/M4_Projects/AIEngineer/ai_job_app/venv/lib/python3.11/site-packages/loguru/_logger.py", line 2090, in error
+    __self._log("ERROR", False, __self._options, __message, args, kwargs)
+  File "/Users/macbookpro/M4_Projects/AIEngineer/ai_job_app/venv/lib/python3.11/site-packages/loguru/_logger.py", line 2055, in _log
+    log_record["message"] = message.format(*args, **kwargs)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: "'error'"
+
+2025-06-10T17:52:03.997134-0500 | ERROR | ❌ HTTP ERROR: POST /api/v1/pipeline/start
+2025-06-10T17:52:03.997256-0500 | ERROR |    ⏱️ Time: 0.563s
+2025-06-10T17:52:03.997315-0500 | ERROR |    💥 Error: "'error'"
+2025-06-10T17:52:03.997373-0500 | ERROR |    🆔 Checkpoint: checkpoint_175203433
+2025-06-10T18:42:34.825569-0500 | ERROR | ❌ Database connection failed on startup: Textual SQL expression 'SELECT 1' should be explicitly declared as text('SELECT 1')
+2025-06-10T18:42:45.502493-0500 | ERROR | ❌ FAILED: Resume processing (0.359s)
+2025-06-10T18:42:45.502924-0500 | ERROR |    💥 Error: Error code: 401 - {'error': {'message': 'Incorrect API key provided: your_ope********here. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+2025-06-10T18:42:45.504184-0500 | ERROR | ❌ FAILED app.tasks.pipeline.run_pipeline
+2025-06-10T18:42:45.504259-0500 | ERROR |    ⏱️ Time: 0.362s
+2025-06-10T18:42:45.504334-0500 | ERROR |    💥 Error: "'error'"
+2025-06-10T18:42:45.511540-0500 | ERROR |    📚 Stack trace:
+Traceback (most recent call last):
+  File "/Users/macbookpro/M4_Projects/AIEngineer/ai_job_app/app/tasks/pipeline.py", line 312, in run_pipeline
+    embedding = embed_resume_text(raw_text)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbookpro/M4_Projects/AIEngineer/ai_job_app/app/services/resume_parser.py", line 33, in embed_resume_text
+    response = client.embeddings.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbookpro/M4_Projects/AIEngineer/ai_job_app/venv/lib/python3.11/site-packages/openai/resources/embeddings.py", line 129, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "/Users/macbookpro/M4_Projects/AIEngineer/ai_job_app/venv/lib/python3.11/site-packages/openai/_base_client.py", line 1242, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbookpro/M4_Projects/AIEngineer/ai_job_app/venv/lib/python3.11/site-packages/openai/_base_client.py", line 1037, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: your_ope********here. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/macbookpro/M4_Projects/AIEngineer/ai_job_app/app/utils/debug_utils.py", line 129, in wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbookpro/M4_Projects/AIEngineer/ai_job_app/app/tasks/pipeline.py", line 547, in run_pipeline
+    logger.error(f"❌ Pipeline failed: {str(e)}", exc_info=True)
+  File "/Users/macbookpro/M4_Projects/AIEngineer/ai_job_app/venv/lib/python3.11/site-packages/loguru/_logger.py", line 2090, in error
+    __self._log("ERROR", False, __self._options, __message, args, kwargs)
+  File "/Users/macbookpro/M4_Projects/AIEngineer/ai_job_app/venv/lib/python3.11/site-packages/loguru/_logger.py", line 2055, in _log
+    log_record["message"] = message.format(*args, **kwargs)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: "'error'"
+
+2025-06-10T18:42:45.512502-0500 | ERROR | ❌ HTTP ERROR: POST /api/v1/pipeline/start
+2025-06-10T18:42:45.512664-0500 | ERROR |    ⏱️ Time: 0.373s
+2025-06-10T18:42:45.512748-0500 | ERROR |    💥 Error: "'error'"
+2025-06-10T18:42:45.512813-0500 | ERROR |    🆔 Checkpoint: checkpoint_184245139
+2025-06-10T18:49:43.876104-0500 | ERROR | ❌ Database connection failed on startup: Textual SQL expression 'SELECT 1' should be explicitly declared as text('SELECT 1')
+2025-06-10T18:49:51.726887-0500 | ERROR | ❌ FAILED: Resume processing (0.377s)
+2025-06-10T18:49:51.727382-0500 | ERROR |    💥 Error: Error code: 401 - {'error': {'message': 'Incorrect API key provided: your_ope********here. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+2025-06-10T18:49:51.728819-0500 | ERROR | ❌ FAILED app.tasks.pipeline.run_pipeline
+2025-06-10T18:49:51.728909-0500 | ERROR |    ⏱️ Time: 0.380s
+2025-06-10T18:49:51.729014-0500 | ERROR |    💥 Error: "'error'"
+2025-06-10T18:49:51.736528-0500 | ERROR |    📚 Stack trace:
+Traceback (most recent call last):
+  File "/Users/macbookpro/M4_Projects/AIEngineer/ai_job_app/app/tasks/pipeline.py", line 312, in run_pipeline
+    embedding = embed_resume_text(raw_text)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbookpro/M4_Projects/AIEngineer/ai_job_app/app/services/resume_parser.py", line 33, in embed_resume_text
+    response = client.embeddings.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbookpro/M4_Projects/AIEngineer/ai_job_app/venv/lib/python3.11/site-packages/openai/resources/embeddings.py", line 129, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "/Users/macbookpro/M4_Projects/AIEngineer/ai_job_app/venv/lib/python3.11/site-packages/openai/_base_client.py", line 1242, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbookpro/M4_Projects/AIEngineer/ai_job_app/venv/lib/python3.11/site-packages/openai/_base_client.py", line 1037, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: your_ope********here. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/macbookpro/M4_Projects/AIEngineer/ai_job_app/app/utils/debug_utils.py", line 129, in wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbookpro/M4_Projects/AIEngineer/ai_job_app/app/tasks/pipeline.py", line 547, in run_pipeline
+    logger.error(f"❌ Pipeline failed: {str(e)}", exc_info=True)
+  File "/Users/macbookpro/M4_Projects/AIEngineer/ai_job_app/venv/lib/python3.11/site-packages/loguru/_logger.py", line 2090, in error
+    __self._log("ERROR", False, __self._options, __message, args, kwargs)
+  File "/Users/macbookpro/M4_Projects/AIEngineer/ai_job_app/venv/lib/python3.11/site-packages/loguru/_logger.py", line 2055, in _log
+    log_record["message"] = message.format(*args, **kwargs)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: "'error'"
+
+2025-06-10T18:49:51.737676-0500 | ERROR | ❌ HTTP ERROR: POST /api/v1/pipeline/start
+2025-06-10T18:49:51.737792-0500 | ERROR |    ⏱️ Time: 0.390s
+2025-06-10T18:49:51.737862-0500 | ERROR |    💥 Error: "'error'"
+2025-06-10T18:49:51.737922-0500 | ERROR |    🆔 Checkpoint: checkpoint_184951347
+2025-06-10T19:34:54.226089-0500 | ERROR | ❌ Database connection failed on startup: Textual SQL expression 'SELECT 1' should be explicitly declared as text('SELECT 1')
+2025-06-10T19:34:57.825838-0500 | ERROR | ❌ Database connection failed on startup: Textual SQL expression 'SELECT 1' should be explicitly declared as text('SELECT 1')
+2025-06-10T19:35:20.397214-0500 | ERROR | ❌ Database connection failed on startup: Textual SQL expression 'SELECT 1' should be explicitly declared as text('SELECT 1')
+2025-06-10T19:35:23.783598-0500 | ERROR | ❌ FAILED: Resume processing (0.447s)
+2025-06-10T19:35:23.783891-0500 | ERROR |    💥 Error: Error code: 401 - {'error': {'message': 'Incorrect API key provided: your_ope********here. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+2025-06-10T19:35:23.784732-0500 | ERROR | ❌ FAILED app.tasks.pipeline.run_pipeline
+2025-06-10T19:35:23.784784-0500 | ERROR |    ⏱️ Time: 0.449s
+2025-06-10T19:35:23.784830-0500 | ERROR |    💥 Error: "'error'"
+2025-06-10T19:35:23.789979-0500 | ERROR |    📚 Stack trace:
+Traceback (most recent call last):
+  File "/Users/macbookpro/M4_Projects/AIEngineer/ai_job_app/app/tasks/pipeline.py", line 312, in run_pipeline
+    embedding = embed_resume_text(raw_text)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbookpro/M4_Projects/AIEngineer/ai_job_app/app/services/resume_parser.py", line 33, in embed_resume_text
+    response = client.embeddings.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbookpro/M4_Projects/AIEngineer/ai_job_app/venv/lib/python3.11/site-packages/openai/resources/embeddings.py", line 129, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "/Users/macbookpro/M4_Projects/AIEngineer/ai_job_app/venv/lib/python3.11/site-packages/openai/_base_client.py", line 1242, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbookpro/M4_Projects/AIEngineer/ai_job_app/venv/lib/python3.11/site-packages/openai/_base_client.py", line 1037, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: your_ope********here. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/macbookpro/M4_Projects/AIEngineer/ai_job_app/app/utils/debug_utils.py", line 129, in wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbookpro/M4_Projects/AIEngineer/ai_job_app/app/tasks/pipeline.py", line 547, in run_pipeline
+    logger.error(f"❌ Pipeline failed: {str(e)}", exc_info=True)
+  File "/Users/macbookpro/M4_Projects/AIEngineer/ai_job_app/venv/lib/python3.11/site-packages/loguru/_logger.py", line 2090, in error
+    __self._log("ERROR", False, __self._options, __message, args, kwargs)
+  File "/Users/macbookpro/M4_Projects/AIEngineer/ai_job_app/venv/lib/python3.11/site-packages/loguru/_logger.py", line 2055, in _log
+    log_record["message"] = message.format(*args, **kwargs)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: "'error'"
+
+2025-06-10T19:35:23.790866-0500 | ERROR | ❌ HTTP ERROR: POST /api/v1/pipeline/start
+2025-06-10T19:35:23.790968-0500 | ERROR |    ⏱️ Time: 0.457s
+2025-06-10T19:35:23.791020-0500 | ERROR |    💥 Error: "'error'"
+2025-06-10T19:35:23.791064-0500 | ERROR |    🆔 Checkpoint: checkpoint_193523333
+2025-06-10T19:41:34.128392-0500 | ERROR | ❌ Database connection failed on startup: Textual SQL expression 'SELECT 1' should be explicitly declared as text('SELECT 1')
+2025-06-10T19:41:35.918271-0500 | ERROR | ❌ Database connection failed on startup: Textual SQL expression 'SELECT 1' should be explicitly declared as text('SELECT 1')
+2025-06-10T19:41:39.651970-0500 | ERROR | ❌ Database connection failed on startup: Textual SQL expression 'SELECT 1' should be explicitly declared as text('SELECT 1')
+2025-06-10T19:41:41.040774-0500 | ERROR | ❌ Database connection failed on startup: Textual SQL expression 'SELECT 1' should be explicitly declared as text('SELECT 1')
+2025-06-10T19:41:59.410207-0500 | ERROR | ❌ Database connection failed on startup: Textual SQL expression 'SELECT 1' should be explicitly declared as text('SELECT 1')
+2025-06-10T19:42:02.940075-0500 | ERROR | ❌ Database connection failed on startup: Textual SQL expression 'SELECT 1' should be explicitly declared as text('SELECT 1')
+2025-06-10T19:42:27.252958-0500 | ERROR | ❌ Database connection failed on startup: Textual SQL expression 'SELECT 1' should be explicitly declared as text('SELECT 1')
+2025-06-10T19:42:31.288695-0500 | ERROR | ❌ Database connection failed on startup: Textual SQL expression 'SELECT 1' should be explicitly declared as text('SELECT 1')
+2025-06-10T19:42:32.717759-0500 | ERROR | ❌ Database connection failed on startup: Textual SQL expression 'SELECT 1' should be explicitly declared as text('SELECT 1')
+2025-06-10T19:42:34.142350-0500 | ERROR | ❌ Database connection failed on startup: Textual SQL expression 'SELECT 1' should be explicitly declared as text('SELECT 1')
+2025-06-10T19:42:36.304795-0500 | ERROR | ❌ Database connection failed on startup: Textual SQL expression 'SELECT 1' should be explicitly declared as text('SELECT 1')
+2025-06-10T19:43:07.109841-0500 | ERROR | ❌ Database connection failed on startup: Textual SQL expression 'SELECT 1' should be explicitly declared as text('SELECT 1')
+2025-06-10T19:43:08.502623-0500 | ERROR | ❌ Database connection failed on startup: Textual SQL expression 'SELECT 1' should be explicitly declared as text('SELECT 1')
+2025-06-10T19:43:14.986884-0500 | ERROR | ❌ Database connection failed on startup: Textual SQL expression 'SELECT 1' should be explicitly declared as text('SELECT 1')
+2025-06-10T19:43:16.373443-0500 | ERROR | ❌ Database connection failed on startup: Textual SQL expression 'SELECT 1' should be explicitly declared as text('SELECT 1')
+2025-06-10T19:44:38.317164-0500 | ERROR | ❌ Database connection failed on startup: Textual SQL expression 'SELECT 1' should be explicitly declared as text('SELECT 1')
+2025-06-10T19:44:44.911650-0500 | ERROR | ❌ FAILED: Resume processing (0.379s)
+2025-06-10T19:44:44.911913-0500 | ERROR |    💥 Error: Error code: 401 - {'error': {'message': 'Incorrect API key provided: your_ope********here. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+2025-06-10T19:44:44.912702-0500 | ERROR | ❌ FAILED app.tasks.pipeline.run_pipeline
+2025-06-10T19:44:44.912754-0500 | ERROR |    ⏱️ Time: 0.381s
+2025-06-10T19:44:44.912797-0500 | ERROR |    💥 Error: "'error'"
+2025-06-10T19:44:44.917730-0500 | ERROR |    📚 Stack trace:
+Traceback (most recent call last):
+  File "/Users/macbookpro/M4_Projects/AIEngineer/ai_job_app/app/tasks/pipeline.py", line 312, in run_pipeline
+    embedding = embed_resume_text(raw_text)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbookpro/M4_Projects/AIEngineer/ai_job_app/app/services/resume_parser.py", line 33, in embed_resume_text
+    response = client.embeddings.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbookpro/M4_Projects/AIEngineer/ai_job_app/venv/lib/python3.11/site-packages/openai/resources/embeddings.py", line 129, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "/Users/macbookpro/M4_Projects/AIEngineer/ai_job_app/venv/lib/python3.11/site-packages/openai/_base_client.py", line 1242, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbookpro/M4_Projects/AIEngineer/ai_job_app/venv/lib/python3.11/site-packages/openai/_base_client.py", line 1037, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: your_ope********here. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/macbookpro/M4_Projects/AIEngineer/ai_job_app/app/utils/debug_utils.py", line 129, in wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbookpro/M4_Projects/AIEngineer/ai_job_app/app/tasks/pipeline.py", line 547, in run_pipeline
+    logger.error(f"❌ Pipeline failed: {str(e)}", exc_info=True)
+  File "/Users/macbookpro/M4_Projects/AIEngineer/ai_job_app/venv/lib/python3.11/site-packages/loguru/_logger.py", line 2090, in error
+    __self._log("ERROR", False, __self._options, __message, args, kwargs)
+  File "/Users/macbookpro/M4_Projects/AIEngineer/ai_job_app/venv/lib/python3.11/site-packages/loguru/_logger.py", line 2055, in _log
+    log_record["message"] = message.format(*args, **kwargs)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: "'error'"
+
+2025-06-10T19:44:44.918535-0500 | ERROR | ❌ HTTP ERROR: POST /api/v1/pipeline/start
+2025-06-10T19:44:44.918621-0500 | ERROR |    ⏱️ Time: 0.389s
+2025-06-10T19:44:44.918669-0500 | ERROR |    💥 Error: "'error'"
+2025-06-10T19:44:44.918712-0500 | ERROR |    🆔 Checkpoint: checkpoint_194444530
+2025-06-10T19:47:59.091658-0500 | ERROR | ❌ Database connection failed on startup: Textual SQL expression 'SELECT 1' should be explicitly declared as text('SELECT 1')
+2025-06-10T19:48:56.980442-0500 | ERROR | ❌ Database connection failed on startup: Textual SQL expression 'SELECT 1' should be explicitly declared as text('SELECT 1')
+2025-06-10T19:49:04.412339-0500 | ERROR | ❌ Database connection failed on startup: Textual SQL expression 'SELECT 1' should be explicitly declared as text('SELECT 1')
+2025-06-10T19:49:25.698429-0500 | ERROR | ❌ Database connection failed on startup: Textual SQL expression 'SELECT 1' should be explicitly declared as text('SELECT 1')
+2025-06-10T19:49:26.909974-0500 | ERROR | ❌ Database connection failed on startup: Textual SQL expression 'SELECT 1' should be explicitly declared as text('SELECT 1')
+2025-06-10T19:49:27.801538-0500 | ERROR | ❌ Database connection failed on startup: Textual SQL expression 'SELECT 1' should be explicitly declared as text('SELECT 1')
+2025-06-10T19:49:46.455380-0500 | ERROR | ❌ Database connection failed on startup: Textual SQL expression 'SELECT 1' should be explicitly declared as text('SELECT 1')
+2025-06-10T19:50:09.778800-0500 | ERROR | ❌ Database connection failed on startup: Textual SQL expression 'SELECT 1' should be explicitly declared as text('SELECT 1')
+2025-06-10T19:51:45.846037-0500 | ERROR | ❌ Database connection failed on startup: Textual SQL expression 'SELECT 1' should be explicitly declared as text('SELECT 1')
+2025-06-10T19:52:51.175523-0500 | ERROR | ❌ Database connection failed on startup: Textual SQL expression 'SELECT 1' should be explicitly declared as text('SELECT 1')
+2025-06-10T19:56:16.272126-0500 | ERROR | ❌ Database connection failed on startup: Textual SQL expression 'SELECT 1' should be explicitly declared as text('SELECT 1')
+2025-06-10T19:56:17.568588-0500 | ERROR | ❌ Database connection failed on startup: Textual SQL expression 'SELECT 1' should be explicitly declared as text('SELECT 1')
+2025-06-10T20:00:56.347348-0500 | ERROR | ❌ Database connection failed on startup: Textual SQL expression 'SELECT 1' should be explicitly declared as text('SELECT 1')
+2025-06-10T20:01:05.399166-0500 | ERROR | ❌ Database connection failed on startup: Textual SQL expression 'SELECT 1' should be explicitly declared as text('SELECT 1')
+2025-06-10T20:04:28.780073-0500 | ERROR | ❌ Database connection failed on startup: Textual SQL expression 'SELECT 1' should be explicitly declared as text('SELECT 1')
+2025-06-10T20:04:35.094092-0500 | ERROR | ❌ Database connection failed on startup: Textual SQL expression 'SELECT 1' should be explicitly declared as text('SELECT 1')
+2025-06-10T20:08:42.400374-0500 | ERROR | ❌ Database connection failed on startup: Textual SQL expression 'SELECT 1' should be explicitly declared as text('SELECT 1')
+2025-06-10T20:09:03.301312-0500 | ERROR | ❌ Database connection failed on startup: Textual SQL expression 'SELECT 1' should be explicitly declared as text('SELECT 1')
+2025-06-10T20:09:05.909570-0500 | ERROR | ❌ Database connection failed on startup: Textual SQL expression 'SELECT 1' should be explicitly declared as text('SELECT 1')
+2025-06-10T20:09:16.712537-0500 | ERROR | ❌ Database connection failed: Textual SQL expression 'SELECT 1' should be explicitly declared as text('SELECT 1')
+2025-06-10T20:09:16.712655-0500 | ERROR | ❌ Cannot fetch URLs: Database connection failed
+2025-06-10T20:09:17.017906-0500 | ERROR | ❌ Google API Error: Status 400
+2025-06-10T20:09:17.017969-0500 | ERROR |    📄 Response: {
+  "error": {
+    "code": 400,
+    "message": "Request contains an invalid argument.",
+    "errors": [
+      {
+        "message": "Request contains an invalid argument.",
+        "domain": "global",
+        "reason": "badRequest"
+      }
+    ],
+    "status": "INVALID_ARGUMENT"
+  }
+}
+...
+2025-06-10T20:09:17.018324-0500 | ERROR | ❌ Failed to get search results from Google API
+2025-06-10T20:09:19.201797-0500 | ERROR | ❌ Google API Error: Status 400
+2025-06-10T20:09:19.201882-0500 | ERROR |    📄 Response: {
+  "error": {
+    "code": 400,
+    "message": "Request contains an invalid argument.",
+    "errors": [
+      {
+        "message": "Request contains an invalid argument.",
+        "domain": "global",
+        "reason": "badRequest"
+      }
+    ],
+    "status": "INVALID_ARGUMENT"
+  }
+}
+...
+2025-06-10T20:09:19.202359-0500 | ERROR | ❌ Failed to get search results from Google API
+2025-06-10T20:09:21.389043-0500 | ERROR | ❌ Google API Error: Status 400
+2025-06-10T20:09:21.389129-0500 | ERROR |    📄 Response: {
+  "error": {
+    "code": 400,
+    "message": "Request contains an invalid argument.",
+    "errors": [
+      {
+        "message": "Request contains an invalid argument.",
+        "domain": "global",
+        "reason": "badRequest"
+      }
+    ],
+    "status": "INVALID_ARGUMENT"
+  }
+}
+...
+2025-06-10T20:09:21.389563-0500 | ERROR | ❌ Failed to get search results from Google API
+2025-06-10T20:09:23.523976-0500 | ERROR | ❌ Google API Error: Status 400
+2025-06-10T20:09:23.524031-0500 | ERROR |    📄 Response: {
+  "error": {
+    "code": 400,
+    "message": "Request contains an invalid argument.",
+    "errors": [
+      {
+        "message": "Request contains an invalid argument.",
+        "domain": "global",
+        "reason": "badRequest"
+      }
+    ],
+    "status": "INVALID_ARGUMENT"
+  }
+}
+...
+2025-06-10T20:09:23.524324-0500 | ERROR | ❌ Failed to get search results from Google API
+2025-06-10T20:09:25.637843-0500 | ERROR | ❌ Google API Error: Status 400
+2025-06-10T20:09:25.637918-0500 | ERROR |    📄 Response: {
+  "error": {
+    "code": 400,
+    "message": "Request contains an invalid argument.",
+    "errors": [
+      {
+        "message": "Request contains an invalid argument.",
+        "domain": "global",
+        "reason": "badRequest"
+      }
+    ],
+    "status": "INVALID_ARGUMENT"
+  }
+}
+...
+2025-06-10T20:09:25.638274-0500 | ERROR | ❌ Failed to get search results from Google API
+2025-06-10T20:09:27.770716-0500 | ERROR | ❌ Google API Error: Status 400
+2025-06-10T20:09:27.770820-0500 | ERROR |    📄 Response: {
+  "error": {
+    "code": 400,
+    "message": "Request contains an invalid argument.",
+    "errors": [
+      {
+        "message": "Request contains an invalid argument.",
+        "domain": "global",
+        "reason": "badRequest"
+      }
+    ],
+    "status": "INVALID_ARGUMENT"
+  }
+}
+...
+2025-06-10T20:09:27.771397-0500 | ERROR | ❌ Failed to get search results from Google API
+2025-06-10T20:09:29.966053-0500 | ERROR | ❌ Google API Error: Status 400
+2025-06-10T20:09:29.966117-0500 | ERROR |    📄 Response: {
+  "error": {
+    "code": 400,
+    "message": "Request contains an invalid argument.",
+    "errors": [
+      {
+        "message": "Request contains an invalid argument.",
+        "domain": "global",
+        "reason": "badRequest"
+      }
+    ],
+    "status": "INVALID_ARGUMENT"
+  }
+}
+...
+2025-06-10T20:09:29.966454-0500 | ERROR | ❌ Failed to get search results from Google API
+2025-06-10T20:09:32.180641-0500 | ERROR | ❌ Google API Error: Status 400
+2025-06-10T20:09:32.180704-0500 | ERROR |    📄 Response: {
+  "error": {
+    "code": 400,
+    "message": "Request contains an invalid argument.",
+    "errors": [
+      {
+        "message": "Request contains an invalid argument.",
+        "domain": "global",
+        "reason": "badRequest"
+      }
+    ],
+    "status": "INVALID_ARGUMENT"
+  }
+}
+...
+2025-06-10T20:09:32.180996-0500 | ERROR | ❌ Failed to get search results from Google API
+2025-06-10T20:09:34.305927-0500 | ERROR | ❌ Google API Error: Status 400
+2025-06-10T20:09:34.306047-0500 | ERROR |    📄 Response: {
+  "error": {
+    "code": 400,
+    "message": "Request contains an invalid argument.",
+    "errors": [
+      {
+        "message": "Request contains an invalid argument.",
+        "domain": "global",
+        "reason": "badRequest"
+      }
+    ],
+    "status": "INVALID_ARGUMENT"
+  }
+}
+...
+2025-06-10T20:09:34.306673-0500 | ERROR | ❌ Failed to get search results from Google API
+2025-06-10T20:09:36.428135-0500 | ERROR | ❌ Google API Error: Status 400
+2025-06-10T20:09:36.428183-0500 | ERROR |    📄 Response: {
+  "error": {
+    "code": 400,
+    "message": "Request contains an invalid argument.",
+    "errors": [
+      {
+        "message": "Request contains an invalid argument.",
+        "domain": "global",
+        "reason": "badRequest"
+      }
+    ],
+    "status": "INVALID_ARGUMENT"
+  }
+}
+...
+2025-06-10T20:09:36.428467-0500 | ERROR | ❌ Failed to get search results from Google API
+2025-06-10T20:10:50.439945-0500 | ERROR | ❌ Database connection failed: Textual SQL expression 'SELECT 1' should be explicitly declared as text('SELECT 1')
+2025-06-10T20:10:50.441236-0500 | ERROR | ❌ Cannot fetch URLs: Database connection failed
+2025-06-10T20:10:50.560190-0500 | ERROR | ❌ Google API Error: Status 400
+2025-06-10T20:10:50.560325-0500 | ERROR |    📄 Response: {
+  "error": {
+    "code": 400,
+    "message": "Request contains an invalid argument.",
+    "errors": [
+      {
+        "message": "Request contains an invalid argument.",
+        "domain": "global",
+        "reason": "badRequest"
+      }
+    ],
+    "status": "INVALID_ARGUMENT"
+  }
+}
+...
+2025-06-10T20:10:50.561008-0500 | ERROR | ❌ Failed to get search results from Google API
+2025-06-10T20:10:52.804374-0500 | ERROR | ❌ Google API Error: Status 400
+2025-06-10T20:10:52.804468-0500 | ERROR |    📄 Response: {
+  "error": {
+    "code": 400,
+    "message": "Request contains an invalid argument.",
+    "errors": [
+      {
+        "message": "Request contains an invalid argument.",
+        "domain": "global",
+        "reason": "badRequest"
+      }
+    ],
+    "status": "INVALID_ARGUMENT"
+  }
+}
+...
+2025-06-10T20:10:52.805017-0500 | ERROR | ❌ Failed to get search results from Google API
+2025-06-10T20:10:55.060740-0500 | ERROR | ❌ Google API Error: Status 400
+2025-06-10T20:10:55.060795-0500 | ERROR |    📄 Response: {
+  "error": {
+    "code": 400,
+    "message": "Request contains an invalid argument.",
+    "errors": [
+      {
+        "message": "Request contains an invalid argument.",
+        "domain": "global",
+        "reason": "badRequest"
+      }
+    ],
+    "status": "INVALID_ARGUMENT"
+  }
+}
+...
+2025-06-10T20:10:55.061085-0500 | ERROR | ❌ Failed to get search results from Google API
+2025-06-10T20:10:57.232105-0500 | ERROR | ❌ Google API Error: Status 400
+2025-06-10T20:10:57.232445-0500 | ERROR |    📄 Response: {
+  "error": {
+    "code": 400,
+    "message": "Request contains an invalid argument.",
+    "errors": [
+      {
+        "message": "Request contains an invalid argument.",
+        "domain": "global",
+        "reason": "badRequest"
+      }
+    ],
+    "status": "INVALID_ARGUMENT"
+  }
+}
+...
+2025-06-10T20:10:57.233696-0500 | ERROR | ❌ Failed to get search results from Google API
+2025-06-10T20:10:59.361974-0500 | ERROR | ❌ Google API Error: Status 400
+2025-06-10T20:10:59.362024-0500 | ERROR |    📄 Response: {
+  "error": {
+    "code": 400,
+    "message": "Request contains an invalid argument.",
+    "errors": [
+      {
+        "message": "Request contains an invalid argument.",
+        "domain": "global",
+        "reason": "badRequest"
+      }
+    ],
+    "status": "INVALID_ARGUMENT"
+  }
+}
+...
+2025-06-10T20:10:59.362294-0500 | ERROR | ❌ Failed to get search results from Google API
+2025-06-10T20:11:01.479331-0500 | ERROR | ❌ Google API Error: Status 400
+2025-06-10T20:11:01.479481-0500 | ERROR |    📄 Response: {
+  "error": {
+    "code": 400,
+    "message": "Request contains an invalid argument.",
+    "errors": [
+      {
+        "message": "Request contains an invalid argument.",
+        "domain": "global",
+        "reason": "badRequest"
+      }
+    ],
+    "status": "INVALID_ARGUMENT"
+  }
+}
+...
+2025-06-10T20:11:01.480219-0500 | ERROR | ❌ Failed to get search results from Google API
+2025-06-10T20:11:03.600224-0500 | ERROR | ❌ Google API Error: Status 400
+2025-06-10T20:11:03.600280-0500 | ERROR |    📄 Response: {
+  "error": {
+    "code": 400,
+    "message": "Request contains an invalid argument.",
+    "errors": [
+      {
+        "message": "Request contains an invalid argument.",
+        "domain": "global",
+        "reason": "badRequest"
+      }
+    ],
+    "status": "INVALID_ARGUMENT"
+  }
+}
+...
+2025-06-10T20:11:03.600552-0500 | ERROR | ❌ Failed to get search results from Google API
+2025-06-10T20:11:05.803519-0500 | ERROR | ❌ Google API Error: Status 400
+2025-06-10T20:11:05.803580-0500 | ERROR |    📄 Response: {
+  "error": {
+    "code": 400,
+    "message": "Request contains an invalid argument.",
+    "errors": [
+      {
+        "message": "Request contains an invalid argument.",
+        "domain": "global",
+        "reason": "badRequest"
+      }
+    ],
+    "status": "INVALID_ARGUMENT"
+  }
+}
+...
+2025-06-10T20:11:05.804029-0500 | ERROR | ❌ Failed to get search results from Google API
+2025-06-10T20:11:08.009769-0500 | ERROR | ❌ Google API Error: Status 400
+2025-06-10T20:11:08.009826-0500 | ERROR |    📄 Response: {
+  "error": {
+    "code": 400,
+    "message": "Request contains an invalid argument.",
+    "errors": [
+      {
+        "message": "Request contains an invalid argument.",
+        "domain": "global",
+        "reason": "badRequest"
+      }
+    ],
+    "status": "INVALID_ARGUMENT"
+  }
+}
+...
+2025-06-10T20:11:08.010265-0500 | ERROR | ❌ Failed to get search results from Google API
+2025-06-10T20:11:10.265394-0500 | ERROR | ❌ Google API Error: Status 400
+2025-06-10T20:11:10.266151-0500 | ERROR |    📄 Response: {
+  "error": {
+    "code": 400,
+    "message": "Request contains an invalid argument.",
+    "errors": [
+      {
+        "message": "Request contains an invalid argument.",
+        "domain": "global",
+        "reason": "badRequest"
+      }
+    ],
+    "status": "INVALID_ARGUMENT"
+  }
+}
+...
+2025-06-10T20:11:10.266434-0500 | ERROR | ❌ Failed to get search results from Google API
+2025-06-10T20:11:40.930059-0500 | ERROR | ❌ Database connection failed on startup: Textual SQL expression 'SELECT 1' should be explicitly declared as text('SELECT 1')
+2025-06-10T20:13:43.911548-0500 | ERROR | ❌ Database connection failed on startup: Textual SQL expression 'SELECT 1' should be explicitly declared as text('SELECT 1')
+2025-06-10T20:15:09.065364-0500 | ERROR | ❌ Database connection failed on startup: Textual SQL expression 'SELECT 1' should be explicitly declared as text('SELECT 1')
+2025-06-10T20:16:57.434308-0500 | ERROR | ❌ Database connection failed on startup: Textual SQL expression 'SELECT 1' should be explicitly declared as text('SELECT 1')
+2025-06-10T20:17:35.093514-0500 | ERROR | ❌ Database connection failed on startup: Textual SQL expression 'SELECT 1' should be explicitly declared as text('SELECT 1')
+2025-06-10T20:17:37.702341-0500 | ERROR | ❌ Database connection failed on startup: Textual SQL expression 'SELECT 1' should be explicitly declared as text('SELECT 1')
+2025-06-10T20:17:47.429235-0500 | ERROR | ❌ Database connection failed on startup: Textual SQL expression 'SELECT 1' should be explicitly declared as text('SELECT 1')
+2025-06-10T20:18:57.143942-0500 | ERROR | ❌ Database connection failed on startup: Textual SQL expression 'SELECT 1' should be explicitly declared as text('SELECT 1')
+2025-06-10T20:19:01.576351-0500 | ERROR | ❌ Database connection failed on startup: Textual SQL expression 'SELECT 1' should be explicitly declared as text('SELECT 1')
+2025-06-10T20:20:04.522746-0500 | ERROR | ❌ Database connection failed on startup: Textual SQL expression 'SELECT 1' should be explicitly declared as text('SELECT 1')
+2025-06-10T20:20:14.518719-0500 | ERROR | ❌ Database connection failed on startup: Textual SQL expression 'SELECT 1' should be explicitly declared as text('SELECT 1')
+2025-06-10T20:20:18.645382-0500 | ERROR | ❌ Database connection failed on startup: Textual SQL expression 'SELECT 1' should be explicitly declared as text('SELECT 1')
+2025-06-10T20:20:30.696874-0500 | ERROR | ❌ Database connection failed on startup: Textual SQL expression 'SELECT 1' should be explicitly declared as text('SELECT 1')
+2025-06-10T20:20:54.787647-0500 | ERROR | ❌ Database connection failed on startup: Textual SQL expression 'SELECT 1' should be explicitly declared as text('SELECT 1')
+2025-06-10T20:21:06.368355-0500 | ERROR | ❌ Database connection failed on startup: Textual SQL expression 'SELECT 1' should be explicitly declared as text('SELECT 1')
+2025-06-10T20:21:15.659703-0500 | ERROR | ❌ Database connection failed on startup: Textual SQL expression 'SELECT 1' should be explicitly declared as text('SELECT 1')
+2025-06-10T20:21:24.837098-0500 | ERROR | ❌ Database connection failed on startup: Textual SQL expression 'SELECT 1' should be explicitly declared as text('SELECT 1')
+2025-06-10T20:21:30.769354-0500 | ERROR | ❌ Database connection failed on startup: Textual SQL expression 'SELECT 1' should be explicitly declared as text('SELECT 1')
+2025-06-10T20:21:34.487232-0500 | ERROR | ❌ Database connection failed on startup: Textual SQL expression 'SELECT 1' should be explicitly declared as text('SELECT 1')
+2025-06-10T20:21:43.359946-0500 | ERROR | ❌ Database connection failed on startup: Textual SQL expression 'SELECT 1' should be explicitly declared as text('SELECT 1')
+2025-06-10T20:21:52.235589-0500 | ERROR | ❌ Database connection failed on startup: Textual SQL expression 'SELECT 1' should be explicitly declared as text('SELECT 1')
+2025-06-10T20:21:55.083792-0500 | ERROR | ❌ Database connection failed on startup: Textual SQL expression 'SELECT 1' should be explicitly declared as text('SELECT 1')
+2025-06-10T20:21:56.895088-0500 | ERROR | ❌ Database connection failed on startup: Textual SQL expression 'SELECT 1' should be explicitly declared as text('SELECT 1')
+2025-06-10T20:21:59.229989-0500 | ERROR | ❌ Database connection failed on startup: Textual SQL expression 'SELECT 1' should be explicitly declared as text('SELECT 1')
+2025-06-10T20:22:01.035108-0500 | ERROR | ❌ Database connection failed on startup: Textual SQL expression 'SELECT 1' should be explicitly declared as text('SELECT 1')
+2025-06-10T20:22:14.249447-0500 | ERROR | ❌ Database connection failed on startup: Textual SQL expression 'SELECT 1' should be explicitly declared as text('SELECT 1')
+2025-06-10T20:22:17.569121-0500 | ERROR | ❌ Database connection failed on startup: Textual SQL expression 'SELECT 1' should be explicitly declared as text('SELECT 1')
+2025-06-10T20:38:41.140343-0500 | ERROR | ❌ Database connection failed on startup: Textual SQL expression 'SELECT 1' should be explicitly declared as text('SELECT 1')
+2025-06-10T20:38:49.947291-0500 | ERROR | ❌ Database connection failed on startup: Textual SQL expression 'SELECT 1' should be explicitly declared as text('SELECT 1')
+2025-06-10T20:38:50.660533-0500 | ERROR | ❌ Database connection failed on startup: Textual SQL expression 'SELECT 1' should be explicitly declared as text('SELECT 1')
+2025-06-10T20:38:57.641079-0500 | ERROR | ❌ Database connection failed on startup: Textual SQL expression 'SELECT 1' should be explicitly declared as text('SELECT 1')
+2025-06-10T20:47:36.306857-0500 | ERROR | ❌ Database connection failed on startup: Textual SQL expression 'SELECT 1' should be explicitly declared as text('SELECT 1')
