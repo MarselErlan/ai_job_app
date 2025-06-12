@@ -1,0 +1,93 @@
+2025-06-12T02:07:32.118565-0500 | ERROR | pipeline:run_pipeline:492 | ❌ Failed to parse selector map: Expecting value: line 1 column 1 (char 0) | 
+2025-06-12T02:07:32.118778-0500 | ERROR | pipeline:run_pipeline:493 | 🔍 Problematic selector_map content: The provided HTML does not contain any input fields. Therefore, the JSON mapping for input fields cannot be created. Please provide HTML with input fields for further assistance. | 
+2025-06-12T02:08:08.049388-0500 | ERROR | form_autofiller:apply_with_selector_map:171 | Failed to fill full_name: fill error: Page.fill: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("input[name='name']")
+ | 
+2025-06-12T02:08:38.059837-0500 | ERROR | form_autofiller:apply_with_selector_map:171 | Failed to fill email: fill error: Page.fill: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("input[name='email']")
+ | 
+2025-06-12T02:09:08.063198-0500 | ERROR | form_autofiller:apply_with_selector_map:171 | Failed to fill phone: fill error: Page.fill: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("input[name='phone']")
+ | 
+2025-06-12T02:09:24.437964-0500 | ERROR | form_autofiller:apply_with_selector_map:162 | Failed to upload resume for resume_upload: upload error: Page.set_input_files: Target page, context or browser has been closed
+Call log:
+  - waiting for locator("input[type='file']")
+ | 
+2025-06-12T02:09:24.441213-0500 | ERROR | form_autofiller:apply_with_selector_map:189 | Dynamic form application failed: Page.screenshot: Target page, context or browser has been closed | 
+2025-06-12T02:09:24.490012-0500 | ERROR | debug_utils:wrapper:225 | ❌ FAILED app.services.form_autofiller.apply_with_selector_map | 
+2025-06-12T02:09:24.490475-0500 | ERROR | debug_utils:wrapper:226 |    ⏱️ Time: 112.370s | 
+2025-06-12T02:09:24.490752-0500 | ERROR | debug_utils:wrapper:227 |    💥 Error: Page.screenshot: Target page, context or browser has been closed | 
+2025-06-12T02:09:24.491776-0500 | ERROR | debug_utils:wrapper:228 |    📚 Stack trace:
+Traceback (most recent call last):
+  File "/Users/macbookpro/M4_Projects/AIEngineer/ai_job_app/app/utils/debug_utils.py", line 183, in wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbookpro/M4_Projects/AIEngineer/ai_job_app/app/services/form_autofiller.py", line 192, in apply_with_selector_map
+    page.screenshot(path=error_screenshot)
+  File "/Users/macbookpro/M4_Projects/AIEngineer/ai_job_app/venv/lib/python3.11/site-packages/playwright/sync_api/_generated.py", line 9789, in screenshot
+    self._sync(
+  File "/Users/macbookpro/M4_Projects/AIEngineer/ai_job_app/venv/lib/python3.11/site-packages/playwright/_impl/_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "/Users/macbookpro/M4_Projects/AIEngineer/ai_job_app/venv/lib/python3.11/site-packages/playwright/_impl/_page.py", line 795, in screenshot
+    encoded_binary = await self._channel.send("screenshot", params)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbookpro/M4_Projects/AIEngineer/ai_job_app/venv/lib/python3.11/site-packages/playwright/_impl/_connection.py", line 61, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbookpro/M4_Projects/AIEngineer/ai_job_app/venv/lib/python3.11/site-packages/playwright/_impl/_connection.py", line 528, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: Page.screenshot: Target page, context or browser has been closed
+ | 
+2025-06-12T02:09:29.529932-0500 | ERROR | form_autofiller:apply_to_ashby_job:113 | Application process failed: Page.wait_for_timeout: Target page, context or browser has been closed | 
+2025-06-12T02:09:29.640908-0500 | ERROR | debug_utils:wrapper:225 | ❌ FAILED app.services.form_autofiller.apply_to_ashby_job | 
+2025-06-12T02:09:29.641358-0500 | ERROR | debug_utils:wrapper:226 |    ⏱️ Time: 5.148s | 
+2025-06-12T02:09:29.641491-0500 | ERROR | debug_utils:wrapper:227 |    💥 Error: Page.screenshot: Target page, context or browser has been closed | 
+2025-06-12T02:09:29.642294-0500 | ERROR | debug_utils:wrapper:228 |    📚 Stack trace:
+Traceback (most recent call last):
+  File "/Users/macbookpro/M4_Projects/AIEngineer/ai_job_app/app/utils/debug_utils.py", line 183, in wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbookpro/M4_Projects/AIEngineer/ai_job_app/app/services/form_autofiller.py", line 116, in apply_to_ashby_job
+    page.screenshot(path=error_screenshot)
+  File "/Users/macbookpro/M4_Projects/AIEngineer/ai_job_app/venv/lib/python3.11/site-packages/playwright/sync_api/_generated.py", line 9789, in screenshot
+    self._sync(
+  File "/Users/macbookpro/M4_Projects/AIEngineer/ai_job_app/venv/lib/python3.11/site-packages/playwright/_impl/_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "/Users/macbookpro/M4_Projects/AIEngineer/ai_job_app/venv/lib/python3.11/site-packages/playwright/_impl/_page.py", line 795, in screenshot
+    encoded_binary = await self._channel.send("screenshot", params)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbookpro/M4_Projects/AIEngineer/ai_job_app/venv/lib/python3.11/site-packages/playwright/_impl/_connection.py", line 61, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbookpro/M4_Projects/AIEngineer/ai_job_app/venv/lib/python3.11/site-packages/playwright/_impl/_connection.py", line 528, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: Page.screenshot: Target page, context or browser has been closed
+ | 
+2025-06-12T02:09:29.642774-0500 | ERROR | debug_utils:debug_section:351 | ❌ FAILED: Form filling (117.523s) | 
+2025-06-12T02:09:29.642938-0500 | ERROR | debug_utils:debug_section:352 |    💥 Error: Page.screenshot: Target page, context or browser has been closed | 
+2025-06-12T02:09:29.643266-0500 | ERROR | pipeline:run_pipeline:620 | ❌ Pipeline failed: Page.screenshot: Target page, context or browser has been closed | 
+2025-06-12T04:00:59.697682-0500 | ERROR | pipeline:run_pipeline:491 | ❌ Failed to parse selector map: Expecting value: line 1 column 1 (char 0) | 
+2025-06-12T04:00:59.697859-0500 | ERROR | pipeline:run_pipeline:492 | 🔍 Problematic selector_map content: The provided HTML does not contain any input fields, so there are no input fields to map to a JSON object. Please provide an HTML with input fields to get a valid JSON mapping. | 
+2025-06-12T04:01:34.626042-0500 | ERROR | form_autofiller:apply_with_selector_map:171 | Failed to fill full_name: fill error: Page.fill: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("input[name='name']")
+    - waiting for" https://www.linkedin.com/feed/?trk=404_page" navigation to finish...
+    - navigated to "https://www.linkedin.com/uas/login?session_redirect=https%3A%2F%2Fwww.linkedin.com%2Ffeed%2F%3Ftrk%3D404_page"
+ | 
+2025-06-12T04:02:04.637884-0500 | ERROR | form_autofiller:apply_with_selector_map:171 | Failed to fill email: fill error: Page.fill: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("input[name='email']")
+ | 
+2025-06-12T04:02:34.648937-0500 | ERROR | form_autofiller:apply_with_selector_map:171 | Failed to fill phone: fill error: Page.fill: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("input[name='phone']")
+ | 
+2025-06-12T04:03:04.663908-0500 | ERROR | form_autofiller:apply_with_selector_map:162 | Failed to upload resume for resume_upload: upload error: Page.set_input_files: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("input[type='file']")
+ | 

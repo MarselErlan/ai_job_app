@@ -22,38 +22,14 @@ def test_job_scraper_fixes():
     print("=" * 50)
     
     try:
-        from app.services.job_scraper import (
-            scrape_google_jobs, 
-            get_api_statistics, 
-            create_fallback_jobs,
-            is_quota_likely_exceeded
+        from app.services.enhanced_job_scraper import (
+            scrape_google_jobs,
+            scrape_google_jobs_enhanced
         )
         
         print("✅ All imports successful")
         
-        # Test 1: Check current API statistics
-        print("\n📊 Current API Statistics:")
-        stats = get_api_statistics()
-        for key, value in stats.items():
-            print(f"   {key}: {value}")
-        
-        # Test 2: Check quota status
-        print(f"\n🚫 Quota likely exceeded: {is_quota_likely_exceeded()}")
-        
-        # Test 3: Test fallback job creation
-        print("\n🔄 Testing fallback job creation:")
-        fallback_jobs = create_fallback_jobs("SDET", "Chicago", 3)
-        print(f"   Created {len(fallback_jobs)} fallback jobs")
-        
-        if fallback_jobs:
-            print("   Sample fallback job:")
-            sample = fallback_jobs[0]
-            print(f"     Title: {sample['title']}")
-            print(f"     Company: {sample['company']}")
-            print(f"     URL: {sample['url']}")
-            print(f"     Source: {sample['source']}")
-        
-        # Test 4: Test actual job search (will use fallback if quota exceeded)
+        # Test: Test enhanced job search
         print("\n🔍 Testing job search with fallback handling:")
         jobs = scrape_google_jobs("SDET", "Chicago", 3)
         print(f"   Found {len(jobs)} jobs")
@@ -65,20 +41,13 @@ def test_job_scraper_fixes():
             print(f"     Company: {sample.get('company', 'N/A')}")
             print(f"     Source: {sample.get('source', 'N/A')}")
             
-            # Check if it's mock data
-            debug_info = sample.get('debug_info', {})
-            if debug_info.get('is_mock_data'):
-                print("     📋 This is mock/fallback data (quota exceeded)")
-            else:
-                print("     📡 This is real API data")
+            # Check if it's enhanced data
+            if sample.get('enhanced_parsing'):
+                print("     ✨ This uses enhanced parsing")
+            if sample.get('ai_summary'):
+                print("     🤖 AI summary available")
         
-        # Test 5: Final API statistics
-        print("\n📈 Final API Statistics:")
-        final_stats = get_api_statistics()
-        for key, value in final_stats.items():
-            print(f"   {key}: {value}")
-        
-        print("\n🎉 All tests completed successfully!")
+        print("\n🎉 Enhanced job search test completed successfully!")
         return True
         
     except Exception as e:

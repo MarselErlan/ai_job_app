@@ -20,3 +20,125 @@
 2025-06-12 01:38:42 | INFO | pipeline_for_5:<module>:82 | 🧠 LangChain modules imported successfully
 2025-06-12 01:50:03 | DEBUG | crud:<module>:674 | 🔧 CRUD operations debug module initialized
 2025-06-12 01:50:04 | INFO | pipeline_for_5:<module>:82 | 🧠 LangChain modules imported successfully
+2025-06-12 02:05:22 | DEBUG | crud:<module>:674 | 🔧 CRUD operations debug module initialized
+2025-06-12 02:05:22 | INFO | pipeline_for_5:<module>:82 | 🧠 LangChain modules imported successfully
+2025-06-12 02:10:15 | DEBUG | crud:<module>:674 | 🔧 CRUD operations debug module initialized
+2025-06-12 02:10:16 | INFO | pipeline_for_5:<module>:82 | 🧠 LangChain modules imported successfully
+2025-06-12 03:20:34 | DEBUG | crud:<module>:674 | 🔧 CRUD operations debug module initialized
+2025-06-12 03:20:34 | INFO | pipeline_for_5:<module>:82 | 🧠 LangChain modules imported successfully
+2025-06-12 03:20:45 | DEBUG | crud:<module>:674 | 🔧 CRUD operations debug module initialized
+2025-06-12 03:20:46 | INFO | pipeline_for_5:<module>:82 | 🧠 LangChain modules imported successfully
+2025-06-12 03:23:06 | DEBUG | crud:<module>:674 | 🔧 CRUD operations debug module initialized
+2025-06-12 03:23:06 | INFO | pipeline_for_5:<module>:82 | 🧠 LangChain modules imported successfully
+2025-06-12 03:23:13 | DEBUG | crud:<module>:674 | 🔧 CRUD operations debug module initialized
+2025-06-12 03:23:13 | INFO | pipeline_for_5:<module>:82 | 🧠 LangChain modules imported successfully
+2025-06-12 03:23:15 | DEBUG | crud:<module>:674 | 🔧 CRUD operations debug module initialized
+2025-06-12 03:23:15 | INFO | pipeline_for_5:<module>:82 | 🧠 LangChain modules imported successfully
+2025-06-12 03:23:20 | DEBUG | crud:<module>:674 | 🔧 CRUD operations debug module initialized
+2025-06-12 03:23:20 | INFO | pipeline_for_5:<module>:81 | 🧠 LangChain modules imported successfully
+2025-06-12 03:23:22 | DEBUG | crud:<module>:674 | 🔧 CRUD operations debug module initialized
+2025-06-12 03:23:22 | INFO | pipeline_for_5:<module>:81 | 🧠 LangChain modules imported successfully
+2025-06-12 03:23:27 | DEBUG | crud:<module>:674 | 🔧 CRUD operations debug module initialized
+2025-06-12 03:23:28 | INFO | pipeline_for_5:<module>:81 | 🧠 LangChain modules imported successfully
+2025-06-12 03:23:29 | DEBUG | crud:<module>:674 | 🔧 CRUD operations debug module initialized
+2025-06-12 03:23:29 | INFO | pipeline_for_5:<module>:81 | 🧠 LangChain modules imported successfully
+2025-06-12 03:23:33 | DEBUG | crud:<module>:674 | 🔧 CRUD operations debug module initialized
+2025-06-12 03:23:33 | INFO | pipeline_for_5:<module>:81 | 🧠 LangChain modules imported successfully
+2025-06-12 03:23:35 | DEBUG | crud:<module>:674 | 🔧 CRUD operations debug module initialized
+2025-06-12 03:23:35 | INFO | pipeline_for_5:<module>:81 | 🧠 LangChain modules imported successfully
+2025-06-12 03:23:41 | DEBUG | crud:<module>:674 | 🔧 CRUD operations debug module initialized
+2025-06-12 03:23:41 | INFO | pipeline_for_5:<module>:81 | 🧠 LangChain modules imported successfully
+2025-06-12 03:23:48 | DEBUG | crud:<module>:674 | 🔧 CRUD operations debug module initialized
+2025-06-12 03:23:48 | INFO | pipeline_for_5:<module>:81 | 🧠 LangChain modules imported successfully
+2025-06-12 03:23:50 | DEBUG | crud:<module>:674 | 🔧 CRUD operations debug module initialized
+2025-06-12 03:23:50 | INFO | pipeline_for_5:<module>:81 | 🧠 LangChain modules imported successfully
+2025-06-12 03:23:54 | DEBUG | crud:<module>:674 | 🔧 CRUD operations debug module initialized
+2025-06-12 03:23:54 | INFO | pipeline_for_5:<module>:81 | 🧠 LangChain modules imported successfully
+2025-06-12 03:24:20 | DEBUG | crud:<module>:674 | 🔧 CRUD operations debug module initialized
+2025-06-12 03:24:20 | INFO | pipeline_for_5:<module>:81 | 🧠 LangChain modules imported successfully
+2025-06-12 03:24:21 | DEBUG | crud:<module>:674 | 🔧 CRUD operations debug module initialized
+2025-06-12 03:24:21 | INFO | pipeline_for_5:<module>:81 | 🧠 LangChain modules imported successfully
+2025-06-12 03:24:24 | DEBUG | crud:<module>:674 | 🔧 CRUD operations debug module initialized
+2025-06-12 03:24:25 | INFO | pipeline_for_5:<module>:81 | 🧠 LangChain modules imported successfully
+2025-06-12 03:24:31 | DEBUG | crud:<module>:674 | 🔧 CRUD operations debug module initialized
+2025-06-12 03:24:31 | INFO | pipeline_for_5:<module>:81 | 🧠 LangChain modules imported successfully
+2025-06-12 03:24:32 | DEBUG | crud:<module>:674 | 🔧 CRUD operations debug module initialized
+2025-06-12 03:24:32 | INFO | pipeline_for_5:<module>:81 | 🧠 LangChain modules imported successfully
+2025-06-12 03:24:37 | DEBUG | crud:<module>:674 | 🔧 CRUD operations debug module initialized
+2025-06-12 03:24:37 | INFO | pipeline_for_5:<module>:81 | 🧠 LangChain modules imported successfully
+2025-06-12 03:24:42 | DEBUG | crud:<module>:674 | 🔧 CRUD operations debug module initialized
+2025-06-12 03:24:42 | INFO | pipeline_for_5:<module>:81 | 🧠 LangChain modules imported successfully
+2025-06-12 03:24:44 | DEBUG | crud:<module>:674 | 🔧 CRUD operations debug module initialized
+2025-06-12 03:24:44 | INFO | pipeline_for_5:<module>:81 | 🧠 LangChain modules imported successfully
+2025-06-12 03:24:55 | DEBUG | crud:<module>:674 | 🔧 CRUD operations debug module initialized
+2025-06-12 03:24:55 | INFO | pipeline_for_5:<module>:81 | 🧠 LangChain modules imported successfully
+2025-06-12 03:24:57 | DEBUG | crud:<module>:674 | 🔧 CRUD operations debug module initialized
+2025-06-12 03:24:57 | INFO | pipeline_for_5:<module>:81 | 🧠 LangChain modules imported successfully
+2025-06-12 03:24:59 | DEBUG | crud:<module>:674 | 🔧 CRUD operations debug module initialized
+2025-06-12 03:24:59 | INFO | pipeline_for_5:<module>:81 | 🧠 LangChain modules imported successfully
+2025-06-12 03:25:01 | DEBUG | crud:<module>:674 | 🔧 CRUD operations debug module initialized
+2025-06-12 03:25:01 | INFO | pipeline_for_5:<module>:81 | 🧠 LangChain modules imported successfully
+2025-06-12 03:25:04 | DEBUG | crud:<module>:674 | 🔧 CRUD operations debug module initialized
+2025-06-12 03:25:04 | INFO | pipeline_for_5:<module>:81 | 🧠 LangChain modules imported successfully
+2025-06-12 03:25:07 | DEBUG | crud:<module>:674 | 🔧 CRUD operations debug module initialized
+2025-06-12 03:25:07 | INFO | pipeline_for_5:<module>:81 | 🧠 LangChain modules imported successfully
+2025-06-12 03:25:17 | DEBUG | crud:<module>:674 | 🔧 CRUD operations debug module initialized
+2025-06-12 03:25:17 | INFO | pipeline_for_5:<module>:81 | 🧠 LangChain modules imported successfully
+2025-06-12 03:26:24 | DEBUG | crud:<module>:674 | 🔧 CRUD operations debug module initialized
+2025-06-12 03:26:25 | INFO | pipeline_for_5:<module>:81 | 🧠 LangChain modules imported successfully
+2025-06-12 03:28:46 | DEBUG | crud:<module>:674 | 🔧 CRUD operations debug module initialized
+2025-06-12 03:28:46 | INFO | pipeline_for_5:<module>:81 | 🧠 LangChain modules imported successfully
+2025-06-12 03:28:48 | DEBUG | crud:<module>:674 | 🔧 CRUD operations debug module initialized
+2025-06-12 03:28:48 | INFO | pipeline_for_5:<module>:81 | 🧠 LangChain modules imported successfully
+2025-06-12 03:29:04 | DEBUG | crud:<module>:674 | 🔧 CRUD operations debug module initialized
+2025-06-12 03:29:04 | INFO | pipeline_for_5:<module>:81 | 🧠 LangChain modules imported successfully
+2025-06-12 03:29:47 | DEBUG | crud:<module>:674 | 🔧 CRUD operations debug module initialized
+2025-06-12 03:29:47 | INFO | pipeline_for_5:<module>:81 | 🧠 LangChain modules imported successfully
+2025-06-12 03:50:49 | DEBUG | crud:<module>:674 | 🔧 CRUD operations debug module initialized
+2025-06-12 03:50:49 | INFO | pipeline_for_5:<module>:81 | 🧠 LangChain modules imported successfully
+2025-06-12 03:50:51 | DEBUG | crud:<module>:674 | 🔧 CRUD operations debug module initialized
+2025-06-12 03:50:51 | INFO | pipeline_for_5:<module>:81 | 🧠 LangChain modules imported successfully
+2025-06-12 03:51:35 | DEBUG | crud:<module>:674 | 🔧 CRUD operations debug module initialized
+2025-06-12 03:51:35 | INFO | pipeline_for_5:<module>:81 | 🧠 LangChain modules imported successfully
+2025-06-12 03:51:37 | DEBUG | crud:<module>:674 | 🔧 CRUD operations debug module initialized
+2025-06-12 03:51:37 | INFO | pipeline_for_5:<module>:81 | 🧠 LangChain modules imported successfully
+2025-06-12 03:54:06 | DEBUG | crud:<module>:674 | 🔧 CRUD operations debug module initialized
+2025-06-12 03:54:06 | INFO | pipeline_for_5:<module>:81 | 🧠 LangChain modules imported successfully
+2025-06-12 03:54:09 | DEBUG | crud:<module>:674 | 🔧 CRUD operations debug module initialized
+2025-06-12 03:54:09 | INFO | pipeline_for_5:<module>:81 | 🧠 LangChain modules imported successfully
+2025-06-12 03:54:27 | DEBUG | crud:<module>:674 | 🔧 CRUD operations debug module initialized
+2025-06-12 03:54:27 | INFO | pipeline_for_5:<module>:81 | 🧠 LangChain modules imported successfully
+2025-06-12 03:54:29 | DEBUG | crud:<module>:674 | 🔧 CRUD operations debug module initialized
+2025-06-12 03:54:29 | INFO | pipeline_for_5:<module>:81 | 🧠 LangChain modules imported successfully
+2025-06-12 03:54:31 | DEBUG | crud:<module>:674 | 🔧 CRUD operations debug module initialized
+2025-06-12 03:54:31 | INFO | pipeline_for_5:<module>:81 | 🧠 LangChain modules imported successfully
+2025-06-12 03:54:49 | DEBUG | crud:<module>:674 | 🔧 CRUD operations debug module initialized
+2025-06-12 03:54:49 | INFO | pipeline_for_5:<module>:81 | 🧠 LangChain modules imported successfully
+2025-06-12 03:54:51 | DEBUG | crud:<module>:674 | 🔧 CRUD operations debug module initialized
+2025-06-12 03:54:51 | INFO | pipeline_for_5:<module>:81 | 🧠 LangChain modules imported successfully
+2025-06-12 03:54:55 | DEBUG | crud:<module>:674 | 🔧 CRUD operations debug module initialized
+2025-06-12 03:54:55 | INFO | pipeline_for_5:<module>:81 | 🧠 LangChain modules imported successfully
+2025-06-12 03:56:13 | DEBUG | crud:<module>:674 | 🔧 CRUD operations debug module initialized
+2025-06-12 03:56:14 | INFO | pipeline_for_5:<module>:81 | 🧠 LangChain modules imported successfully
+2025-06-12 03:56:15 | DEBUG | crud:<module>:674 | 🔧 CRUD operations debug module initialized
+2025-06-12 03:56:15 | INFO | pipeline_for_5:<module>:81 | 🧠 LangChain modules imported successfully
+2025-06-12 03:56:17 | DEBUG | crud:<module>:674 | 🔧 CRUD operations debug module initialized
+2025-06-12 03:56:17 | INFO | pipeline_for_5:<module>:81 | 🧠 LangChain modules imported successfully
+2025-06-12 03:56:56 | DEBUG | crud:<module>:674 | 🔧 CRUD operations debug module initialized
+2025-06-12 03:56:56 | INFO | pipeline_for_5:<module>:81 | 🧠 LangChain modules imported successfully
+2025-06-12 03:56:58 | DEBUG | crud:<module>:674 | 🔧 CRUD operations debug module initialized
+2025-06-12 03:56:58 | INFO | pipeline_for_5:<module>:81 | 🧠 LangChain modules imported successfully
+2025-06-12 03:57:00 | DEBUG | crud:<module>:674 | 🔧 CRUD operations debug module initialized
+2025-06-12 03:57:00 | INFO | pipeline_for_5:<module>:81 | 🧠 LangChain modules imported successfully
+2025-06-12 03:57:50 | DEBUG | crud:<module>:674 | 🔧 CRUD operations debug module initialized
+2025-06-12 03:57:50 | INFO | pipeline_for_5:<module>:81 | 🧠 LangChain modules imported successfully
+2025-06-12 03:57:52 | DEBUG | crud:<module>:674 | 🔧 CRUD operations debug module initialized
+2025-06-12 03:57:52 | INFO | pipeline_for_5:<module>:81 | 🧠 LangChain modules imported successfully
+2025-06-12 03:58:02 | DEBUG | crud:<module>:674 | 🔧 CRUD operations debug module initialized
+2025-06-12 03:58:02 | INFO | pipeline_for_5:<module>:81 | 🧠 LangChain modules imported successfully
+2025-06-12 03:58:59 | DEBUG | crud:<module>:674 | 🔧 CRUD operations debug module initialized
+2025-06-12 03:58:59 | INFO | pipeline_for_5:<module>:81 | 🧠 LangChain modules imported successfully
+2025-06-12 03:59:44 | DEBUG | crud:<module>:674 | 🔧 CRUD operations debug module initialized
+2025-06-12 03:59:44 | INFO | pipeline_for_5:<module>:81 | 🧠 LangChain modules imported successfully
+2025-06-12 03:59:57 | DEBUG | crud:<module>:674 | 🔧 CRUD operations debug module initialized
+2025-06-12 03:59:57 | INFO | pipeline_for_5:<module>:81 | 🧠 LangChain modules imported successfully

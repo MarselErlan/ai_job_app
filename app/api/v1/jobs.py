@@ -12,8 +12,7 @@ from typing import List, Optional
 from loguru import logger
 from app.utils.debug_utils import debug_performance
 
-from app.services.job_scraper import scrape_google_jobs
-from app.services.enhanced_job_scraper import scrape_google_jobs_enhanced
+from app.services.enhanced_job_scraper import scrape_google_jobs, scrape_google_jobs_enhanced
 from app.services.jd_matcher import rank_job_matches
 from app.services.resume_parser import embed_resume_text
 

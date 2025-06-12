@@ -1,0 +1,51 @@
+{
+  "timestamp": "2025-06-12T03:58:39.062185",
+  "results": [
+    {
+      "title": "Software Engineer - TechCorp",
+      "company": "TechCorp",
+      "url": "https://linkedin.com/techcorp/jobs/123456",
+      "location": "San Francisco",
+      "salary": "$112,000 - $196,000 (estimated)",
+      "snippet": "Join TechCorp as a Software Engineer in San Francisco. We're a 1000-5000 employee Software company looking for talented professionals.\n\nKey Requirements:\n\u2022 3+ years experience in software engineer\n\u2022 Strong technical skills and problem-solving abilities  \n\u2022 Experience with modern development practices\n\u2022 Excellent communication and collaboration skills\n\nWhat we offer:\n\u2022 Competitive salary and equity\n\u2022 Comprehensive health benefits\n\u2022 401(k) with company matching\n\u2022 Flexible work arrangements\n\u2022 Professional development opportunities\n\u2022 San Francisco office with remote options\n\nJoin our team and help shape the future of software!",
+      "source": "LinkedIn",
+      "date_posted": null,
+      "job_type": "Full-time",
+      "remote_friendly": true,
+      "experience_level": "Mid-level",
+      "industry": "Software",
+      "skills": [],
+      "benefits": [],
+      "company_size": "1000-5000",
+      "company_rating": 4.2,
+      "ai_summary": "**Position:** Software Engineer  \n**Company:** TechCorp  \n**Location:** San Francisco  \n**Experience:** Mid-level  \n\n**Key Requirements:**  \n- 3+ years of experience in software engineering  \n- Strong technical skills and problem-solving abilities  \n- Experience with modern development practices  \n- Excellent communication and collaboration skills  \n\n**Highlights:**  \n- Competitive salary and equity  \n- Comprehensive health benefits  \n- 401(k) with company matching  \n- Flexible work arrangements  \n- Professional development opportunities  \n\n**Salary:** Not specified",
+      "quality_score": 4.8,
+      "relevance_score": 6.33,
+      "enhanced_parsing": true
+    },
+    {
+      "title": "Senior Software Engineer",
+      "company": "DataFlow Inc",
+      "url": "https://indeed.com/dataflowinc/jobs/123457",
+      "location": "San Francisco",
+      "salary": "$196,000 - $280,000 (estimated)",
+      "snippet": "Join DataFlow Inc as a Software Engineer in San Francisco. We're a 500-1000 employee Analytics company looking for talented professionals.\n\nKey Requirements:\n\u2022 3+ years experience in software engineer\n\u2022 Strong technical skills and problem-solving abilities  \n\u2022 Experience with modern development practices\n\u2022 Excellent communication and collaboration skills\n\nWhat we offer:\n\u2022 Competitive salary and equity\n\u2022 Comprehensive health benefits\n\u2022 401(k) with company matching\n\u2022 Flexible work arrangements\n\u2022 Professional development opportunities\n\u2022 San Francisco office with remote options\n\nJoin our team and help shape the future of analytics!",
+      "source": "Indeed",
+      "date_posted": null,
+      "job_type": "Full-time",
+      "remote_friendly": true,
+      "experience_level": "Senior",
+      "industry": "Analytics",
+      "skills": [
+        "analytics"
+      ],
+      "benefits": [],
+      "company_size": "500-1000",
+      "company_rating": 4.5,
+      "ai_summary": "**Position:** Senior Software Engineer  \n**Company:** DataFlow Inc  \n**Location:** San Francisco  \n**Experience:** Senior  \n\n**Key Requirements:**  \n- Minimum of 3 years of experience in software engineering  \n- Strong technical skills and problem-solving abilities  \n- Proficiency in modern development practices  \n- Excellent communication and collaboration skills  \n\n**Highlights:**  \n- Competitive salary and equity options  \n- Comprehensive health benefits  \n- 401(k) plan with company matching  \n- Flexible work arrangements  \n\n**Salary:** Not specified",
+      "quality_score": 4.9,
+      "relevance_score": 5.33,
+      "enhanced_parsing": true
+    }
+  ]
+}

@@ -16,8 +16,7 @@ import os
 # Add the project root to Python path
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
-from app.services.enhanced_job_scraper import scrape_google_jobs_enhanced
-from app.services.job_scraper import scrape_google_jobs
+from app.services.enhanced_job_scraper import scrape_google_jobs_enhanced, scrape_google_jobs
 from loguru import logger
 
 def test_enhanced_vs_standard():

@@ -1,5 +1,5 @@
 from app.services.resume_parser import extract_text_from_resume
-from app.services.job_scraper import scrape_job_listings
+from app.services.enhanced_job_scraper import scrape_google_jobs
 from app.services.jd_matcher import match_resume_to_jd
 from app.core.console_logger import set_logger_component
 from loguru import logger
@@ -17,7 +17,7 @@ def test_logging():
         # Test job scraper
         print("\nTesting job scraper...")
         set_logger_component("job_scraper")
-        jobs = scrape_job_listings("software engineer", "remote")
+        jobs = scrape_google_jobs("software engineer", "remote")
         
         # Test JD matcher
         print("\nTesting JD matcher...")

@@ -30,3 +30,30 @@
 2025-06-12 01:50:03 | INFO | enhanced_job_scraper:<module>:35 | ✅ LangChain successfully imported
 2025-06-12 01:50:03 | DEBUG | crud:<module>:674 | 🔧 CRUD operations debug module initialized
 2025-06-12 01:50:04 | INFO | pipeline_for_5:<module>:82 | 🧠 LangChain modules imported successfully
+2025-06-12 02:05:22 | INFO | enhanced_job_scraper:<module>:35 | ✅ LangChain successfully imported
+2025-06-12 02:05:22 | DEBUG | crud:<module>:674 | 🔧 CRUD operations debug module initialized
+2025-06-12 02:05:22 | INFO | pipeline_for_5:<module>:82 | 🧠 LangChain modules imported successfully
+2025-06-12 02:10:15 | INFO | enhanced_job_scraper:<module>:35 | ✅ LangChain successfully imported
+2025-06-12 02:10:15 | DEBUG | crud:<module>:674 | 🔧 CRUD operations debug module initialized
+2025-06-12 02:10:16 | INFO | pipeline_for_5:<module>:82 | 🧠 LangChain modules imported successfully
+2025-06-12 03:20:34 | INFO | enhanced_job_scraper:<module>:35 | ✅ LangChain successfully imported
+2025-06-12 03:20:34 | DEBUG | crud:<module>:674 | 🔧 CRUD operations debug module initialized
+2025-06-12 03:20:34 | INFO | pipeline_for_5:<module>:82 | 🧠 LangChain modules imported successfully
+2025-06-12 03:20:45 | INFO | enhanced_job_scraper:<module>:35 | ✅ LangChain successfully imported
+2025-06-12 03:20:45 | DEBUG | crud:<module>:674 | 🔧 CRUD operations debug module initialized
+2025-06-12 03:20:46 | INFO | pipeline_for_5:<module>:82 | 🧠 LangChain modules imported successfully
+2025-06-12 03:23:06 | INFO | enhanced_job_scraper:<module>:35 | ✅ LangChain successfully imported
+2025-06-12 03:23:06 | DEBUG | crud:<module>:674 | 🔧 CRUD operations debug module initialized
+2025-06-12 03:23:06 | INFO | pipeline_for_5:<module>:82 | 🧠 LangChain modules imported successfully
+2025-06-12 03:23:13 | INFO | enhanced_job_scraper:<module>:35 | ✅ LangChain successfully imported
+2025-06-12 03:23:13 | DEBUG | crud:<module>:674 | 🔧 CRUD operations debug module initialized
+2025-06-12 03:23:13 | INFO | pipeline_for_5:<module>:82 | 🧠 LangChain modules imported successfully
+2025-06-12 03:23:15 | INFO | enhanced_job_scraper:<module>:35 | ✅ LangChain successfully imported
+2025-06-12 03:23:15 | DEBUG | crud:<module>:674 | 🔧 CRUD operations debug module initialized
+2025-06-12 03:23:15 | INFO | pipeline_for_5:<module>:82 | 🧠 LangChain modules imported successfully
+2025-06-12 03:23:20 | INFO | enhanced_job_scraper:<module>:35 | ✅ LangChain successfully imported
+2025-06-12 03:23:20 | DEBUG | crud:<module>:674 | 🔧 CRUD operations debug module initialized
+2025-06-12 03:23:20 | INFO | pipeline_for_5:<module>:81 | 🧠 LangChain modules imported successfully
+2025-06-12 03:23:22 | INFO | enhanced_job_scraper:<module>:35 | ✅ LangChain successfully imported
+2025-06-12 03:23:22 | DEBUG | crud:<module>:674 | 🔧 CRUD operations debug module initialized
+2025-06-12 03:23:22 | INFO | pipeline_for_5:<module>:81 | 🧠 LangChain modules imported successfully

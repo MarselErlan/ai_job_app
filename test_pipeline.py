@@ -41,7 +41,7 @@ def test_imports():
         
         # Test core services
         from app.services.resume_parser import extract_text_from_resume, embed_resume_text
-        from app.services.job_scraper import scrape_google_jobs
+        from app.services.enhanced_job_scraper import scrape_google_jobs
         from app.services.jd_matcher import rank_job_matches
         from app.services.resume_tailor import tailor_resume
         from app.services.pdf_generator import save_resume_as_pdf
