@@ -48,8 +48,48 @@ PERFORMANCE_LOGGING = os.getenv("PERF_LOGGING", "true").lower() == "true"
 MEMORY_LOGGING = os.getenv("MEMORY_LOGGING", "true").lower() == "true"
 API_LOGGING = os.getenv("API_LOGGING", "true").lower() == "true"
 
+# Add configuration for different logging levels
+DEBUG_LEVEL = os.getenv("DEBUG_LEVEL", "DEBUG").upper()  # DEBUG/INFO/WARNING/ERROR/CRITICAL
+FUNCTION_ENTRY_LEVEL = "DEBUG"
+FUNCTION_SUCCESS_LEVEL = "INFO" 
+FUNCTION_ERROR_LEVEL = "ERROR"
+PERFORMANCE_THRESHOLD = float(os.getenv("PERF_THRESHOLD", "1.0"))  # Warn if > 1 second
+MEMORY_THRESHOLD = float(os.getenv("MEMORY_THRESHOLD", "50.0"))    # Warn if > 50MB
+API_THRESHOLD = float(os.getenv("API_THRESHOLD", "5.0"))          # Warn if > 5 seconds
+
 # Thread-local storage for request tracking
 _thread_local = threading.local()
+
+def _smart_format_args(args, kwargs, max_length=100):
+    """Smart formatting for function arguments to prevent console spam"""
+    formatted_args = []
+    formatted_kwargs = {}
+    
+    # Format positional arguments
+    for i, arg in enumerate(args[:3]):  # Only show first 3 args
+        if isinstance(arg, str) and len(arg) > max_length:
+            formatted_args.append(f"'{arg[:max_length]}...'[{len(arg)} chars]")
+        elif isinstance(arg, (list, tuple, dict)) and len(str(arg)) > max_length:
+            formatted_args.append(f"{type(arg).__name__}[{len(arg)} items]")
+        else:
+            formatted_args.append(repr(arg)[:max_length])
+    
+    if len(args) > 3:
+        formatted_args.append(f"...+{len(args)-3} more")
+    
+    # Format keyword arguments
+    for key, value in list(kwargs.items())[:3]:  # Only show first 3 kwargs
+        if isinstance(value, str) and len(value) > max_length:
+            formatted_kwargs[key] = f"'{value[:max_length]}...'[{len(value)} chars]"
+        elif isinstance(value, (list, tuple, dict)) and len(str(value)) > max_length:
+            formatted_kwargs[key] = f"{type(value).__name__}[{len(value)} items]"
+        else:
+            formatted_kwargs[key] = str(value)[:max_length]
+    
+    if len(kwargs) > 3:
+        formatted_kwargs["..."] = f"+{len(kwargs)-3} more params"
+    
+    return formatted_args, formatted_kwargs
 
 def get_memory_usage() -> Dict[str, float]:
     """
@@ -100,17 +140,27 @@ def debug_memory(checkpoint: str = "") -> None:
             f"Available: {memory_stats['available_memory_mb']:.1f}MB"
         )
 
+def _log_with_level(level: str, message: str):
+    """Log message with appropriate level"""
+    level = level.upper()
+    if level == "DEBUG":
+        logger.debug(message)
+    elif level == "INFO":
+        logger.info(message)
+    elif level == "WARNING":
+        logger.warning(message)
+    elif level == "ERROR":
+        logger.error(message)
+    elif level == "CRITICAL":
+        logger.critical(message)
+
 def debug_performance(func: Callable) -> Callable:
     """
-    ⏱️ PERFORMANCE MONITORING DECORATOR
-    
-    Decorates functions to automatically log execution time,
-    memory usage before/after, and function parameters.
-    
-    Usage:
-        @debug_performance
-        def my_function(param1, param2):
-            return result
+    ⏱️ ENHANCED PERFORMANCE MONITORING with intelligent logging levels:
+    - DEBUG: Function entry/exit details
+    - INFO: Normal completion with timing
+    - WARNING: Slow execution or high memory usage
+    - ERROR: Function failures
     """
     if not DEBUG_ENABLED or not PERFORMANCE_LOGGING:
         return func
@@ -123,10 +173,11 @@ def debug_performance(func: Callable) -> Callable:
         # Get memory before execution
         memory_before = get_memory_usage()
         
-        # Log function entry
+        # DEBUG LEVEL: Function entry details
         logger.debug(f"⚡ ENTERING {func_name}")
-        logger.debug(f"   📥 Args: {args[:3]}{'...' if len(args) > 3 else ''}")
-        logger.debug(f"   📥 Kwargs: {dict(list(kwargs.items())[:3])}")
+        formatted_args, formatted_kwargs = _smart_format_args(args, kwargs)
+        logger.debug(f"   📥 Args: {formatted_args}")
+        logger.debug(f"   📥 Kwargs: {formatted_kwargs}")
         
         try:
             result = func(*args, **kwargs)
@@ -136,16 +187,41 @@ def debug_performance(func: Callable) -> Callable:
             memory_after = get_memory_usage()
             memory_diff = memory_after.get('process_memory_mb', 0) - memory_before.get('process_memory_mb', 0)
             
-            # Log successful completion
-            logger.debug(f"✅ COMPLETED {func_name}")
-            logger.debug(f"   ⏱️ Time: {execution_time:.3f}s")
-            logger.debug(f"   🧠 Memory: {memory_diff:+.2f}MB")
+            # Determine logging level based on performance
+            if execution_time > PERFORMANCE_THRESHOLD and memory_diff > MEMORY_THRESHOLD:
+                # WARNING: Both slow and memory intensive
+                logger.warning(f"🐌🧠 SLOW & MEMORY INTENSIVE {func_name}")
+                logger.warning(f"   ⏱️ Time: {execution_time:.3f}s (>{PERFORMANCE_THRESHOLD}s)")
+                logger.warning(f"   🧠 Memory: {memory_diff:+.2f}MB (>{MEMORY_THRESHOLD}MB)")
+            elif execution_time > PERFORMANCE_THRESHOLD:
+                # WARNING: Slow execution
+                logger.warning(f"🐌 SLOW EXECUTION {func_name}")
+                logger.warning(f"   ⏱️ Time: {execution_time:.3f}s (>{PERFORMANCE_THRESHOLD}s threshold)")
+                logger.warning(f"   🧠 Memory: {memory_diff:+.2f}MB")
+            elif memory_diff > MEMORY_THRESHOLD:
+                # WARNING: High memory usage
+                logger.warning(f"🧠 HIGH MEMORY USAGE {func_name}")
+                logger.warning(f"   ⏱️ Time: {execution_time:.3f}s")
+                logger.warning(f"   🧠 Memory: {memory_diff:+.2f}MB (>{MEMORY_THRESHOLD}MB threshold)")
+            elif execution_time > 0.1:  # INFO for functions taking more than 100ms
+                # INFO: Notable completion
+                logger.info(f"✅ COMPLETED {func_name}")
+                logger.info(f"   ⏱️ Time: {execution_time:.3f}s")
+                logger.info(f"   🧠 Memory: {memory_diff:+.2f}MB")
+            else:
+                # DEBUG: Fast completion
+                logger.debug(f"✅ COMPLETED {func_name}")
+                logger.debug(f"   ⏱️ Time: {execution_time:.3f}s")
+                logger.debug(f"   🧠 Memory: {memory_diff:+.2f}MB")
+            
+            # Always show result type at DEBUG level
             logger.debug(f"   📤 Result type: {type(result).__name__}")
             
             return result
             
         except Exception as e:
             execution_time = time.time() - start_time
+            # ERROR LEVEL: Function failures
             logger.error(f"❌ FAILED {func_name}")
             logger.error(f"   ⏱️ Time: {execution_time:.3f}s")
             logger.error(f"   💥 Error: {str(e)}")
@@ -155,17 +231,7 @@ def debug_performance(func: Callable) -> Callable:
     return wrapper
 
 def debug_api_call(func: Callable) -> Callable:
-    """
-    🌐 API CALL DEBUGGING DECORATOR
-    
-    Decorates functions that make API calls to log requests,
-    responses, timing, and error handling.
-    
-    Usage:
-        @debug_api_call
-        def call_openai_api(prompt):
-            return openai.complete(prompt)
-    """
+    """🌐 ENHANCED API CALL DEBUGGING with intelligent levels"""
     if not DEBUG_ENABLED or not API_LOGGING:
         return func
         
@@ -174,24 +240,32 @@ def debug_api_call(func: Callable) -> Callable:
         func_name = f"{func.__module__}.{func.__name__}"
         start_time = time.time()
         
-        logger.debug(f"🌐 API CALL: {func_name}")
-        logger.debug(f"   📤 Request args: {str(args)[:200]}...")
-        logger.debug(f"   📤 Request kwargs: {str(kwargs)[:200]}...")
+        # INFO LEVEL: API call initiation
+        logger.info(f"🌐 API CALL: {func_name}")
+        formatted_args, formatted_kwargs = _smart_format_args(args, kwargs, max_length=50)
+        logger.debug(f"   📤 Request args: {formatted_args}")
+        logger.debug(f"   📤 Request kwargs: {formatted_kwargs}")
         
         try:
             result = func(*args, **kwargs)
             execution_time = time.time() - start_time
             
-            logger.debug(f"✅ API SUCCESS: {func_name}")
-            logger.debug(f"   ⏱️ Response time: {execution_time:.3f}s")
+            # Determine logging level based on response time
+            if execution_time > API_THRESHOLD:
+                logger.warning(f"🐌 SLOW API RESPONSE {func_name}")
+                logger.warning(f"   ⏱️ Response time: {execution_time:.3f}s (>{API_THRESHOLD}s)")
+            else:
+                logger.info(f"✅ API SUCCESS {func_name}")
+                logger.info(f"   ⏱️ Response time: {execution_time:.3f}s")
+            
             logger.debug(f"   📥 Response type: {type(result).__name__}")
-            logger.debug(f"   📥 Response preview: {str(result)[:200]}...")
+            logger.debug(f"   📥 Response preview: {str(result)[:100]}...")
             
             return result
             
         except Exception as e:
             execution_time = time.time() - start_time
-            logger.error(f"❌ API FAILED: {func_name}")
+            logger.error(f"❌ API FAILED {func_name}")
             logger.error(f"   ⏱️ Time: {execution_time:.3f}s")
             logger.error(f"   💥 Error: {str(e)}")
             logger.error(f"   📚 Full traceback:\n{traceback.format_exc()}")
@@ -417,3 +491,52 @@ if DEBUG_ENABLED:
 @debug_performance
 def your_function():
     pass 
+
+# New utility functions for different levels
+def debug_info(message: str, **context):
+    """INFO level debug message with context"""
+    if context:
+        formatted_context = _smart_format_args([], context, max_length=50)[1]
+        logger.info(f"ℹ️ {message} | {formatted_context}")
+    else:
+        logger.info(f"ℹ️ {message}")
+
+def debug_warning(message: str, **context):
+    """WARNING level debug message"""
+    if context:
+        formatted_context = _smart_format_args([], context, max_length=50)[1]
+        logger.warning(f"⚠️ {message} | {formatted_context}")
+    else:
+        logger.warning(f"⚠️ {message}")
+
+def debug_error(message: str, **context):
+    """ERROR level debug message"""
+    if context:
+        formatted_context = _smart_format_args([], context, max_length=50)[1]
+        logger.error(f"🔥 {message} | {formatted_context}")
+    else:
+        logger.error(f"🔥 {message}")
+
+def debug_critical(message: str, **context):
+    """CRITICAL level debug message"""
+    if context:
+        formatted_context = _smart_format_args([], context, max_length=50)[1]
+        logger.critical(f"🚨 CRITICAL: {message} | {formatted_context}")
+    else:
+        logger.critical(f"🚨 CRITICAL: {message}")
+
+def debug_step(step_name: str, level: str = "INFO"):
+    """Log processing steps with appropriate level"""
+    _log_with_level(level, f"👉 STEP: {step_name}")
+
+def debug_checkpoint(name: str, data_info: str = "", level: str = "DEBUG"):
+    """Enhanced checkpoint logging with timestamp"""
+    timestamp = datetime.now().strftime("%H:%M:%S.%f")[:-3]
+    if data_info:
+        _log_with_level(level, f"📍 [{timestamp}] {name} | {data_info}")
+    else:
+        _log_with_level(level, f"📍 [{timestamp}] {name}")
+
+def debug_data_flow(step: str, data_info: str, level: str = "DEBUG"):
+    """Enhanced data flow tracking"""
+    _log_with_level(level, f"📊 DATA: {step} | {data_info}")
