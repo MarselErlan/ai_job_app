@@ -66,3 +66,127 @@
 2025-06-11 17:07:59 | DEBUG    | app.db.crud:<module>:674 - 🔧 CRUD operations debug module initialized
 2025-06-11 17:07:59 | INFO     | app.tasks.pipeline_for_5:<module>:82 - 🧠 LangChain modules imported successfully
 2025-06-11 17:07:59 | INFO     | app.main:<module>:61 - 🚀 Initializing application in DEBUG mode
+2025-06-11 17:33:22 | DEBUG    | app.services.notion_logger:<module>:37 - Initializing Notion client
+2025-06-11 17:33:22 | INFO     | app.services.enhanced_job_scraper:<module>:35 - ✅ LangChain successfully imported
+2025-06-11 17:33:22 | DEBUG    | app.db.crud:<module>:674 - 🔧 CRUD operations debug module initialized
+2025-06-11 17:33:22 | INFO     | app.tasks.pipeline_for_5:<module>:82 - 🧠 LangChain modules imported successfully
+2025-06-11 17:33:22 | INFO     | app.main:<module>:61 - 🚀 Initializing application in DEBUG mode
+2025-06-11 17:47:19 | DEBUG    | app.services.notion_logger:<module>:37 - Initializing Notion client
+2025-06-11 17:47:20 | INFO     | app.services.enhanced_job_scraper:<module>:35 - ✅ LangChain successfully imported
+2025-06-11 17:47:20 | DEBUG    | app.db.crud:<module>:674 - 🔧 CRUD operations debug module initialized
+2025-06-11 17:47:20 | INFO     | app.tasks.pipeline_for_5:<module>:82 - 🧠 LangChain modules imported successfully
+2025-06-11 17:47:20 | INFO     | app.main:<module>:61 - 🚀 Initializing application in DEBUG mode
+2025-06-11 17:47:29 | DEBUG    | app.services.notion_logger:<module>:37 - Initializing Notion client
+2025-06-11 17:47:29 | INFO     | app.services.enhanced_job_scraper:<module>:35 - ✅ LangChain successfully imported
+2025-06-11 17:47:30 | DEBUG    | app.db.crud:<module>:674 - 🔧 CRUD operations debug module initialized
+2025-06-11 17:47:30 | INFO     | app.tasks.pipeline_for_5:<module>:82 - 🧠 LangChain modules imported successfully
+2025-06-11 17:47:30 | INFO     | app.main:<module>:61 - 🚀 Initializing application in DEBUG mode
+2025-06-11 17:55:09 | DEBUG    | app.services.notion_logger:<module>:37 - Initializing Notion client
+2025-06-11 17:55:10 | INFO     | app.services.enhanced_job_scraper:<module>:35 - ✅ LangChain successfully imported
+2025-06-11 17:55:10 | DEBUG    | app.db.crud:<module>:674 - 🔧 CRUD operations debug module initialized
+2025-06-11 17:55:10 | INFO     | app.tasks.pipeline_for_5:<module>:82 - 🧠 LangChain modules imported successfully
+2025-06-11 17:56:03 | DEBUG    | app.services.notion_logger:<module>:37 - Initializing Notion client
+2025-06-11 17:56:04 | INFO     | app.services.enhanced_job_scraper:<module>:35 - ✅ LangChain successfully imported
+2025-06-11 17:56:04 | DEBUG    | app.db.crud:<module>:674 - 🔧 CRUD operations debug module initialized
+2025-06-11 17:56:04 | INFO     | app.tasks.pipeline_for_5:<module>:82 - 🧠 LangChain modules imported successfully
+2025-06-11 17:56:04 | INFO     | app.main:<module>:61 - 🚀 Initializing application in DEBUG mode
+2025-06-11 17:56:14 | DEBUG    | app.services.notion_logger:<module>:37 - Initializing Notion client
+2025-06-11 17:56:14 | INFO     | app.services.enhanced_job_scraper:<module>:35 - ✅ LangChain successfully imported
+2025-06-11 17:56:14 | DEBUG    | app.db.crud:<module>:674 - 🔧 CRUD operations debug module initialized
+2025-06-11 17:56:14 | INFO     | app.tasks.pipeline_for_5:<module>:82 - 🧠 LangChain modules imported successfully
+2025-06-11 17:56:14 | INFO     | app.main:<module>:61 - 🚀 Initializing application in DEBUG mode
+2025-06-11 17:56:19 | DEBUG    | app.services.notion_logger:<module>:37 - Initializing Notion client
+2025-06-11 17:56:19 | INFO     | app.services.enhanced_job_scraper:<module>:35 - ✅ LangChain successfully imported
+2025-06-11 17:56:19 | DEBUG    | app.db.crud:<module>:674 - 🔧 CRUD operations debug module initialized
+2025-06-11 17:56:19 | INFO     | app.tasks.pipeline_for_5:<module>:82 - 🧠 LangChain modules imported successfully
+2025-06-11 17:56:19 | INFO     | app.main:<module>:61 - 🚀 Initializing application in DEBUG mode
+2025-06-11 17:56:22 | DEBUG    | app.services.notion_logger:<module>:37 - Initializing Notion client
+2025-06-11 17:56:22 | INFO     | app.services.enhanced_job_scraper:<module>:35 - ✅ LangChain successfully imported
+2025-06-11 17:56:22 | DEBUG    | app.db.crud:<module>:674 - 🔧 CRUD operations debug module initialized
+2025-06-11 17:56:23 | INFO     | app.tasks.pipeline_for_5:<module>:82 - 🧠 LangChain modules imported successfully
+2025-06-11 17:56:23 | INFO     | app.main:<module>:61 - 🚀 Initializing application in DEBUG mode
+2025-06-11 17:56:26 | DEBUG    | app.services.notion_logger:<module>:37 - Initializing Notion client
+2025-06-11 17:56:27 | INFO     | app.services.enhanced_job_scraper:<module>:35 - ✅ LangChain successfully imported
+2025-06-11 17:56:27 | DEBUG    | app.db.crud:<module>:674 - 🔧 CRUD operations debug module initialized
+2025-06-11 17:56:27 | INFO     | app.tasks.pipeline_for_5:<module>:82 - 🧠 LangChain modules imported successfully
+2025-06-11 17:56:27 | INFO     | app.main:<module>:61 - 🚀 Initializing application in DEBUG mode
+2025-06-12 00:51:07 | DEBUG    | app.services.notion_logger:<module>:37 - Initializing Notion client
+2025-06-12 00:51:07 | INFO     | app.services.enhanced_job_scraper:<module>:35 - ✅ LangChain successfully imported
+2025-06-12 00:51:07 | DEBUG    | app.db.crud:<module>:674 - 🔧 CRUD operations debug module initialized
+2025-06-12 00:51:07 | INFO     | app.tasks.pipeline_for_5:<module>:82 - 🧠 LangChain modules imported successfully
+2025-06-12 00:51:07 | INFO     | app.main:<module>:61 - 🚀 Initializing application in DEBUG mode
+2025-06-12 01:00:03 | DEBUG    | app.services.notion_logger:<module>:37 - Initializing Notion client
+2025-06-12 01:00:03 | INFO     | app.services.enhanced_job_scraper:<module>:35 - ✅ LangChain successfully imported
+2025-06-12 01:00:03 | DEBUG    | app.db.crud:<module>:674 - 🔧 CRUD operations debug module initialized
+2025-06-12 01:00:03 | INFO     | app.tasks.pipeline_for_5:<module>:82 - 🧠 LangChain modules imported successfully
+2025-06-12 01:00:03 | INFO     | app.main:<module>:61 - 🚀 Initializing application in DEBUG mode
+2025-06-12 01:00:22 | DEBUG    | app.services.notion_logger:<module>:37 - Initializing Notion client
+2025-06-12 01:00:22 | INFO     | app.services.enhanced_job_scraper:<module>:35 - ✅ LangChain successfully imported
+2025-06-12 01:00:22 | DEBUG    | app.db.crud:<module>:674 - 🔧 CRUD operations debug module initialized
+2025-06-12 01:00:22 | INFO     | app.tasks.pipeline_for_5:<module>:82 - 🧠 LangChain modules imported successfully
+2025-06-12 01:00:22 | INFO     | app.main:<module>:61 - 🚀 Initializing application in DEBUG mode
+2025-06-12 01:00:36 | DEBUG    | app.services.notion_logger:<module>:37 - Initializing Notion client
+2025-06-12 01:00:36 | INFO     | app.services.enhanced_job_scraper:<module>:35 - ✅ LangChain successfully imported
+2025-06-12 01:00:36 | DEBUG    | app.db.crud:<module>:674 - 🔧 CRUD operations debug module initialized
+2025-06-12 01:00:36 | INFO     | app.tasks.pipeline_for_5:<module>:82 - 🧠 LangChain modules imported successfully
+2025-06-12 01:00:36 | INFO     | app.main:<module>:61 - 🚀 Initializing application in DEBUG mode
+2025-06-12 01:01:11 | DEBUG    | app.services.notion_logger:<module>:37 - Initializing Notion client
+2025-06-12 01:01:11 | INFO     | app.services.enhanced_job_scraper:<module>:35 - ✅ LangChain successfully imported
+2025-06-12 01:01:11 | DEBUG    | app.db.crud:<module>:674 - 🔧 CRUD operations debug module initialized
+2025-06-12 01:01:11 | INFO     | app.tasks.pipeline_for_5:<module>:82 - 🧠 LangChain modules imported successfully
+2025-06-12 01:01:11 | INFO     | app.main:<module>:61 - 🚀 Initializing application in DEBUG mode
+2025-06-12 01:11:21 | DEBUG    | app.services.notion_logger:<module>:37 - Initializing Notion client
+2025-06-12 01:11:22 | INFO     | app.services.enhanced_job_scraper:<module>:35 - ✅ LangChain successfully imported
+2025-06-12 01:11:22 | DEBUG    | app.db.crud:<module>:674 - 🔧 CRUD operations debug module initialized
+2025-06-12 01:11:22 | INFO     | app.tasks.pipeline_for_5:<module>:82 - 🧠 LangChain modules imported successfully
+2025-06-12 01:11:22 | INFO     | app.main:<module>:61 - 🚀 Initializing application in DEBUG mode
+2025-06-12 01:11:45 | DEBUG    | app.services.notion_logger:<module>:37 - Initializing Notion client
+2025-06-12 01:11:46 | INFO     | app.services.enhanced_job_scraper:<module>:35 - ✅ LangChain successfully imported
+2025-06-12 01:11:46 | DEBUG    | app.db.crud:<module>:674 - 🔧 CRUD operations debug module initialized
+2025-06-12 01:11:46 | INFO     | app.tasks.pipeline_for_5:<module>:82 - 🧠 LangChain modules imported successfully
+2025-06-12 01:11:46 | INFO     | app.main:<module>:61 - 🚀 Initializing application in DEBUG mode
+2025-06-12 01:14:38 | DEBUG    | app.services.notion_logger:<module>:37 - Initializing Notion client
+2025-06-12 01:14:38 | INFO     | app.services.enhanced_job_scraper:<module>:35 - ✅ LangChain successfully imported
+2025-06-12 01:14:38 | DEBUG    | app.db.crud:<module>:674 - 🔧 CRUD operations debug module initialized
+2025-06-12 01:14:39 | INFO     | app.tasks.pipeline_for_5:<module>:82 - 🧠 LangChain modules imported successfully
+2025-06-12 01:14:39 | INFO     | app.main:<module>:61 - 🚀 Initializing application in DEBUG mode
+2025-06-12 01:15:43 | DEBUG    | app.services.notion_logger:<module>:37 - Initializing Notion client
+2025-06-12 01:15:44 | INFO     | app.services.enhanced_job_scraper:<module>:35 - ✅ LangChain successfully imported
+2025-06-12 01:15:44 | DEBUG    | app.db.crud:<module>:674 - 🔧 CRUD operations debug module initialized
+2025-06-12 01:15:44 | INFO     | app.tasks.pipeline_for_5:<module>:82 - 🧠 LangChain modules imported successfully
+2025-06-12 01:15:44 | INFO     | app.main:<module>:61 - 🚀 Initializing application in DEBUG mode
+2025-06-12 01:16:30 | DEBUG    | app.services.notion_logger:<module>:37 - Initializing Notion client
+2025-06-12 01:16:30 | INFO     | app.services.enhanced_job_scraper:<module>:35 - ✅ LangChain successfully imported
+2025-06-12 01:16:30 | DEBUG    | app.db.crud:<module>:674 - 🔧 CRUD operations debug module initialized
+2025-06-12 01:16:30 | INFO     | app.tasks.pipeline_for_5:<module>:82 - 🧠 LangChain modules imported successfully
+2025-06-12 01:16:30 | INFO     | app.main:<module>:61 - 🚀 Initializing application in DEBUG mode
+2025-06-12 01:16:32 | DEBUG    | app.services.notion_logger:<module>:37 - Initializing Notion client
+2025-06-12 01:16:32 | INFO     | app.services.enhanced_job_scraper:<module>:35 - ✅ LangChain successfully imported
+2025-06-12 01:16:32 | DEBUG    | app.db.crud:<module>:674 - 🔧 CRUD operations debug module initialized
+2025-06-12 01:16:32 | INFO     | app.tasks.pipeline_for_5:<module>:82 - 🧠 LangChain modules imported successfully
+2025-06-12 01:16:32 | INFO     | app.main:<module>:61 - 🚀 Initializing application in DEBUG mode
+2025-06-12 01:16:33 | DEBUG    | app.services.notion_logger:<module>:37 - Initializing Notion client
+2025-06-12 01:16:33 | INFO     | app.services.enhanced_job_scraper:<module>:35 - ✅ LangChain successfully imported
+2025-06-12 01:16:34 | DEBUG    | app.db.crud:<module>:674 - 🔧 CRUD operations debug module initialized
+2025-06-12 01:16:34 | INFO     | app.tasks.pipeline_for_5:<module>:82 - 🧠 LangChain modules imported successfully
+2025-06-12 01:16:34 | INFO     | app.main:<module>:61 - 🚀 Initializing application in DEBUG mode
+2025-06-12 01:17:41 | DEBUG    | app.services.notion_logger:<module>:37 - Initializing Notion client
+2025-06-12 01:17:42 | INFO     | app.services.enhanced_job_scraper:<module>:35 - ✅ LangChain successfully imported
+2025-06-12 01:17:42 | DEBUG    | app.db.crud:<module>:674 - 🔧 CRUD operations debug module initialized
+2025-06-12 01:17:42 | INFO     | app.tasks.pipeline_for_5:<module>:82 - 🧠 LangChain modules imported successfully
+2025-06-12 01:17:42 | INFO     | app.main:<module>:61 - 🚀 Initializing application in DEBUG mode
+2025-06-12 01:17:43 | DEBUG    | app.services.notion_logger:<module>:37 - Initializing Notion client
+2025-06-12 01:17:43 | INFO     | app.services.enhanced_job_scraper:<module>:35 - ✅ LangChain successfully imported
+2025-06-12 01:17:43 | DEBUG    | app.db.crud:<module>:674 - 🔧 CRUD operations debug module initialized
+2025-06-12 01:17:44 | INFO     | app.tasks.pipeline_for_5:<module>:82 - 🧠 LangChain modules imported successfully
+2025-06-12 01:17:44 | INFO     | app.main:<module>:61 - 🚀 Initializing application in DEBUG mode
+2025-06-12 01:17:59 | DEBUG    | app.services.notion_logger:<module>:37 - Initializing Notion client
+2025-06-12 01:17:59 | INFO     | app.services.enhanced_job_scraper:<module>:35 - ✅ LangChain successfully imported
+2025-06-12 01:17:59 | DEBUG    | app.db.crud:<module>:674 - 🔧 CRUD operations debug module initialized
+2025-06-12 01:17:59 | INFO     | app.tasks.pipeline_for_5:<module>:82 - 🧠 LangChain modules imported successfully
+2025-06-12 01:17:59 | INFO     | app.main:<module>:61 - 🚀 Initializing application in DEBUG mode
+2025-06-12 01:18:15 | DEBUG    | app.services.notion_logger:<module>:37 - Initializing Notion client
+2025-06-12 01:18:15 | INFO     | app.services.enhanced_job_scraper:<module>:35 - ✅ LangChain successfully imported
+2025-06-12 01:18:15 | DEBUG    | app.db.crud:<module>:674 - 🔧 CRUD operations debug module initialized
+2025-06-12 01:18:15 | INFO     | app.tasks.pipeline_for_5:<module>:82 - 🧠 LangChain modules imported successfully
+2025-06-12 01:18:15 | INFO     | app.main:<module>:61 - 🚀 Initializing application in DEBUG mode

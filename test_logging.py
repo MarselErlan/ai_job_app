@@ -1,7 +1,7 @@
 from app.services.resume_parser import extract_text_from_resume
 from app.services.job_scraper import scrape_job_listings
 from app.services.jd_matcher import match_resume_to_jd
-from app.core.logger import set_logger_component
+from app.core.console_logger import set_logger_component
 from loguru import logger
 
 def test_logging():

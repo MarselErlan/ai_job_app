@@ -66,3 +66,127 @@
 2025-06-11 17:07:59 | DEBUG | crud:<module>:674 | 🔧 CRUD operations debug module initialized
 2025-06-11 17:07:59 | INFO | pipeline_for_5:<module>:82 | 🧠 LangChain modules imported successfully
 2025-06-11 17:07:59 | INFO | main:<module>:61 | 🚀 Initializing application in DEBUG mode
+2025-06-11 17:33:22 | DEBUG | notion_logger:<module>:37 | Initializing Notion client
+2025-06-11 17:33:22 | INFO | enhanced_job_scraper:<module>:35 | ✅ LangChain successfully imported
+2025-06-11 17:33:22 | DEBUG | crud:<module>:674 | 🔧 CRUD operations debug module initialized
+2025-06-11 17:33:22 | INFO | pipeline_for_5:<module>:82 | 🧠 LangChain modules imported successfully
+2025-06-11 17:33:22 | INFO | main:<module>:61 | 🚀 Initializing application in DEBUG mode
+2025-06-11 17:47:19 | DEBUG | notion_logger:<module>:37 | Initializing Notion client
+2025-06-11 17:47:20 | INFO | enhanced_job_scraper:<module>:35 | ✅ LangChain successfully imported
+2025-06-11 17:47:20 | DEBUG | crud:<module>:674 | 🔧 CRUD operations debug module initialized
+2025-06-11 17:47:20 | INFO | pipeline_for_5:<module>:82 | 🧠 LangChain modules imported successfully
+2025-06-11 17:47:20 | INFO | main:<module>:61 | 🚀 Initializing application in DEBUG mode
+2025-06-11 17:47:29 | DEBUG | notion_logger:<module>:37 | Initializing Notion client
+2025-06-11 17:47:29 | INFO | enhanced_job_scraper:<module>:35 | ✅ LangChain successfully imported
+2025-06-11 17:47:30 | DEBUG | crud:<module>:674 | 🔧 CRUD operations debug module initialized
+2025-06-11 17:47:30 | INFO | pipeline_for_5:<module>:82 | 🧠 LangChain modules imported successfully
+2025-06-11 17:47:30 | INFO | main:<module>:61 | 🚀 Initializing application in DEBUG mode
+2025-06-11 17:55:09 | DEBUG | notion_logger:<module>:37 | Initializing Notion client
+2025-06-11 17:55:10 | INFO | enhanced_job_scraper:<module>:35 | ✅ LangChain successfully imported
+2025-06-11 17:55:10 | DEBUG | crud:<module>:674 | 🔧 CRUD operations debug module initialized
+2025-06-11 17:55:10 | INFO | pipeline_for_5:<module>:82 | 🧠 LangChain modules imported successfully
+2025-06-11 17:56:03 | DEBUG | notion_logger:<module>:37 | Initializing Notion client
+2025-06-11 17:56:04 | INFO | enhanced_job_scraper:<module>:35 | ✅ LangChain successfully imported
+2025-06-11 17:56:04 | DEBUG | crud:<module>:674 | 🔧 CRUD operations debug module initialized
+2025-06-11 17:56:04 | INFO | pipeline_for_5:<module>:82 | 🧠 LangChain modules imported successfully
+2025-06-11 17:56:04 | INFO | main:<module>:61 | 🚀 Initializing application in DEBUG mode
+2025-06-11 17:56:14 | DEBUG | notion_logger:<module>:37 | Initializing Notion client
+2025-06-11 17:56:14 | INFO | enhanced_job_scraper:<module>:35 | ✅ LangChain successfully imported
+2025-06-11 17:56:14 | DEBUG | crud:<module>:674 | 🔧 CRUD operations debug module initialized
+2025-06-11 17:56:14 | INFO | pipeline_for_5:<module>:82 | 🧠 LangChain modules imported successfully
+2025-06-11 17:56:14 | INFO | main:<module>:61 | 🚀 Initializing application in DEBUG mode
+2025-06-11 17:56:19 | DEBUG | notion_logger:<module>:37 | Initializing Notion client
+2025-06-11 17:56:19 | INFO | enhanced_job_scraper:<module>:35 | ✅ LangChain successfully imported
+2025-06-11 17:56:19 | DEBUG | crud:<module>:674 | 🔧 CRUD operations debug module initialized
+2025-06-11 17:56:19 | INFO | pipeline_for_5:<module>:82 | 🧠 LangChain modules imported successfully
+2025-06-11 17:56:19 | INFO | main:<module>:61 | 🚀 Initializing application in DEBUG mode
+2025-06-11 17:56:22 | DEBUG | notion_logger:<module>:37 | Initializing Notion client
+2025-06-11 17:56:22 | INFO | enhanced_job_scraper:<module>:35 | ✅ LangChain successfully imported
+2025-06-11 17:56:22 | DEBUG | crud:<module>:674 | 🔧 CRUD operations debug module initialized
+2025-06-11 17:56:23 | INFO | pipeline_for_5:<module>:82 | 🧠 LangChain modules imported successfully
+2025-06-11 17:56:23 | INFO | main:<module>:61 | 🚀 Initializing application in DEBUG mode
+2025-06-11 17:56:26 | DEBUG | notion_logger:<module>:37 | Initializing Notion client
+2025-06-11 17:56:27 | INFO | enhanced_job_scraper:<module>:35 | ✅ LangChain successfully imported
+2025-06-11 17:56:27 | DEBUG | crud:<module>:674 | 🔧 CRUD operations debug module initialized
+2025-06-11 17:56:27 | INFO | pipeline_for_5:<module>:82 | 🧠 LangChain modules imported successfully
+2025-06-11 17:56:27 | INFO | main:<module>:61 | 🚀 Initializing application in DEBUG mode
+2025-06-12 00:51:07 | DEBUG | notion_logger:<module>:37 | Initializing Notion client
+2025-06-12 00:51:07 | INFO | enhanced_job_scraper:<module>:35 | ✅ LangChain successfully imported
+2025-06-12 00:51:07 | DEBUG | crud:<module>:674 | 🔧 CRUD operations debug module initialized
+2025-06-12 00:51:07 | INFO | pipeline_for_5:<module>:82 | 🧠 LangChain modules imported successfully
+2025-06-12 00:51:07 | INFO | main:<module>:61 | 🚀 Initializing application in DEBUG mode
+2025-06-12 01:00:03 | DEBUG | notion_logger:<module>:37 | Initializing Notion client
+2025-06-12 01:00:03 | INFO | enhanced_job_scraper:<module>:35 | ✅ LangChain successfully imported
+2025-06-12 01:00:03 | DEBUG | crud:<module>:674 | 🔧 CRUD operations debug module initialized
+2025-06-12 01:00:03 | INFO | pipeline_for_5:<module>:82 | 🧠 LangChain modules imported successfully
+2025-06-12 01:00:03 | INFO | main:<module>:61 | 🚀 Initializing application in DEBUG mode
+2025-06-12 01:00:22 | DEBUG | notion_logger:<module>:37 | Initializing Notion client
+2025-06-12 01:00:22 | INFO | enhanced_job_scraper:<module>:35 | ✅ LangChain successfully imported
+2025-06-12 01:00:22 | DEBUG | crud:<module>:674 | 🔧 CRUD operations debug module initialized
+2025-06-12 01:00:22 | INFO | pipeline_for_5:<module>:82 | 🧠 LangChain modules imported successfully
+2025-06-12 01:00:22 | INFO | main:<module>:61 | 🚀 Initializing application in DEBUG mode
+2025-06-12 01:00:36 | DEBUG | notion_logger:<module>:37 | Initializing Notion client
+2025-06-12 01:00:36 | INFO | enhanced_job_scraper:<module>:35 | ✅ LangChain successfully imported
+2025-06-12 01:00:36 | DEBUG | crud:<module>:674 | 🔧 CRUD operations debug module initialized
+2025-06-12 01:00:36 | INFO | pipeline_for_5:<module>:82 | 🧠 LangChain modules imported successfully
+2025-06-12 01:00:36 | INFO | main:<module>:61 | 🚀 Initializing application in DEBUG mode
+2025-06-12 01:01:11 | DEBUG | notion_logger:<module>:37 | Initializing Notion client
+2025-06-12 01:01:11 | INFO | enhanced_job_scraper:<module>:35 | ✅ LangChain successfully imported
+2025-06-12 01:01:11 | DEBUG | crud:<module>:674 | 🔧 CRUD operations debug module initialized
+2025-06-12 01:01:11 | INFO | pipeline_for_5:<module>:82 | 🧠 LangChain modules imported successfully
+2025-06-12 01:01:11 | INFO | main:<module>:61 | 🚀 Initializing application in DEBUG mode
+2025-06-12 01:11:21 | DEBUG | notion_logger:<module>:37 | Initializing Notion client
+2025-06-12 01:11:22 | INFO | enhanced_job_scraper:<module>:35 | ✅ LangChain successfully imported
+2025-06-12 01:11:22 | DEBUG | crud:<module>:674 | 🔧 CRUD operations debug module initialized
+2025-06-12 01:11:22 | INFO | pipeline_for_5:<module>:82 | 🧠 LangChain modules imported successfully
+2025-06-12 01:11:22 | INFO | main:<module>:61 | 🚀 Initializing application in DEBUG mode
+2025-06-12 01:11:45 | DEBUG | notion_logger:<module>:37 | Initializing Notion client
+2025-06-12 01:11:46 | INFO | enhanced_job_scraper:<module>:35 | ✅ LangChain successfully imported
+2025-06-12 01:11:46 | DEBUG | crud:<module>:674 | 🔧 CRUD operations debug module initialized
+2025-06-12 01:11:46 | INFO | pipeline_for_5:<module>:82 | 🧠 LangChain modules imported successfully
+2025-06-12 01:11:46 | INFO | main:<module>:61 | 🚀 Initializing application in DEBUG mode
+2025-06-12 01:14:38 | DEBUG | notion_logger:<module>:37 | Initializing Notion client
+2025-06-12 01:14:38 | INFO | enhanced_job_scraper:<module>:35 | ✅ LangChain successfully imported
+2025-06-12 01:14:38 | DEBUG | crud:<module>:674 | 🔧 CRUD operations debug module initialized
+2025-06-12 01:14:39 | INFO | pipeline_for_5:<module>:82 | 🧠 LangChain modules imported successfully
+2025-06-12 01:14:39 | INFO | main:<module>:61 | 🚀 Initializing application in DEBUG mode
+2025-06-12 01:15:43 | DEBUG | notion_logger:<module>:37 | Initializing Notion client
+2025-06-12 01:15:44 | INFO | enhanced_job_scraper:<module>:35 | ✅ LangChain successfully imported
+2025-06-12 01:15:44 | DEBUG | crud:<module>:674 | 🔧 CRUD operations debug module initialized
+2025-06-12 01:15:44 | INFO | pipeline_for_5:<module>:82 | 🧠 LangChain modules imported successfully
+2025-06-12 01:15:44 | INFO | main:<module>:61 | 🚀 Initializing application in DEBUG mode
+2025-06-12 01:16:30 | DEBUG | notion_logger:<module>:37 | Initializing Notion client
+2025-06-12 01:16:30 | INFO | enhanced_job_scraper:<module>:35 | ✅ LangChain successfully imported
+2025-06-12 01:16:30 | DEBUG | crud:<module>:674 | 🔧 CRUD operations debug module initialized
+2025-06-12 01:16:30 | INFO | pipeline_for_5:<module>:82 | 🧠 LangChain modules imported successfully
+2025-06-12 01:16:30 | INFO | main:<module>:61 | 🚀 Initializing application in DEBUG mode
+2025-06-12 01:16:32 | DEBUG | notion_logger:<module>:37 | Initializing Notion client
+2025-06-12 01:16:32 | INFO | enhanced_job_scraper:<module>:35 | ✅ LangChain successfully imported
+2025-06-12 01:16:32 | DEBUG | crud:<module>:674 | 🔧 CRUD operations debug module initialized
+2025-06-12 01:16:32 | INFO | pipeline_for_5:<module>:82 | 🧠 LangChain modules imported successfully
+2025-06-12 01:16:32 | INFO | main:<module>:61 | 🚀 Initializing application in DEBUG mode
+2025-06-12 01:16:33 | DEBUG | notion_logger:<module>:37 | Initializing Notion client
+2025-06-12 01:16:33 | INFO | enhanced_job_scraper:<module>:35 | ✅ LangChain successfully imported
+2025-06-12 01:16:34 | DEBUG | crud:<module>:674 | 🔧 CRUD operations debug module initialized
+2025-06-12 01:16:34 | INFO | pipeline_for_5:<module>:82 | 🧠 LangChain modules imported successfully
+2025-06-12 01:16:34 | INFO | main:<module>:61 | 🚀 Initializing application in DEBUG mode
+2025-06-12 01:17:41 | DEBUG | notion_logger:<module>:37 | Initializing Notion client
+2025-06-12 01:17:42 | INFO | enhanced_job_scraper:<module>:35 | ✅ LangChain successfully imported
+2025-06-12 01:17:42 | DEBUG | crud:<module>:674 | 🔧 CRUD operations debug module initialized
+2025-06-12 01:17:42 | INFO | pipeline_for_5:<module>:82 | 🧠 LangChain modules imported successfully
+2025-06-12 01:17:42 | INFO | main:<module>:61 | 🚀 Initializing application in DEBUG mode
+2025-06-12 01:17:43 | DEBUG | notion_logger:<module>:37 | Initializing Notion client
+2025-06-12 01:17:43 | INFO | enhanced_job_scraper:<module>:35 | ✅ LangChain successfully imported
+2025-06-12 01:17:43 | DEBUG | crud:<module>:674 | 🔧 CRUD operations debug module initialized
+2025-06-12 01:17:44 | INFO | pipeline_for_5:<module>:82 | 🧠 LangChain modules imported successfully
+2025-06-12 01:17:44 | INFO | main:<module>:61 | 🚀 Initializing application in DEBUG mode
+2025-06-12 01:17:59 | DEBUG | notion_logger:<module>:37 | Initializing Notion client
+2025-06-12 01:17:59 | INFO | enhanced_job_scraper:<module>:35 | ✅ LangChain successfully imported
+2025-06-12 01:17:59 | DEBUG | crud:<module>:674 | 🔧 CRUD operations debug module initialized
+2025-06-12 01:17:59 | INFO | pipeline_for_5:<module>:82 | 🧠 LangChain modules imported successfully
+2025-06-12 01:17:59 | INFO | main:<module>:61 | 🚀 Initializing application in DEBUG mode
+2025-06-12 01:18:15 | DEBUG | notion_logger:<module>:37 | Initializing Notion client
+2025-06-12 01:18:15 | INFO | enhanced_job_scraper:<module>:35 | ✅ LangChain successfully imported
+2025-06-12 01:18:15 | DEBUG | crud:<module>:674 | 🔧 CRUD operations debug module initialized
+2025-06-12 01:18:15 | INFO | pipeline_for_5:<module>:82 | 🧠 LangChain modules imported successfully
+2025-06-12 01:18:15 | INFO | main:<module>:61 | 🚀 Initializing application in DEBUG mode

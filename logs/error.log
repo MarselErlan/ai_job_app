@@ -1416,3 +1416,39 @@ Call log:
 Call log:
   - waiting for locator("input[type='file']")
 
+2025-06-11T17:35:31.520625-0500 | ERROR | ❌ Failed to parse selector map: Expecting value: line 1 column 1 (char 0)
+2025-06-11T17:35:31.520944-0500 | ERROR | 🔍 Problematic selector_map content: The provided HTML does not contain any input fields. Therefore, a JSON mapping for input fields cannot be created. Please provide an HTML with input fields for further assistance.
+2025-06-11T17:36:06.343607-0500 | ERROR | Failed to fill full_name: fill error: Page.fill: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("input[name='name']")
+
+2025-06-11T17:36:36.350039-0500 | ERROR | Failed to fill email: fill error: Page.fill: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("input[name='email']")
+
+2025-06-11T17:37:06.357138-0500 | ERROR | Failed to fill phone: fill error: Page.fill: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("input[name='phone']")
+
+2025-06-11T17:37:36.371811-0500 | ERROR | Failed to upload resume for resume_upload: upload error: Page.set_input_files: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("input[type='file']")
+
+2025-06-11T17:48:54.975832-0500 | ERROR | pipeline:run_pipeline:492 | ❌ Failed to parse selector map: Expecting value: line 1 column 1 (char 0)
+2025-06-11T17:48:54.976132-0500 | ERROR | pipeline:run_pipeline:493 | 🔍 Problematic selector_map content: The HTML provided does not contain any input fields. Therefore, the JSON mapping for all input fields cannot be generated. Please provide an HTML with input fields to generate the required JSON mapping.
+2025-06-11T17:49:30.207904-0500 | ERROR | form_autofiller:apply_with_selector_map:171 | Failed to fill full_name: fill error: Page.fill: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("input[name='name']")
+
+2025-06-11T17:50:00.215998-0500 | ERROR | form_autofiller:apply_with_selector_map:171 | Failed to fill email: fill error: Page.fill: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("input[name='email']")
+
+2025-06-11T17:50:30.223983-0500 | ERROR | form_autofiller:apply_with_selector_map:171 | Failed to fill phone: fill error: Page.fill: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("input[name='phone']")
+
+2025-06-11T17:51:00.238062-0500 | ERROR | form_autofiller:apply_with_selector_map:162 | Failed to upload resume for resume_upload: upload error: Page.set_input_files: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("input[type='file']")
+
